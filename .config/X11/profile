@@ -9,7 +9,7 @@
 #                      |___/                             
 #
 ####################################################################################################
-# Runs on login, sets all the Evironmental variables.
+# Runs after login, sets all the Evironmental variables.
 
 
 ####################################################################################################
@@ -36,7 +36,8 @@ export DND=0
 ####################################################################################################
 
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERM="st-256color"
+export TERMINAL="st-256color"
 export BROWSER="qutebrowser"
 export READER="zathura"
 
@@ -76,9 +77,6 @@ export DRACULA_THEME="$CONFIG/dracula-theme"
 #       _EXTRA
 ####################################################################################################
 
-# for terminal
-export TERM='st-256color'
-
 # colorful LESS
 export LESSHISTFILE=-
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -105,5 +103,5 @@ export LF_ICONS="\ tw=:\ st=:\ ow=:\ dt=:\ di=:\ fi=:\ ln=:
 #       _STARTX
 ####################################################################################################
 
-# autostarts tbsm on tty1
+# auto run xinit on tty1 after login
 #[[ $XDG_VTNR -eq 1 ]] && exec startx --vt1
