@@ -1,6 +1,0 @@
-2020/08/22-21:33:36.749 47d8 Reusing MANIFEST /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb/MANIFEST-000001
-2020/08/22-21:33:36.750 47d8 Recovering log #7
-2020/08/22-21:33:36.772 47d8 Reusing old log /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_www.primevideo.com_0.indexeddb.leveldb/000007.log 
-2020/08/22-21:33:41.988 4812 Level-0 table #11: started
-2020/08/22-21:33:42.328 4812 Level-0 table #11: 3296597 bytes OK
-2020/08/22-21:33:42.605 4812 Delete type=0 #7

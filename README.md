@@ -1,1 +1,1 @@
-![banner](.config/dotfiles/banner_dotfiles.png)
+.config/dotfiles/README.md

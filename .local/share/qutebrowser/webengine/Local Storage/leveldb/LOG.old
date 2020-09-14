@@ -1,9 +1,0 @@
-2020/09/13-19:17:36.554 46a Reusing MANIFEST /home/samyak039/.local/share/qutebrowser/webengine/Local Storage/leveldb/MANIFEST-000001
-2020/09/13-19:17:36.588 46a Recovering log #4540
-2020/09/13-19:17:36.952 46a Reusing old log /home/samyak039/.local/share/qutebrowser/webengine/Local Storage/leveldb/004540.log 
-2020/09/13-19:17:49.830 6aa Level-0 table #4544: started
-2020/09/13-19:17:50.684 6aa Level-0 table #4544: 20730 bytes OK
-2020/09/13-19:17:52.246 6aa Delete type=0 #4540
-2020/09/14-00:21:39.302 6aa Level-0 table #4546: started
-2020/09/14-00:21:39.375 6aa Level-0 table #4546: 168590 bytes OK
-2020/09/14-00:21:39.601 6aa Delete type=0 #4543
