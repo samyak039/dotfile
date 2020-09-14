@@ -1,0 +1,16 @@
+windows:
+- active: true
+  geometry: !!binary |
+    AdnQywADAAAAAAAEAAAABAAABVEAAALkAAAABAAAAAQAAAVRAAAC5AAAAAAAAAAABVYAAAAEAAAA
+    BAAABVEAAALk
+  tabs:
+  - active: true
+    history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Home
+      url: file:///home/samyak039/.config/startpages/simpleClock/index.html
+      zoom: 1.0

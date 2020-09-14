@@ -1,0 +1,5 @@
+2020/08/18-15:20:13.551 acf Reusing MANIFEST /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_t.17track.net_0.indexeddb.leveldb/MANIFEST-000001
+2020/08/18-15:20:23.114 b2a Level-0 table #5: started
+2020/08/18-15:20:23.157 b2a Level-0 table #5: 576 bytes OK
+2020/08/18-15:20:23.223 b2a Delete type=0 #3
+2020/08/18-15:20:23.224 b2a Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

@@ -1,0 +1,21 @@
+{
+    "Black Clover": {
+        "addPaused": null,
+        "affectedFeeds": [
+            "https://feed.animetosho.org/atom?q=FFA+1080p&aids=12665"
+        ],
+        "assignedCategory": "anime",
+        "createSubfolder": null,
+        "enabled": true,
+        "episodeFilter": "",
+        "ignoreDays": 0,
+        "lastMatch": "08 Sep 2020 16:36:01 +0000",
+        "mustContain": "",
+        "mustNotContain": "",
+        "previouslyMatchedEpisodes": [
+        ],
+        "savePath": "/home/samyak039/video/anime/Black Clover",
+        "smartFilter": false,
+        "useRegex": false
+    }
+}

@@ -1,0 +1,146 @@
+#################################################
+#   _ALIAS
+#################################################
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+
+# configuration file
+alias cfg='/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME'
+alias cfalias='$EDITOR $CONFIG/aliasrc'
+alias cfi3='$EDITOR $CONFIG/i3/config $CONFIG/i3blocks/config'
+alias cflf='$EDITOR $CONFIG/lf/lfrc'
+alias cfnvim='$EDITOR $CONFIG/nvim/init.vim'
+alias cfprofile='$EDITOR $CONFIG/X11/profile'
+alias cfqute='$EDITOR $CONFIG/qutebrowser/config.py $CONFIG/qutebrowser/autoconfig.yml'
+alias cfqtile='$EDITOR $CONFIG/qtile/config.py'
+alias cfxinit='$EDITOR $CONFIG/X11/xinitrc'
+alias cfzsh='$EDITOR $CONFIG/zsh/.zshrc'
+
+alias 5sem='cd $HOME/wiki/college/5sem'
+
+alias s='doas --'
+alias df='df -h'                                            # human readable format
+alias du='du -h'
+alias grep='grep --color=auto'
+#alias sxiv='sxiv-rifle'
+
+#alias cat='ccat'                                            # colorised cat
+alias restart-qtile='qshell-cmd -o cmd -f restart'          # restart qtile
+alias shit='fuck'                                           # sfw of fuck
+
+# nvim
+alias v='nvim'
+alias nam='vman'                                # man page in man (vim-superman)
+
+# advanced cp, mv
+# https://web.archive.org/web/20131115171331/http://beatex.org/web/advancedcopy.html
+# https://www.tecmint.com/advanced-copy-command-shows-progress-bar-while-copying-files/comment-page-1/
+alias cp='$HOME/.local/bin/advcp -g'                                            # confirms before overwritting
+alias mv='$HOME/.local/bin/advmv -g'                                           
+
+# [pac]kage-[man]ager
+alias pacman='pacman --color auto'                     # pacman colored and auto-sudo
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="doas reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+alias yay='yay --sudo /usr/bin/doas'
+
+# changing "ls" to "exa"
+alias l='exa --grid --group-directories-first --classify --color=always'
+alias la='exa --long --time-style=long-iso --group-directories-first --classify --color=always'
+alias ld='exa --grid --only-dirs'
+alias le='exa --long --time-style=long-iso --all --group-directories-first --classify --sort=extension --color=always'
+alias ll='exa --long --time-style=long-iso --all --group-directories-first --classify --color=always'
+alias lt='exa --long --time-style=long-iso --all --sort=time --classify --color=always'
+alias ltree='exa --tree --all --group-directories-first --classify --color=always'
+alias ltree2='exa --tree --level 2 --all --group-directories-first --classify --color=always'
+
+# rm more careful
+alias rm='rm -i'
+
+# keyboard shit
+alias amma="setxkbmap -layout us -option"
+alias setkeeb="setxkbmap -model 'pc104' -layout 'us,us,us' -variant 'dvp,dvorak,' -option 'grp:alt_space_toggle,grp_led:caps,grp_led:scroll,caps:backspace,shift:both_capslock_cancel,rupeesign:i1,terminate:ctrl_alt_bksp,altwin:swap_lalt_lwin' && xmodmap -e 'clear Lock'"
+
+# nordvpn -> vpn
+alias vpn="sudo protonvpn"
+
+# record screen
+alias record='ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -c:v libx264rgb -crf 0 -preset ultrafast $(date +%F_%H-%M-%S).mkv'
+
+# tuir -> reddit client
+alias reddit='tuir'
+
+# xampp
+alias xampp='s /opt/lampp/xampp'
+
+# misc
+alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
+
+# startx
+alias x='startx'
+
+
+#################################################
+# FUNCTIONS
+#################################################
+
+# [ex]tractor for any compressed file
+ex () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# mkcd -> mkdir + cd
+function mkcd {
+    if [ ! -n "$1" ]; then
+        echo "enter the name, you dumb !!!"
+    elif [ -d $1 ]; then
+        echo "'$1' exists"
+    else
+        mkdir -p $1 && cd $1
+    fi
+}
+
+# cd -> cd + ll
+function cd {
+    if [ ! "$1" ]; then
+        builtin cd $HOME
+    else
+        builtin cd "$*";
+    fi
+    echo -n "PWD -->> "
+    pwd;
+    ll;
+}
+
+####################################################################################################
+#   _CODE
+####################################################################################################
+
+# _KOTLIN
+alias ktc='kotlinc -include-runtime -d'
+alias ktct='ktc /tmp/run.jar'
+alias javart='java -jar /tmp/run.jar'

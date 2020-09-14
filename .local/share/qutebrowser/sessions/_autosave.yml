@@ -1,0 +1,118 @@
+windows:
+- active: true
+  geometry: !!binary |
+    AdnQywADAAAAAAAEAAAABAAABVEAAALkAAAABAAAAAQAAAVRAAAC5AAAAAAAAAAABVYAAAAEAAAA
+    BAAABVEAAALk
+  tabs:
+  - history:
+    - pinned: false
+      title: Home
+      url: file:///home/samyak039/.config/startpages/simpleClock/index.html
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: dwm at DuckDuckGo
+      url: https://duckduckgo.com/?q=dwm&ia=web
+      zoom: 1.0
+  - history:
+    - pinned: false
+      title: (2) git bare repo dotfiles - YouTube
+      url: https://www.youtube.com/results?search_query=git%20bare%20repo%20dotfiles
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 600
+      title: (2) Git Bare Repository - A Better Way To Manage Dotfiles - YouTube
+      url: https://www.youtube.com/watch?v=tBoLDpTWVOM&t=672s
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: how to git local to remote at DuckDuckGo
+      url: https://duckduckgo.com/?q=how+to+git+local+to+remote&ia=web&iai=r1-0&page=1&adx=prdsdc&sexp=%7B%22v7exp%22%3A%22a%22%2C%22sltexp%22%3A%22b%22%2C%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22wiadrk%22%3A%22b%22%2C%22langexp%22%3A%22b%22%7D
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 4020
+      title: How to connect Git Local Repository with Remote Repository over GitHub?
+      url: https://www.toolsqa.com/git/local-repository-remote-repository/
+      zoom: 1.0
+  - history:
+    - pinned: false
+      title: samyak039 (सम्यक् बरड़िया)
+      url: https://github.com/samyak039
+    - pinned: false
+      title: Your Repositories
+      url: https://github.com/samyak039?tab=repositories
+    - pinned: false
+      title: 'samyak039/dotfiles: all my linux configuration files.'
+      url: https://github.com/samyak039/dotfiles
+    - original-url: https://github.com/samyak039/dotfiles
+      pinned: false
+      title: Options
+      url: https://github.com/samyak039/dotfiles/settings
+    - pinned: false
+      title: Confirm password
+      url: https://github.com/samyak039/dotfiles/settings/delete
+    - original-url: https://github.com/samyak039/dotfiles/settings/delete
+      pinned: false
+      title: GitHub
+      url: https://github.com/
+    - pinned: false
+      title: Create a New Repository
+      url: https://github.com/new
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: samyak039/dotfiles
+      url: https://github.com/samyak039/dotfiles
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: src refspec master does not match any + git at DuckDuckGo
+      url: https://duckduckgo.com/?q=src+refspec+master+does+not+match+any+%2B+git&ia=web&iai=r1-0&page=1&adx=prdsdc&sexp=%7B%22v7exp%22%3A%22a%22%2C%22sltexp%22%3A%22b%22%2C%22prodexp%22%3A%22b%22%2C%22prdsdexp%22%3A%22c%22%2C%22biaexp%22%3A%22b%22%2C%22wiadrk%22%3A%22b%22%2C%22langexp%22%3A%22b%22%7D
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Message 'src refspec master does not match any' when pushing commits
+        in Git - Stack Overflow
+      url: https://stackoverflow.com/questions/4181861/message-src-refspec-master-does-not-match-any-when-pushing-commits-in-git
+      zoom: 1.0
+  - active: true
+    history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: dotfiles/suckless at master · kaihendry/dotfiles
+      url: https://github.com/kaihendry/dotfiles/tree/master/suckless
+      zoom: 1.0
+  - history:
+    - active: true
+      pinned: false
+      scroll-pos:
+        x: 0
+        y: 0
+      title: dotfiles/suckless/scroll at master · kaihendry/dotfiles
+      url: https://github.com/kaihendry/dotfiles/tree/master/suckless/scroll
+      zoom: 1.0

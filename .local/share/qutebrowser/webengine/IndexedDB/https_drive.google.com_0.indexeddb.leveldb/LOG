@@ -1,0 +1,6 @@
+2020/09/02-17:13:11.961 294d4 Reusing MANIFEST /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/09/02-17:13:11.961 294d4 Recovering log #36
+2020/09/02-17:13:11.975 294d4 Reusing old log /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_drive.google.com_0.indexeddb.leveldb/000036.log 
+2020/09/02-17:13:13.286 2955d Level-0 table #43: started
+2020/09/02-17:13:13.465 2955d Level-0 table #43: 5407145 bytes OK
+2020/09/02-17:13:13.502 2955d Delete type=0 #36

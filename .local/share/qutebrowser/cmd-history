@@ -1,0 +1,116 @@
+:open -t github.com/samyak039
+:open -t gitlab to github
+:open -t gitlab vs github
+:open -t wimpy kids movie
+:open -t https://github.com/LukeSmithxyz/dmenu
+:open -t github.com/samyak039
+:open -t https://wimpykid.com/movies/
+:open -t https://classroom.google.com/u/1/h
+:open -t !yt pain
+:open -t st text wrap when changing window size
+:open -t https://classroom.google.com/u/1/h
+:open -t tmux
+:open -t https://www.reddit.com/r/Naruto/comments/91wdjv/naruto_kai_ultimate_subbed_edition/
+:open -t reddit naruto kai
+:open -t anime tosho.org
+:open -t izumi uchiha
+:open -t https://myanimelist.net/animelist/samyak039
+:open -t naruto kai
+/izumi
+:open -t https://www.animefillerguide.com/2019/06/naruto-shippuden-filler-list.html
+:buffer 0/19
+/
+:open -t total naruto watch time !g
+:open -t anime filler
+:open -t https://animetosho.org/search?q=naruto+kai+complete&aids=
+:open -t animetosho.org
+:open -t https://www.animefillerlist.com/shows/one-piece
+:open -t https://www.animefillerguide.com/2019/06/one-piece-filler-list.html
+:open -t how to scroll in tmux
+:open -t suckless st best way to scroll !g
+:open -t !di prattling
+:open -t !di capsize
+:open -t !di salvage
+:open snapchat with xposed
+:open https://github.com/Juxstin/
+:open edxposed + snapchat
+:open -t edxposed snapchat bypass
+:open snapchat with edxposed
+:open -t https://www.animefillerguide.com/2019/06/one-piece-filler-list.html
+:open -t hikari e
+:open -t ffmpeg cut a clip from a video
+:open -t hikari e
+:open -t ffmpeg hard code the subtitle
+:open -t how to compress video ffmpeg
+:open -t !yt among us
+:open -t https://draculatheme.com/contribute/
+:open -t microg + snapchat
+:open -t safety net with exposed
+:open -t droidguard helper
+:open -t snapchat with root
+:open -t xposed edge alternative
+/edge
+:open -t edge gestures
+:open -t how to purchase app using aurora store
+:open -t https://crdroid.net/beryllium
+:open https://crdroid.net/lavender
+:open https://crdroid.net/beryllium
+:open https://crdroid.net/v500
+:open https://classroom.google.com/u/1/h
+:open -t windows is a preemptive operating system
+/windows
+:open -t Consider the following statements about process state transitions for a system using preemptive scheduling. I. A running process can move to ready state. II. A ready process can move to running state. III. A blocked process can move to running state. IV. A blocked process can move to ready state.
+!g
+:open -t Consider the following set of processes, assumed to have arrived at time 0. Consider the CPU scheduling algorithms Shortest Job First (SJF) and Round Robin (RR). For RR, assume that the processes are scheduled in the order P1, P2, P3, P4. If the time quantum for RR is 4 ms, then the absolute value of the difference between the average turnaround times (in ms) of SJF and RR (round off to 2 decimal places) is
+!g
+:open -t Consider the following CPU processes with arrival times (in milliseconds) and length of CPU bursts (in milliseconds) as given below:If the pre-emptive shortest remaining time first scheduling algorithm is used to schedule the processes, then the average waiting time across all processes is _______ milliseconds
+
+:open -t Consider the following CPU processes with arrival times (in milliseconds) and length of CPU bursts (in milliseconds) as given below:If the pre-emptive shortest remaining time first scheduling algorithm is used to schedule the processes, then the average waiting time across all processes is _______ milliseconds
+!g
+:open -t Which of the following is/are shared by all the threads in a process? I. Program Counter II. Stack III. Address space IV. Registers
+!g
+:open -t Consider the set of processes with arrival time(in milliseconds), CPU burst time (in milliseconds), and priority(0 is the highest priority) shown below. None of the processes have I/O burst time.The average waiting time (in milliseconds) of all the processes using preemptive priority scheduling algorithm is ____.
+!g
+:open -t In a computer system, memory-mapped access takes 100 nanoseconds when a page fault in the TLB. In case the page is not TLB, it takes 400 nanoseconds to access. As giving a hit ratio of 80%, the effective access time is
+!g
+:open -t Suppose that P, Q and R are the cooperative processes satisfying mutual exclusion condition then if the Q process is executed in its critical section then
+!g
+:open -t Find out the number of page faults when references to pages occurs in order 1,2,4,5, 2,1,2,4 assume that the main memory can accommodate 3 pages and the main memory already has the page 1 and 2, with page 1 having brought earlier than page 2 assume LRU algorithm is used
+!g
+:open -t A process residing in main memory and ready and waiting for the execution is kept on
+!g
+:open -t WINDOWS is a______________operating System.
+!g
+:open -t WINDOWS is a______________operating System.
+1 point
+Nonpreemptive
+Real Time
+preemptive
+Multi-user !g
+:open -t https://www.animefillerguide.com/2019/06/one-piece-filler-list.html
+/memories
+:open -t demon slayer myanimelist
+/run
+/hikari e
+:open -t animetosho.org
+:open -t https://classroom.google.com/u/1/h
+:open -t https://www.codechef.com/SEPT20B/
+:open -t 10.0.0.1
+:open -t cpp max in array
+:open -t https://www.codechef.com/SEPT20B/
+:open -t !yt
+:messages
+:open !yt coding music
+:open dwm
+:open -t !yt suckless terminal scroll
+/shortcut
+/scroll
+/shortcuts
+/scroll
+:open -t github.com
+/bump
+:open -t !yt git bare repo dotfiles
+:open -t how to git local to remote
+:open -t github.com/samyak039
+:open -t src refspec master does not match any + git
+:open -t https://github.com/kaihendry/dotfiles/tree/master/suckless

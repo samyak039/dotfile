@@ -1,0 +1,5 @@
+2020/09/01-00:02:07.784 124a7 Reusing MANIFEST /home/samyak039/.local/share/qutebrowser/webengine/IndexedDB/https_www.gizdev.com_0.indexeddb.leveldb/MANIFEST-000001
+2020/09/01-00:02:33.652 1255b Level-0 table #5: started
+2020/09/01-00:02:33.696 1255b Level-0 table #5: 565 bytes OK
+2020/09/01-00:02:33.751 1255b Delete type=0 #3
+2020/09/01-00:02:33.752 1255b Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
