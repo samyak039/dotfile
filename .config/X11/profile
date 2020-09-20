@@ -37,7 +37,7 @@ export DND=0
 
 export EDITOR="nvim"
 export TERM="st-256color"
-export TERMINAL="st-256color"
+export TERMINAL="st"
 export BROWSER="qutebrowser"
 export READER="zathura"
 

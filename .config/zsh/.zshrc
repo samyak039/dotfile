@@ -43,7 +43,6 @@ antigen bundle dircycle
 antigen bundle extract; alias ex=extract
 antigen bundle history
 antigen bundle history-substring-search
-antigen bundle per-directory-history
 antigen bundle rand-quote
 antigen bundle vi-mode
 

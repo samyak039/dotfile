@@ -37,8 +37,8 @@ alias nam='vman'                                # man page in man (vim-superman)
 # advanced cp, mv
 # https://web.archive.org/web/20131115171331/http://beatex.org/web/advancedcopy.html
 # https://www.tecmint.com/advanced-copy-command-shows-progress-bar-while-copying-files/comment-page-1/
-alias cp='$HOME/.local/bin/advcp -g'                                            # confirms before overwritting
-alias mv='$HOME/.local/bin/advmv -g'                                           
+alias c='$HOME/.local/bin/advcp -g'                                            # confirms before overwritting
+alias m='$HOME/.local/bin/advmv -g'                                           
 
 # [pac]kage-[man]ager
 alias pacman='pacman --color auto'                     # pacman colored and auto-sudo
