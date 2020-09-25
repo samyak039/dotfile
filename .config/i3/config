@@ -127,35 +127,39 @@ bindsym $mod+space focus mode_toggle
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws0 "0:ARCH" 
-set $ws1 "1:FILE"
-set $ws2 "2:EDIT"
-set $ws3 "3:TERM"
-set $ws4 "4:MISC"
-set $ws5 "5:CHAT"
-set $ws6 "6:MEDIA"
-set $ws7 "7:BROWSER"
+set $ws1 "1:ARCH" 
+set $ws2 "2:FILE"
+set $ws3 "3:EDIT"
+set $ws4 "4:TERM"
+set $ws5 "5:MISC"
+set $ws6 "6:CHAT"
+set $ws7 "7:MEDIA"
+set $ws8 "8:BROWSER"
+set $ws9 "9:DUAL"
 
+workspace $ws9 output HDMI1
 
 # switch to workspace
-bindsym $mod+a          workspace number $ws0
-bindsym $mod+o          workspace number $ws1
-bindsym $mod+e          workspace number $ws2
-bindsym $mod+u          workspace number $ws3
-bindsym $mod+semicolon  workspace number $ws4
-bindsym $mod+comma      workspace number $ws5
-bindsym $mod+period     workspace number $ws6
-bindsym $mod+p          workspace number $ws7
+bindsym $mod+a          workspace number $ws1
+bindsym $mod+o          workspace number $ws2
+bindsym $mod+e          workspace number $ws3
+bindsym $mod+u          workspace number $ws4
+bindsym $mod+semicolon  workspace number $ws5
+bindsym $mod+comma      workspace number $ws6
+bindsym $mod+period     workspace number $ws7
+bindsym $mod+p          workspace number $ws8
+bindsym $mod+y          workspace number $ws9
 
 # move focused container to workspace
-Bindsym $mod+Shift+a            move container to workspace number $ws0
-bindsym $mod+Shift+o            move container to workspace number $ws1
-bindsym $mod+Shift+e            move container to workspace number $ws2
-bindsym $mod+Shift+u            move container to workspace number $ws3
-bindsym $mod+Shift+semicolon    move container to workspace number $ws4
-bindsym $mod+Shift+comma        move container to workspace number $ws5
-bindsym $mod+Shift+period       move container to workspace number $ws6
-bindsym $mod+Shift+p            move container to workspace number $ws7
+Bindsym $mod+Shift+a            move container to workspace number $ws1
+bindsym $mod+Shift+o            move container to workspace number $ws2
+bindsym $mod+Shift+e            move container to workspace number $ws3
+bindsym $mod+Shift+u            move container to workspace number $ws4
+bindsym $mod+Shift+semicolon    move container to workspace number $ws5
+bindsym $mod+Shift+comma        move container to workspace number $ws6
+bindsym $mod+Shift+period       move container to workspace number $ws7
+bindsym $mod+Shift+p            move container to workspace number $ws8
+bindsym $mod+Shift+y            move container to workspace number $ws9
 
 bindsym $mod+Shift+w move workspace to output right
 bindsym $mod+Shift+v move workspace to output left
@@ -163,7 +167,11 @@ bindsym $mod+Shift+v move workspace to output left
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-#workspace_auto_back_and_forth yes
+workspace_auto_back_and_forth yes
+
+# multi monitor setup
+bindsym $mod+i focus output right
+bindsym $mod+Shift+i move workspace to output right
 
 # resize
 bindsym $mod+l resize grow width 10 px or 10 ppt; resize grow height 5 px or 5 ppt
@@ -359,18 +367,18 @@ exec --no-startup-id qutebrowser
 #bindsym $mod+c exec konsole -e cmus
 
 # Assign Workspaces:
-assign [class="Apache NetBeans IDE 12.0"] $ws0
-assign [class="Eclipse"] $ws0
-assign [class="Java"] $ws0
-assign [class="jetbrains-studio"] $ws0
-assign [class="qBittorrent"] $ws4
-assign [class="discord"] $ws5
-assign [class="whatsapp-nativefier-d52542"] $ws5
-assign [class="TelegramDesktop"] $ws5
-assign [class="Slack"] $ws5
-assign [class="mpv"] $ws6
-assign [class="Spotify"] $ws6
-assign [class="qutebrowser"] $ws7
+assign [class="Apache NetBeans IDE 12.0"] $ws1
+assign [class="Eclipse"] $ws1
+assign [class="Java"] $ws1
+assign [class="jetbrains-studio"] $ws1
+assign [class="qBittorrent"] $ws5
+assign [class="discord"] $ws6
+assign [class="whatsapp-nativefier-d52542"] $ws6
+assign [class="TelegramDesktop"] $ws6
+assign [class="Slack"] $ws6
+assign [class="mpv"] $ws7
+assign [class="Spotify"] $ws7
+assign [class="qutebrowser"] $ws8
 assign [class="Firefox Beta"] $ws7
 
 # for window
