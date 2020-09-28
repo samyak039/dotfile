@@ -18,6 +18,9 @@ zstyle :compinstall filename '/home/samyak039/.config/zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
+
+autoload -Uz promptinit
+promptinit
 ################################################################################
 #   ZSH-NEWUSER-INSTALL
 ################################################################################

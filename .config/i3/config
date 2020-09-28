@@ -137,6 +137,7 @@ set $ws7 "7:MEDIA"
 set $ws8 "8:BROWSER"
 set $ws9 "9:DUAL"
 
+workspace $ws7 output primary
 workspace $ws9 output HDMI1
 
 # switch to workspace
@@ -167,9 +168,9 @@ bindsym $mod+Shift+v move workspace to output left
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 
-# multi monitor setup
+# dual monitor setup
 bindsym $mod+i focus output right
 bindsym $mod+Shift+i move workspace to output right
 
@@ -180,7 +181,7 @@ bindsym $mod+h resize shrink width 10 px or 10 ppt; resize shrink height 5 px or
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Control+semicolon exec i3-msg exit
 #bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -246,7 +247,8 @@ bar {
     strip_workspace_numbers no
     strip_workspace_name yes
     binding_mode_indicator yes
-    tray_padding 2
+    tray_padding 0
+    tray_output HDMI1
     tray_output primary
     colors {
         background #282A36
@@ -385,3 +387,5 @@ assign [class="Firefox Beta"] $ws7
 for_window [class="sun-applet-Main"] floating enable
 for_window [class="Yad"] floating enable
 
+# settings
+focus_follows_mouse yes

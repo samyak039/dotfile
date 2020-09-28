@@ -15,7 +15,7 @@
     #
     # If this option is set to mouse or keyboard, the monitor option
     # will be ignored.
-    follow = mouse
+    follow = none
 
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
@@ -126,7 +126,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%a -- %s</b>\n%p%b"
+    format = "<b>%s</b>\n%p%b"
     #format = "<b>%a</b>\n<b>%s</b>\n%p%b"
 
     # Alignment of message text.
