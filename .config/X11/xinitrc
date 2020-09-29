@@ -39,8 +39,8 @@ mpd &
 nitrogen --restore &
 pcmanfm -d &
 picom &
-qbittorrent &
 syncthing --no-browser &
+transmission-daemon &
 
 # start WM
 exec i3

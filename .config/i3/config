@@ -72,9 +72,9 @@ bindsym $mod+d exec dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 # whole
 bindsym Print exec flameshot gui -p "$HOME/image/screenshot"
 # current
-bindsym Shift+Print exec flameshot full -p "$HOME/image/screenshot" 
+bindsym Shift+Print exec flameshot screen -p "$HOME/image/screenshot" 
 # select
-bindsym Control+Print exec flameshot full -c
+bindsym Control+Print exec flameshot screen -c
 # wait 3sec
 bindsym Control+Shift+Print exec sleep 3s && flameshot gui -p "$HOME/image/screenshot"
 
