@@ -12,14 +12,14 @@
     "blocklist-url": "http://www.example.com/blocklist",
     "cache-size-mb": 4,
     "dht-enabled": true,
-    "download-dir": "/home/samyak039/downloads",
+    "download-dir": "/home/samyak039/download/",
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 1,
     "idle-seeding-limit": 30,
     "idle-seeding-limit-enabled": false,
-    "incomplete-dir": "/home/samyak039/downloads",
-    "incomplete-dir-enabled": false,
+    "incomplete-dir": "/home/samyak039/download/misc",
+    "incomplete-dir-enabled": true,
     "lpd-enabled": false,
     "message-level": 2,
     "peer-congestion-algorithm": "",
@@ -66,5 +66,6 @@
     "upload-slots-per-torrent": 14,
     "utp-enabled": true,
     "watch-dir": "/home/samyak039/download/torrent",
-    "watch-dir-enable": false
+    "watch-dir-enable": true,
+    "watch-dir-enabled": true
 }

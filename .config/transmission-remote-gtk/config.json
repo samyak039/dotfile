@@ -18,45 +18,60 @@
       "update-interval" : 3,
       "min-update-interval" : 3,
       "session-update-interval" : 60,
-      "last-add-destination" : "/home/samyak039/downloads/shit",
+      "last-add-destination" : "/home/samyak039/downloads/iso/",
       "exec-commands" : [],
       "destinations" : [
         {
-          "label" : "iso",
-          "dir" : "/home/samyak039/downloads/iso/"
+          "label" : "download",
+          "dir" : "/home/samyak039/download/"
         },
         {
-          "label" : "movie",
+          "label" : "d/iso",
+          "dir" : "/home/samyak039/download/iso/"
+        },
+        {
+          "label" : "d/shit",
+          "dir" : "/home/samyak039/download/shit/"
+        },
+        {
+          "label" : "video",
+          "dir" : "/home/samyak039/video/"
+        },
+        {
+          "label" : "v/anime",
+          "dir" : "/home/samyak039/video/anime/"
+        },
+        {
+          "label" : "v/movie",
           "dir" : "/home/samyak039/video/movie/"
         }
-      ]
+      ],
+      "last-move-destination" : "/home/samyak039/download/iso/"
     }
   ],
   "profile-id" : 0,
   "tree-views" : {
     "TrgTorrentTreeView" : {
-      "sort-col" : 39,
+      "sort-col" : 5,
       "sort-type" : 0,
       "widths" : [
-        131,
-        187,
-        60,
+        406,
+        68,
         66,
-        73,
+        96,
         101,
         71,
         90,
         114,
         95,
-        55,
+        66,
         96,
         115,
         67,
-        134,
-        226
+        137,
+        274
       ],
       "columns" : [
-        "queue-position",
         "name",
         "size",
         "done",
@@ -78,14 +93,14 @@
       "sort-col" : -2,
       "sort-type" : 0,
       "widths" : [
-        68,
-        284,
-        79,
-        131,
-        136,
-        163,
-        229,
-        264
+        39,
+        311,
+        50,
+        102,
+        107,
+        135,
+        200,
+        287
       ],
       "columns" : [
         "tier",
@@ -102,11 +117,11 @@
       "sort-col" : -2,
       "sort-type" : 0,
       "widths" : [
-        727,
-        145,
-        159,
-        168,
-        155
+        555,
+        110,
+        114,
+        123,
+        110
       ],
       "columns" : [
         "name",
@@ -120,14 +135,14 @@
       "sort-col" : -2,
       "sort-type" : 0,
       "widths" : [
-        138,
-        154,
-        175,
-        205,
-        186,
-        180,
-        156,
-        160
+        120,
+        348,
+        149,
+        96,
+        77,
+        71,
+        50,
+        189
       ],
       "columns" : [
         "ip",
@@ -143,15 +158,15 @@
   },
   "state-selector-last" : 0,
   "window-height" : 737,
-  "window-width" : 1358,
-  "notebook-paned-pos" : 378,
+  "window-width" : 1016,
+  "notebook-paned-pos" : 262,
   "states-paned-pos" : 138,
   "start-paused" : false,
   "add-options-dialog" : true,
   "delete-local-torrent" : false,
-  "show-state-selector" : true,
+  "show-state-selector" : false,
   "filter-dirs" : true,
-  "filter-trackers" : false,
+  "filter-trackers" : true,
   "directories-first" : true,
   "show-notebook" : true,
   "system-tray" : false,

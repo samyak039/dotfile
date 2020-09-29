@@ -137,6 +137,7 @@ set $ws7 "7:MEDIA"
 set $ws8 "8:BROWSER"
 set $ws9 "9:DUAL"
 
+workspace $ws5 output HDMI1
 workspace $ws7 output primary
 workspace $ws9 output HDMI1
 
@@ -373,7 +374,7 @@ assign [class="Apache NetBeans IDE 12.0"] $ws1
 assign [class="Eclipse"] $ws1
 assign [class="Java"] $ws1
 assign [class="jetbrains-studio"] $ws1
-assign [class="qBittorrent"] $ws5
+assign [class="Transmission-remote-gtk"] $ws5
 assign [class="discord"] $ws6
 assign [class="whatsapp-nativefier-d52542"] $ws6
 assign [class="TelegramDesktop"] $ws6

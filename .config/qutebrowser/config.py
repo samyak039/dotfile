@@ -11,9 +11,6 @@ import dracula.draw
 #   qute://help/configuring.html
 #   qute://help/settings.html
 
-# This is here so configs done via the GUI are still loaded.
-# Remove it to not load settings done via the GUI.
-config.load_autoconfig()
 
 # dracula theme
 dracula.draw.blood(c, {
@@ -975,7 +972,7 @@ c.content.xss_auditing = False
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
 # Type: Directory
-c.downloads.location.directory = '~/downloads'
+c.downloads.location.directory = '~/download'
 
 # Prompt the user for the download location. If set to false,
 # `downloads.location.directory` will be used.
@@ -2159,3 +2156,7 @@ config.bind('N', 'prompt-accept --save no', mode='yesno')
 config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 config.bind('n', 'prompt-accept no', mode='yesno')
 config.bind('y', 'prompt-accept yes', mode='yesno')
+
+# This is here so configs done via the GUI are still loaded.
+# Remove it to not load settings done via the GUI.
+#config.load_autoconfig()
