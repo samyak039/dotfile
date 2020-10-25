@@ -18,7 +18,7 @@
       "update-interval" : 3,
       "min-update-interval" : 3,
       "session-update-interval" : 60,
-      "last-add-destination" : "/home/samyak039/downloads/iso/",
+      "last-add-destination" : "/home/samyak039/download/shit/",
       "exec-commands" : [],
       "destinations" : [
         {
@@ -55,21 +55,21 @@
       "sort-col" : 5,
       "sort-type" : 0,
       "widths" : [
-        406,
+        579,
         68,
         66,
-        96,
+        162,
         101,
         71,
         90,
         114,
         95,
-        66,
+        64,
         96,
         115,
         67,
-        137,
-        274
+        138,
+        316
       ],
       "columns" : [
         "name",
@@ -94,13 +94,13 @@
       "sort-type" : 0,
       "widths" : [
         39,
-        311,
+        108,
         50,
         102,
         107,
-        135,
-        200,
-        287
+        109,
+        86,
+        87
       ],
       "columns" : [
         "tier",
@@ -117,11 +117,11 @@
       "sort-col" : -2,
       "sort-type" : 0,
       "widths" : [
-        555,
-        110,
-        114,
-        123,
-        110
+        89,
+        78,
+        109,
+        118,
+        105
       ],
       "columns" : [
         "name",
@@ -135,14 +135,14 @@
       "sort-col" : -2,
       "sort-type" : 0,
       "widths" : [
-        120,
-        348,
-        149,
-        96,
-        77,
-        71,
-        50,
-        189
+        31,
+        47,
+        68,
+        98,
+        79,
+        73,
+        49,
+        54
       ],
       "columns" : [
         "ip",
@@ -157,9 +157,9 @@
     }
   },
   "state-selector-last" : 0,
-  "window-height" : 737,
-  "window-width" : 1016,
-  "notebook-paned-pos" : 262,
+  "window-height" : 733,
+  "window-width" : 503,
+  "notebook-paned-pos" : 258,
   "states-paned-pos" : 138,
   "start-paused" : false,
   "add-options-dialog" : true,

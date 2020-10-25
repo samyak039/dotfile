@@ -5,7 +5,7 @@
 
 # directories to be used
 watch_dir="$(xdg-user-dir DOWNLOAD)/torrent"
-trash_dir="$watch_dir/trash"
+trash_dir="$watch_dir/.torrent"
 
 # checking if dir exists or not; if not then create them
 [ -d $watch_dir ] || mkdir $watch_dir
@@ -15,8 +15,9 @@ trash_dir="$watch_dir/trash"
 # if yes, then start the torrent and move the .torrent file to the trash_dir
 inotifywait -m $watch_dir -e create -e moved_to |
     while read file_path action file_name; do
-        transmission-remote -n 'samyak039:seedbox' -a $file_path/$file_name &&
-            mv "$file_path/$file_name" "$trash_dir" &&
-            notify-send -a "Transmission" -u low "torrent STARTED" "$file_name" ||
-                notify-send -a "Transmission" -u critical "torrent FAILED" "$file_name"
+        [ ${file_name##*.} = "torrent" ] &&
+            transmission-remote -n 'samyak039:seedbox' -a $file_path/$file_name &&
+                mv "$file_path/$file_name" "$trash_dir" &&
+                notify-send -a "Transmission" -u normal "torrent STARTED" "$file_name" ||
+                    notify-send -a "Transmission" -u critical "torrent FAILED" "$file_name"
     done

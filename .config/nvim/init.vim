@@ -80,6 +80,8 @@ set sidescrolloff=5                             " verticle lines to leave when s
 set formatoptions-=cro                          " disable auto-commenting
 "set formatoptions=vcroql
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 " highlight current line and current column
 set nocursorline nocursorcolumn                                                 " turn off any highlighting
 augroup cursorHighlightToggle
@@ -120,6 +122,7 @@ augroup specify_filetype
     autocmd!
     autocmd BufRead,BufNewFile *.md set filetype=markdown
     autocmd BufRead,BufNewFile *.txt set filetype=text
+    autocmd BufRead,BufNewFile *.tex set filetype=tex
 augroup END
 autocmd FileType text,tex,markdown setlocal spell                " spell check
 autocmd FileType text,markdown,tex setlocal textwidth=100      " limit line length
@@ -210,11 +213,17 @@ nnoremap <C-b>p :bprevious<CR>
 map <silent> <leader>/ :noh<cr>
 
 " cursor highlight toggle
-nnoremap <leader>c :set cursorline! cursorcolumn!<return>
+nnoremap <leader>C :set cursorline! cursorcolumn!<return>
 "inoremap <C-S-c> :set cursorline! cursorcolumn!<return>
 
 " relative numebr toggle
 nnoremap <leader>n :set relativenumber!<return>
+
+" compile document, be it groff/LaTeX/markdown/etc.
+map <leader>c :w! \| !compiler <c-r>%<CR>
+
+" cleans out tex build files
+autocmd VimLeave *.tex !texclear %
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "       _PLUG-INs
@@ -246,7 +255,6 @@ Plug 'sheerun/vim-polyglot'                     " polyglot
 Plug 'kana/vim-submode'                         " submode
 Plug 'tpope/vim-surround'                       " surround - parenthesis management
 Plug 'scrooloose/syntastic'                     " syntastic - syntax checker
-Plug 'plasticboy/vim-markdown'                  " syntax - markdown
 Plug 'majutsushi/tagbar'                        " tagbar for all the classes and variables defined
 Plug 'godlygeek/tabular'                        " tabular - for improved indentation for weird stuff
 Plug 'dracula/vim', { 'as': 'dracula' }         " theme - dracula 
@@ -255,11 +263,13 @@ Plug 'arcticicestudio/nord-vim'                 " theme - nord
 Plug 'sainnhe/gruvbox-material'                 " theme - gruvbox material
 Plug 'freitass/todo.txt-vim'                    " todo.txt
 Plug 'vimwiki/vimwiki'                          " vimwiki
-Plug 'tpope/vim-vinegar'                        " vinegar - make netrw functional
+
+Plug 'plasticboy/vim-markdown'                  " syntax - markdown
 
 
 call plug#end()
 
+Plug 'tpope/vim-vinegar'                        " vinegar - make netrw functional
 
 
 
@@ -414,6 +424,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" latex
+let g:syntastic_tex_lacheck_quite_messages = { 'regex': '\Vpossible unwanted space at' }
+let g:syntastic_tex_lacheck_quite_messages = { 'regex': '\Vunmatched "beginning of file main.tex"' }
 
 " --->> _TAGBAR
 """"""""""""""""""""""""""""""

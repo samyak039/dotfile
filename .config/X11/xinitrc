@@ -34,7 +34,7 @@ fi
 
 # start scripts
 sort_download_dir &
-transmission_auto_download &
+#transmission_auto_download &
 
 # start background application
 flameshot &
