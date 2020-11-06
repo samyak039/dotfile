@@ -324,22 +324,32 @@ bindsym $mod+F1 exec dnd
 # Brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id  xbacklight -dec 10 && pkill -RTMIN+20 i3blocks
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10 && pkill -RTMIN+20 i3blocks
-bindsym $mod+F3 exec --no-startup-id xbacklight -dec 5 && pkill -RTMIN+20 i3blocks
-bindsym $mod+F4 exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+20 i3blocks
+bindsym $mod+F9 exec --no-startup-id xbacklight -dec 5 && pkill -RTMIN+20 i3blocks
+bindsym $mod+F10 exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+20 i3blocks
+#bindsym $mod+F3 exec --no-startup-id xbacklight -dec 5 && pkill -RTMIN+20 i3blocks
+#bindsym $mod+F4 exec --no-startup-id xbacklight -inc 5 && pkill -RTMIN+20 i3blocks
 
 # volume control
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
-bindsym $mod+F9 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym $mod+F10 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym $mod+F11 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym $mod+F2 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym $mod+F3 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym $mod+F4 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F9 exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F10 exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F11 exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
 
-# media control
-bindsym $mod+F5 exec mpc prev && pkill -RTMIN+10 i3blocks
-bindsym $mod+F6 exec mpc next && pkill -RTMIN+10 i3blocks
-bindsym $mod+F7 exec mpc toggle && pkill -RTMIN+10 i3blocks
-bindsym $mod+F8 exec mpc stop && pkill -RTMIN+10 i3blocks
+# media control (music)
+bindsym $mod+F5 exec playerctl stop && pkill -RTMIN+10 i3blocks
+bindsym $mod+F6 exec playerctl previous && pkill -RTMIN+10 i3blocks
+bindsym $mod+F7 exec playerctl play-pause && pkill -RTMIN+10 i3blocks
+bindsym $mod+shift+F7 exec mpc toggle && pkill -RTMIN+10 i3blocks
+bindsym $mod+F8 exec playerctl next && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F5 exec mpc prev && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F6 exec mpc next && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F7 exec mpc toggle && pkill -RTMIN+10 i3blocks
+#bindsym $mod+F8 exec mpc stop && pkill -RTMIN+10 i3blocks
 
 # keyboard
 #exec_always --no-startup-id setxkbmap -model 'pc104' -layout 'us, in' -variant 'dvp, eng' -option 'grp:alt_space_toggle, grp_led:caps, grp_led:scroll, caps:backspace, shift:both_capslock_cancel, rupeesign:i1, lv3:ralt_switch_multikey, terminate:ctrl_alt_bksp'
@@ -374,6 +384,7 @@ assign [class="Apache NetBeans IDE 12.0"] $ws1
 assign [class="Eclipse"] $ws1
 assign [class="Java"] $ws1
 assign [class="jetbrains-studio"] $ws1
+assign [class="Bitwarden"] $ws5
 assign [class="Transmission-remote-gtk"] $ws5
 assign [class="discord"] $ws6
 assign [class="whatsapp-nativefier-d52542"] $ws6

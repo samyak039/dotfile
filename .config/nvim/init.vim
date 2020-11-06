@@ -213,14 +213,14 @@ nnoremap <C-b>p :bprevious<CR>
 map <silent> <leader>/ :noh<cr>
 
 " cursor highlight toggle
-nnoremap <leader>C :set cursorline! cursorcolumn!<return>
+"nnoremap <leader>C :set cursorline! cursorcolumn!<return>
 "inoremap <C-S-c> :set cursorline! cursorcolumn!<return>
 
 " relative numebr toggle
 nnoremap <leader>n :set relativenumber!<return>
 
 " compile document, be it groff/LaTeX/markdown/etc.
-map <leader>c :w! \| !compiler <c-r>%<CR>
+nnoremap <leader>cc :w! \| !compiler <c-r>%<CR>
 
 " cleans out tex build files
 autocmd VimLeave *.tex !texclear %
@@ -657,3 +657,25 @@ autocmd FileType markdown,text setlocal omnifunc=text_omnicomplete#OmniComplete
 "
 "vnoremap <silent> <Esc> <Esc>:set cursorline cursorcolumn<CR>
 "vnoremap <silent> <script> <Esc> <Esc><SID>CursorHi<Esc>
+
+augroup competitiveProgramming
+    autocmd! competitiveProgramming
+    " for initial template
+    autocmd Filetype c nnoremap <leader><leader>i :-1 read ~/.config/nvim/templates/cp.c<CR>/<++><CR>cc
+    autocmd Filetype cpp nnoremap <leader><leader>i :-1read ~/.config/nvim/templates/cp.cpp<CR>/<++><CR>cc
+    " for compiling
+    autocmd Filetype c nnoremap <leader><leader>c :!clang -o %:r %<CR>
+    autocmd Filetype cpp nnoremap <leader><leader>c :!clang++ -o %:r %<CR>
+    " for running (without testcase)
+    autocmd Filetype c,cpp nnoremap <leader><leader>r :!./%:r<CR>
+    " for running with TESTCASES
+    autocmd Filetype c,cpp nnoremap <leader><leader>t :!for f in *.test; do echo "\n$f\n=======\n"; ./%:r < $f; done<CR>
+augroup end
+
+"nnoremap <leader><leader>c :!clang++ -o %:r %<CR>
+"nnoremap <leader><leader>r :!./%:r<CR>
+"nnoremap <leader><leader>t :!for f in *.test; do echo "\n=========\nTEST: $f"; ./%:r < $f; done<CR>
+
+augroup templates
+    autocmd BufNewFile *_.cpp :-1read ~/.config/nvim/templates/cp.cpp
+augroup END

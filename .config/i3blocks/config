@@ -6,7 +6,7 @@ markup=pango
 #[separator]
 #interval=once
 
-[mpd]
+[mediaplayer]
 interval=5
 signal=10
 
@@ -17,6 +17,14 @@ DECIMALS=0
 separator=false
 separator_block_width=7
 color=#6272a4
+
+[temperature]
+interval=10
+label=TMP:
+color=#6272a4
+#SENSOR_CHIP=""
+separator=false
+separator_block_width=7
 
 [memory]
 interval=10
