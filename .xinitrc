@@ -1,1 +1,1 @@
-.config/X11/xinitrc
+/home/samyak039/.config/X11/xinitrc

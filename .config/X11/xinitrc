@@ -45,7 +45,9 @@ nitrogen --restore &
 pcmanfm -d &
 picom &
 syncthing --no-browser &
+setxkbmap -layout 'us,us,us' -variant 'dvp,dvorak,' && sxhkd &
 transmission-daemon &
 
 # start WM
-exec i3
+exec dwm
+#exec i3
