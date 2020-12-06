@@ -31,6 +31,17 @@ setopt autocd extendedglob nomatch notify
 unsetopt beep
 
 ################################################################################
+#   colors
+#load colors
+autoload colors && colors
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
+    eval $COLOR='%{$fg_no_bold[${(L)COLOR}]%}'  #wrap colours between %{ %} to avoid weird gaps in autocomplete
+    eval BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+	eval BG_$COLOR='%{$bg_no_bold[${(L)COLOR}]%}'
+done
+eval RESET='%{$reset_color%}'
+
+################################################################################
 #   ANTIGEN
 ################################################################################
 source /usr/share/zsh/share/antigen.zsh
@@ -48,6 +59,7 @@ antigen bundle history
 antigen bundle history-substring-search
 antigen bundle rand-quote
 antigen bundle vi-mode
+antigen bundle spectrum
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-completions
@@ -55,6 +67,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 #antigen theme bureau
+#antigen theme denysdovhan/spaceship-prompt
 
 # Tell Antigen that you're done.
 antigen apply
@@ -63,3 +76,6 @@ antigen apply
 #   MY-CONFIG
 ################################################################################
 source $CONFIG/aliasrc
+source $ZDOTDIR/prompt
+
+#eval "$(starship init zsh)"
