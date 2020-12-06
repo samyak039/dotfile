@@ -30,6 +30,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
 # DND mode
 export DND=0
 
+export GHAR="/home/samyak039"
 
 ####################################################################################################
 #       _DEFAULT PROGRAMS
