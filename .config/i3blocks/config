@@ -16,12 +16,12 @@ LABEL=CPU:
 DECIMALS=0
 separator=false
 separator_block_width=7
-color=#6272a4
+color=#665c54
 
 [temperature]
 interval=10
 label=TMP:
-color=#6272a4
+color=#665c54
 #SENSOR_CHIP=""
 separator=false
 separator_block_width=7
@@ -29,23 +29,23 @@ separator_block_width=7
 [memory]
 interval=10
 label=MEM:
-color=#6272a4
+color=#665c54
 
 [battery]
 command=$SCRIPT_DIR/battery
 interval=60
 label=BAT:
-color=#6272a4
-
-[volume]
-interval=once
-signal=10
-label=VOL:
+color=#665c54
 
 [backlight]
 interval=once
 signal=20
 label=BRG:
+
+[volume]
+interval=once
+signal=10
+label=VOL:
 
 [calendar]
 interval=60
@@ -58,10 +58,10 @@ separator_block_width=5
 [time]
 interval=1
 STRFTIME_FORMAT= %H:%M:%S 
-color=#282a36
+color=#1d2021
 TZONES=$DEFAULT_TZ,Asia/Calcutta
 TZ_LABELS=,IN
-background=#bd93f9
+background=#ebdbb2
 
 #[dunst]
 #interval=once
@@ -73,6 +73,6 @@ background=#bd93f9
 #interval=once
 #signal=30
 
-[sep]
-full_text=""
-interval=once
+#[sep]
+#full_text=""
+#interval=once

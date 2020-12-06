@@ -63,11 +63,11 @@ printf("%.0f°\n", $temperature);
 if ($temperature > 80) {
     exit 33;
 } elsif ($temperature > 70) {
-    print "#ff5555\n";
+    print "#cc241d\n";
 } elsif ($temperature > 65) {
-    print "#ffb86c\n";
+    print "#d65d0e\n";
 } elsif ($temperature > 60) {
-    print "#f1fa8c\n";
+    print "#d79921\n";
 }
 
 exit 0;

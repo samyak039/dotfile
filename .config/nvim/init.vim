@@ -42,11 +42,15 @@ set scrolloff=5 sidescrolloff=3
 set smartindent shiftround shiftwidth=4
 set tabstop=4 softtabstop=4 noexpandtab
 
+filetype plugin on
+syntax on
+
 " setting directories
 set dir=$HOME/.cache/nvim/swap/
 set undodir=$HOME/.cache/nvim/undo/
 set backupdir=$HOME/.cache/nvim/backup/
 set backupskip=/tmp/*,/private/tmp/*
+set undofile
 
 
 "---------------------------------------------------------------------------------------------------
@@ -60,11 +64,11 @@ command! W execute 'w !doas -n -u root -- tee > /dev/null %' <bar> edit!
 noremap ; :
 noremap : ;
 noremap <C-n> :Lexplore<CR>
+noremap <C-s> :UndotreeToggle<CR>
 noremap <C-t> :TagbarToggle<CR>
 
 nnoremap <silent> < v<
 nnoremap <silent> > v>
-"nnoremap <A-d> :bdelete<CR>
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
@@ -72,7 +76,7 @@ nnoremap <A-l> <C-w>l
 nnoremap <A-n> :bnext<CR>
 nnoremap <A-p> :bprevious<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
-"nnoremap <A-w> :tabclose<CR>
+nnoremap <A-t> :set expandtab!<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 nnoremap <leader>w :w!<CR>
@@ -109,9 +113,9 @@ autocmd VimLeave *.tex !texclear %
 augroup competitiveProgramming
 	autocmd! competitiveProgramming
 	" for initial template
-	autocmd Filetype c nnoremap <leader><leader>i :-1 read ~/.config/nvim/templates/cp.c<CR>/<++><CR>cc
-	autocmd Filetype cpp nnoremap <leader><leader>i :-1read ~/.config/nvim/templates/cp.cpp<CR>/<++><CR>cc
-	autocmd Filetype sh nnoremap <leader><leader>i :-1read ~/.config/nvim/templates/template.sh<CR>/<++><CR>cc
+	autocmd Filetype c nnoremap <leader><leader>i :-1 read ~/.config/templates/cp.c<CR>/<++><CR>cc
+	autocmd Filetype cpp nnoremap <leader><leader>i :-1read ~/.config/templates/cp.cpp<CR>/<++><CR>cc
+	autocmd Filetype sh nnoremap <leader><leader>i :-1read ~/.config/templates/template.sh<CR>/<++><CR>cc
 	" for compiling
 	autocmd Filetype c nnoremap <leader><leader>c :!gcc -o %:r %<CR>
 	autocmd Filetype cpp nnoremap <leader><leader>c :!g++ -o %:r %<CR>

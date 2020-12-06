@@ -1,6 +1,6 @@
 # #---Basic Definitions---# #
-set $inner_gaps 2
-set $outer_gaps 2
+set $inner_gaps 0
+set $outer_gaps 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $stoprec --no-startup-id dmenurecord kill
@@ -10,7 +10,7 @@ set $netrefresh --no-startup-id sudo -A systemctl restart NetworkManager
 set $hibernate sudo -A systemctl suspend
 
 # #---Gaps---# #
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 gaps inner $inner_gaps
 gaps outer $outer_gaps
 hide_edge_borders smart
@@ -53,10 +53,10 @@ focus_follows_mouse no
 #bindsym $mod+Return exec $term
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+apostrophe kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
+bindsym $mod+d exec dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -78,10 +78,10 @@ bindsym $mod+Shift+q kill
 #bindsym Control+Shift+Print exec sleep 3s && flameshot gui -p "$HOME/image/screenshot"
 
 # change focus
-#bindsym $mod+h focus left
-bindsym $mod+j focus down; focus right
-bindsym $mod+k focus up; focus left
-#bindsym $mod+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -163,8 +163,6 @@ bindsym $mod+Shift+period       move container to workspace number $ws7
 bindsym $mod+Shift+p            move container to workspace number $ws8
 bindsym $mod+Shift+y            move container to workspace number $ws9
 
-bindsym $mod+Shift+w move workspace to output right
-bindsym $mod+Shift+v move workspace to output left
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
@@ -172,19 +170,23 @@ bindsym $mod+Shift+Tab workspace prev
 #workspace_auto_back_and_forth yes
 
 # dual monitor setup
-bindsym $mod+apostrophe focus output right
-bindsym $mod+Shift+apostrophe move workspace to output right
+bindsym $mod+v focus output right
+bindsym $mod+w focus output left
+bindsym $mod+Shift+v move workspace to output right
+bindsym $mod+Shift+w move workspace to output left
 
 # resize
-bindsym $mod+l resize grow width 10 px or 10 ppt; resize grow height 5 px or 5 ppt
-bindsym $mod+h resize shrink width 10 px or 10 ppt; resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+h resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+j resize grow height 5 px or 5 ppt
+bindsym $mod+Ctrl+k resize shrink height 5 px or 5 ppt
+bindsym $mod+Ctrl+l resize grow width 10 px or 10 ppt
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+Control+i reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+r restart
+bindsym $mod+Shift+Control+apostrophe restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Control+semicolon exec i3-msg exit
+bindsym $mod+Shift+Control+semicolon exec i3-msg exit
 #bindsym $mod+Shift+period exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # shutdown
@@ -213,12 +215,12 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        #bindsym h resize shrink width 10 px or 10 ppt
-        #bindsym j resize grow height 10 px or 10 ppt
-        #bindsym k resize shrink height 10 px or 10 ppt
-        #bindsym l resize grow width 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt; resize grow height 10 px or 10 ppt
-        bindsym h resize shrink width 10 px or 10 ppt; resize shrink height 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        #bindsym l resize grow width 10 px or 10 ppt; resize grow height 10 px or 10 ppt
+        #bindsym h resize shrink width 10 px or 10 ppt; resize shrink height 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -252,15 +254,15 @@ bar {
     tray_output HDMI1
     tray_output primary
     colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #6272a4
+        background #282828
+        statusline #ebdbb2
+        separator  #665c54
         #                  border  bgcolor   text
-        focused_workspace  #bd93f9 #bd93f9 #282a36
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #282A36
-        binding_mode       #FF5555 #FF5555 #282a36
+        focused_workspace  #ebdbb2 #ebdbb2 #1d2021
+        active_workspace   #1d2021 #1d2021 #ebdbb2
+        inactive_workspace #1d2021 #1d2021 #ebdbb2
+        urgent_workspace   #cc241d #cc241d #1d2021
+        binding_mode       #cc241d #cc241d #1d2021
     }
 }
 bar {
@@ -280,15 +282,15 @@ bar {
     tray_padding 2
     tray_output none
     colors {
-        background #282A36
-        statusline #F8F8F2
-        separator  #6272a4
+        background #282828
+        statusline #ebdbb2
+        separator  #665c54
         #                  border  bgcolor   text
-        focused_workspace  #bd93f9 #bd93f9 #282a36
-        active_workspace   #282A36 #44475A #F8F8F2
-        inactive_workspace #282A36 #282A36 #BFBFBF
-        urgent_workspace   #FF5555 #FF5555 #282A36
-        binding_mode       #FF5555 #FF5555 #282a36
+        focused_workspace  #ebdbb2 #ebdbb2 #1d2021
+        active_workspace   #1d2021 #1d2021 #ebdbb2
+        inactive_workspace #1d2021 #1d2021 #ebdbb2
+        urgent_workspace   #cc241d #cc241d #1d2021
+        binding_mode       #cc241d #cc241d #1d2021
     }
 }
 
@@ -364,13 +366,13 @@ exec_always --no-startup-id i3-battery-popup -L 25 -m 'Battery LOOOOOOOOOOOOOOOO
 exec --no-startup-id nm-applet
 
 # class                 border  bground text    indicator child_border
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
-client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
-client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.focused          #ebdbb2 #ebdbb2 #1d2021 #ebdbb2   #ebdbb2
+client.focused_inactive #665c54 #665c54 #ebdbb2 #665c54   #665c54
+client.unfocused        #3c3836 #3c3836 #bdae93 #3c3836   #3c3836
+client.urgent           #665c54 #cc241d #ebdbb2 #cc241d   #cc241d
+client.placeholder      #3c3836 #3c3836 #ebdbb2 #3c3836   #3c3836
 
-client.background       #F8F8F2
+client.background       #ebdbb2
 
 # auto-run softwares
 exec --no-startup-id qutebrowser

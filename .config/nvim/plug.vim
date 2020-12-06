@@ -18,6 +18,14 @@ let g:gruvbox_invert_tabline=1
 let g:gruvxox_improved_warnings=1
 
 "---------------------------------------------------------------------------------------------------
+" mbbill/undotree
+"---------------------------------------------------------------------------------------------------
+let g:undotree_WindowLayout = 4
+let g:undotree_ShortIndicators = 0
+let g:undotree_RelativeTimestamp = 1
+let g:undotree_HighlightChangedWithSign = 1
+
+"---------------------------------------------------------------------------------------------------
 " vim/netrw
 "---------------------------------------------------------------------------------------------------
 set modifiable
@@ -39,10 +47,49 @@ autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype
 "---------------------------------------------------------------------------------------------------
 "autocmd FileType c,cpp nested :call tagbar#autoopen(1)
 ""autocmd VimEnter * nested :call tagbar#autoopen(1)
-let g:tagbar_position = 'right'
+let g:tagbar_position = 'botright vertical'
 let g:tagbar_width = 20
 let g:tagbar_autoshowtag = 1
 let g:tagbar_sort = 0
+autocmd FileType markdown,vimwiki let g:tagbar_position = 'topleft vertical'
+autocmd FileType markdown,vimwiki let g:tagbar_width = 45
+let g:tagbar_type_markdown = {
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '/home/samyak039/.local/bin/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+let g:tagbar_type_vimwiki = {
+    \ 'ctagstype': 'vimwiki',
+    \ 'ctagsbin' : '/home/samyak039/.local/bin/markdown2ctags.py',
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+\ }
+"let g:tagbar_type_vimwiki = {
+"          \   'ctagstype':'vimwiki'
+"          \ , 'kinds':['h:header']
+"          \ , 'sro':'&&&'
+"          \ , 'kind2scope':{'h':'header'}
+"          \ , 'sort':0
+"          \ , 'ctagsbin':'$HOME/.local/bin/markdown2ctags.py'
+"          \ , 'ctagsargs': 'default'
+"          \ }
 
 "---------------------------------------------------------------------------------------------------
 " plasticboy/vim-markdown
@@ -96,7 +143,8 @@ let g:airline_symbols.maxlinenr = ''
 " vimwiki/vimwiki
 "---------------------------------------------------------------------------------------------------
 " wiki: default, study, college
-let g:vimwiki_list = [ { 'path' : '~/wiki/vimwiki',
+let g:vimwiki_list = [ { 'name' : 'wiki',
+                       \ 'path' : '~/wiki/vimwiki',
                        \ 'ext' : '.md',
                        \ 'syntax' : 'markdown' },
                      \ { 'path' : '~/wiki/study',
@@ -108,12 +156,13 @@ let g:vimwiki_list = [ { 'path' : '~/wiki/vimwiki',
                        \ 'custom_wiki2html' : 'vimwiki_markdown',
                        \ 'html_filename_parameterization' : 1 } ]
 " heading colors
-hi VimwikiHeader1 guifg=#fb4934 gui=bold
-hi VimwikiHeader2 guifg=#d3869b gui=bold
+let g:vimwiki_hl_headers = 1
+hi VimwikiHeader1 guifg=#FB4934 gui=bold
+hi VimwikiHeader2 guifg=#D3869B gui=bold
 hi VimwikiHeader3 guifg=#458588 gui=bold
-hi VimwikiHeader4 guifg=#fe8019 gui=bold
-hi VimwikiHeader5 guifg=#b8bb26 gui=bold
-hi VimwikiHeader6 guifg=#fabd2f gui=bold
+hi VimwikiHeader4 guifg=#FE8019 gui=bold
+hi VimwikiHeader5 guifg=#B8BB26 gui=bold
+hi VimwikiHeader6 guifg=#FABD2F gui=bold
 
 
 "---------------------------------------------------------------------------------------------------
@@ -130,12 +179,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'godlygeek/tabular'
+Plug 'jez/vim-superman'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
+Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/tagbar'
-"Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'

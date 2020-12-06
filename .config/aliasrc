@@ -22,6 +22,7 @@ alias cfzsh='$EDITOR $CONFIG/zsh/.zshrc'
 alias 5sem='cd $HOME/wiki/college/5sem'
 
 alias doas='doas --'
+alias doom='$XDG_DATA_HOME/doom-emacs/bin/doom'
 alias dfh='df -h'                                            # human readable format
 alias duh='du -h'
 alias s='duh -s * | sort -hr | head'
@@ -84,7 +85,7 @@ alias xampp='s /opt/lampp/xampp'
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
 
 # startx
-alias x='startx'
+alias x='startx "$XDG_CONFIG_HOME/X11/xinitrc'
 
 
 #################################################

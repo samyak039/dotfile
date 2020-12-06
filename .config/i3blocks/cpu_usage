@@ -55,11 +55,11 @@ printf "%.${decimals}f%%\n", $cpu_usage;
 if ($cpu_usage > 95) {
     exit 33;
 } elsif ($cpu_usage > 85) {
-    print "#ff5555\n";
+    print "#cc241d\n";
 } elsif ($cpu_usage > 75) {
-    print "#ffb86c\n";
+    print "#d65d0e\n";
 } elsif ($cpu_usage > 65) {
-    print "#f1fa8c\n";
+    print "#d79921\n";
 }
 
 exit 0;

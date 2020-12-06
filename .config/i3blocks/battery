@@ -78,13 +78,13 @@ print "$full_text\n";
 if ($status eq 'Discharging') {
 
 	if ($percent < 30) {
-		print "#ff5555\n";
+		print "#cc241d\n";
 	} elsif ($percent < 40) {
-		print "#ffb86c\n";
+		print "#d65d0e\n";
 	} elsif ($percent < 60) {
-		print "#f1fa8c\n";
+		print "#d79921\n";
 	} else {
-		print "#50fa7b\n";
+		print "#98971a\n";
 	}
 
 	if ($percent < 5) {

@@ -64,6 +64,7 @@ export ANDROID_EMULATOR_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/android"
 export ADB_VENDOR_KEY="${XDG_CONFIG_HOME:-$HOME/.config}/android"
 export ANSIBLE_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/ansible/ansible.cfg"
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export DOOMDIR="${XDG_CONFIG_HOME:-$HOME/.config/}/doom"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
@@ -107,4 +108,4 @@ export LF_ICONS="\ tw=:\ st=:\ ow=:\ dt=:\ di=:\ fi=:\ ln=:
 ####################################################################################################
 
 # auto run xinit on tty1 after login
-[[ $XDG_VTNR -eq 1 ]] && exec startx --vt1
+[[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
