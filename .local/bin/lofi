@@ -1,0 +1,21 @@
+#!/bin/sh
+
+music=("ChilledCow Sleep/Chill", "ChilledCow Study/Relax");
+url_chilledcow_sleep="https://www.youtube.com/watch?v=DWcJFNfaw9c";
+url_chilledcow_study="https://www.youtube.com/watch?v=5qap5aO4i9A";
+url_relaxedguy_brown="https://www.youtube.com/watch?v=hXetO_bYcMo&t";
+
+
+case $1 in
+	chilledcow_sleep)
+		url="https://www.youtube.com/watch?v=DWcJFNfaw9c" ;;
+	chilledcow_study)
+		url="https://www.youtube.com/watch?v=5qap5aO4i9A" ;;
+	relaxedguy_brown)
+		url=$url_relaxedguy_brown ;;
+esac
+
+mpv --no-resume-playback --no-video \
+	--term-osd-bar --term-osd-bar-chars="[-|-]" \
+	--vo=tct --vo-tct-algo=plain --vo-tct-256=yes --profile=sw-fast \
+	--ytdl "$url"

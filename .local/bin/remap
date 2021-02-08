@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# /etc/X11/xorg.conf.d/00-keyboard.conf
+
+# set layout
+xmodmap $XDG_CONFIG_HOME/X11/Xmodmap
+
+# increase key press raate
+xset r rate 250 50
+
+# make caps as escape + hyper_l | control_l
+killall xcape 2>/dev/null
+
+# laptop config
+[[ ! -z $(lsusb | rg -i Keyboard > /dev/null) ]] && 
+	xmodmap $XDG_CONFIG_HOME/X11/Xmodmap.laptop && echo 1 &&
+	xcape -e 'Control_L=Escape' || xcape -e 'Hyper_L=Escape'
+
+# if want to set using setxkbmap
+#setxkbmap -model 'pc104' -layout 'us,in' -variant 'dvp,eng'
+#setxkbmap -option "grp:alt_space_toggle, grp_led:caps, grp_led:scroll, caps:escape, compose:sclk, shift:both_shiftlock keypad:pointerkeys, rupeesign:i1, altwin:swap_lalt_lwin, keypad:pointerkeys, terminate:ctrl_alt_bksp"

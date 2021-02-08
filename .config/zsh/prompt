@@ -8,9 +8,10 @@ RPROMPT=""
 PROMPT+="$FG[008]${(r:$COLUMNS::-:)}${RESET}"
 # username for ssh session
 [[ -n "$SSH_CLIENT" ]] && PROMPT+="${BOLD_RED}%n${WHITE}@${RED}%M${RESET} "
+#PROMPT+="${BOLD_RED}%n${RESET} "
 
 # present dir from home
-PROMPT+="${YELLOW}%4(~|../|)%3~${RESET} "
+PROMPT+="${YELLOW}%3(~|../|)%2~${RESET} "
 # > if normal user, # if sudo
 PROMPT+="%(!|${BOLD_RED}#${RESET}|${BOLD_BLUE}>${RESET}) "
 
@@ -24,7 +25,7 @@ function precmd() {
 		elapsed=$(($now - $timer))
 		minutes=$((elasped / 60))
 		seconds=$((elapsed % 60))
-		[[ $seconds -le 10 ]] && seconds="0${seconds}"
+		[[ $seconds -lt 10 ]] && seconds="0${seconds}"
 		time_taken="${minutes}:${seconds}"
 		export RPROMPT="%(?||${BOLD_RED}[%?]${RESET}) $FG[007]${time_taken}${RESET}"
 		unset timer

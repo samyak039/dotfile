@@ -1,3 +1,4 @@
+# vim:ft=zsh
 #################################################
 #   _ALIAS
 #################################################
@@ -38,10 +39,8 @@ alias v='nvim'
 alias nam='vman'                                # man page in man (vim-superman)
 
 # advanced cp, mv
-# https://web.archive.org/web/20131115171331/http://beatex.org/web/advancedcopy.html
-# https://www.tecmint.com/advanced-copy-command-shows-progress-bar-while-copying-files/comment-page-1/
-alias c='$HOME/.local/bin/advcp -g'                                            # confirms before overwritting
-alias m='$HOME/.local/bin/advmv -g'                                           
+alias c='$HOME/.local/bin/advcp -ig'
+alias m='$HOME/.local/bin/advmv -ig'
 
 # [pac]kage-[man]ager
 alias pacman='pacman --color auto'                     # pacman colored and auto-sudo
@@ -70,7 +69,7 @@ alias amma="setxkbmap -layout us -option"
 alias setkeeb="setxkbmap -model 'pc104' -layout 'us,us,us' -variant 'dvp,dvorak,' -option 'grp:alt_space_toggle,grp_led:caps,grp_led:scroll,caps:backspace,shift:both_capslock_cancel,rupeesign:i1,terminate:ctrl_alt_bksp,altwin:swap_lalt_lwin' && xmodmap -e 'clear Lock'"
 
 # nordvpn -> vpn
-alias vpn="sudo protonvpn"
+alias vpn="doas protonvpn"
 
 # record screen
 alias record='ffmpeg -video_size 1366x768 -framerate 25 -f x11grab -i :0.0 -c:v libx264rgb -crf 0 -preset ultrafast $(date +%F_%H-%M-%S).mkv'
@@ -81,11 +80,15 @@ alias reddit='tuir'
 # xampp
 alias xampp='s /opt/lampp/xampp'
 
+xxev() {
+	xev | awk -F'[ )]+' ' /^KeyPress/ {a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+
 # misc
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
 
 # startx
-alias x='startx "$XDG_CONFIG_HOME/X11/xinitrc'
+alias x='startx $XDG_CONFIG_HOME/X11/xinitrc'
 
 
 #################################################

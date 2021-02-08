@@ -41,6 +41,9 @@ autocmd FileType netrw setl bufhidden=wipe
 autocmd VimEnter * if argc() != 0 | Lexplore | wincmd p | else | Lexplore | endif
 " Close Netrw if it's the only buffer open
 autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' | q! | endif
+" when netrw should not be called
+"autocmd FileType man Lexplore
+
 
 "---------------------------------------------------------------------------------------------------
 " preservim/tagbar
@@ -193,6 +196,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/loremipsum'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()

@@ -70,6 +70,9 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
 export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
+export NODE_REPL_HISTORY="${XDG_CONFIG_HOME:-$HOME/.config}/node_repl_history"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
@@ -81,6 +84,9 @@ export DRACULA_THEME="$CONFIG/dracula-theme"
 ####################################################################################################
 #       _EXTRA
 ####################################################################################################
+
+# Android Studio in DWM
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # colorful LESS
 export LESSHISTFILE=-
@@ -94,6 +100,9 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Mozilla Firefox
 export MOZ_USE_XINPUT2=1
+
+# qutebrowser readability-js
+export NODE_PATH=$NODE_PATH:$(npm root -g)
 
 # bitwarden-cli
 #export CALCURSE_CALDAV_PASSWORD=$(pass show cloud/nextcloud.com)

@@ -20,10 +20,12 @@
 "---------------------------------------------------------------------------------------------------
 " BASIC
 "---------------------------------------------------------------------------------------------------
-source ~/.config/nvim/plug.vim
+if !exists('g:vscode')
+	source ~/.config/nvim/plug.vim
+	colorscheme gruvbox
+endif
 
 set background=dark
-colorscheme gruvbox
 set clipboard+=unnamedplus
 set hidden
 set list lcs=tab:\|\ ,trail:-,extends:>,precedes:<,nbsp:+
@@ -59,27 +61,29 @@ set undofile
 let mapleader = " "
 let maplocalleader = " "
 
-command! W execute 'w !doas -n -u root -- tee > /dev/null %' <bar> edit!
+command! W execute 'w !doas -u root -- tee > /dev/null %' <bar> edit!
 
-noremap ; :
-noremap : ;
+"noremap ; :
+"noremap : ;
 noremap <C-n> :Lexplore<CR>
 noremap <C-s> :UndotreeToggle<CR>
 noremap <C-t> :TagbarToggle<CR>
 
 nnoremap <silent> < v<
 nnoremap <silent> > v>
+nnoremap <A-d> :tabclose<CR>
+nnoremap <A-e> :tabe 
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-nnoremap <A-n> :bnext<CR>
-nnoremap <A-p> :bprevious<CR>
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprevious<CR>
+nnoremap <A-q> :q<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
 nnoremap <A-t> :set expandtab!<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <A-w> :w!<CR>
 nnoremap <leader>Q :q!<CR>
-nnoremap <leader>w :w!<CR>
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>W :W<CR>
 
@@ -108,23 +112,28 @@ endif
 " specific settings for file type
 autocmd FileType markdown,tex,text setlocal spell			   " spell check
 autocmd FileType markdown,tex,text setlocal textwidth=100	   " limit line length
-autocmd VimLeave *.tex !texclear %
+augroup LaTeX
+	autocmd Filetype tex nnoremap <A-c :w! \| !compiler "<c-r>%"<CR>
+	autocmd Filetype tex nnoremap <A-r :!opout <c-r>%<CR><CR>
+	autocmd VimLeave *.tex !texclear %
+augroup end
 
 augroup competitiveProgramming
 	autocmd! competitiveProgramming
 	" for initial template
-	autocmd Filetype c nnoremap <leader><leader>i :-1 read ~/.config/templates/cp.c<CR>/<++><CR>cc
-	autocmd Filetype cpp nnoremap <leader><leader>i :-1read ~/.config/templates/cp.cpp<CR>/<++><CR>cc
-	autocmd Filetype sh nnoremap <leader><leader>i :-1read ~/.config/templates/template.sh<CR>/<++><CR>cc
+	autocmd Filetype c nnoremap <A-i> :-1 read ~/.config/templates/cp.c<CR>/<++><CR>cc
+	autocmd Filetype cpp nnoremap <A-i> :-1read ~/.config/templates/cp.cpp<CR>/<++><CR>cc
+	autocmd Filetype sh nnoremap <A-i> :-1read ~/.config/templates/template.sh<CR>/<++><CR>cc
 	" for compiling
-	autocmd Filetype c nnoremap <leader><leader>c :!gcc -o %:r %<CR>
-	autocmd Filetype cpp nnoremap <leader><leader>c :!g++ -o %:r %<CR>
+	autocmd Filetype c nnoremap <A-c> :!gcc -o %:r %<CR>
+	autocmd Filetype cpp nnoremap <A-c> :!g++ -o %:r %<CR>
 	" for running (without testcase)
-	autocmd Filetype c,cpp nnoremap <leader><leader>r :!time ./%:r<CR>
-	autocmd Filetype sh nnoremap <leader><leader>r :!time bash %<CR>
+	autocmd Filetype c,cpp nnoremap <A-r> :!time ./%:r<CR>
+	autocmd Filetype sh nnoremap <A-r> :!time bash %<CR>
 	" for running with TESTCASES
-	autocmd Filetype c,cpp nnoremap <leader><leader>t :!for f in *_test; do echo "\n$f\n======="; /usr/bin/time ./%:r < $f; done<CR>
-	autocmd Filetype sh nnoremap <leader><leader>t :!for f in *_test; do echo "\n$f\n======="; /usr/bin/time bash % < $f; done<CR>
+	autocmd Filetype c,cpp nnoremap <A-t> :!for f in *_test; do echo "\n$f\n======="; time ./%:r < $f; done<CR>
+	autocmd Filetype sh nnoremap <A-t> :!for f in *_test; do echo "\n$f\n======="; time bash % < $f; done<CR>
 	" for convinence
-	nnoremap <leader><leader>w :w<CR>
+	nnoremap <A-w :w<CR>
 augroup end
+
