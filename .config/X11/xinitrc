@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# merge in xresources and keymaps
-[[ -f $userresources ]] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
-[[ -f $usermodmap ]] && xmodmap $usermodmap
+xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then

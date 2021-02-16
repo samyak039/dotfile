@@ -97,13 +97,9 @@ alias x='startx $XDG_CONFIG_HOME/X11/xinitrc'
 
 # mkcd -> mkdir + cd
 function mkcd {
-    if [ ! -n "$1" ]; then
-        echo "enter the name, you dumb !!!"
-    elif [ -d $1 ]; then
-        echo "'$1' exists"
-    else
-        mkdir -p $1 && cd $1
-    fi
+    [[ ! -n "$1" ]] && echo "enter the name, you dumb !!!"
+    [[ -d $1 ]] && echo "'$1' exists" || mkdir -p $1
+	cd $1
 }
 
 # cd -> cd + ll

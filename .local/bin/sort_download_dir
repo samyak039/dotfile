@@ -2,18 +2,18 @@
 # moves file from downloadDir to there folders
 
 # all the directories and mkdir them if not exists
-downloadDir=$(xdg-user-dir DOWNLOAD);   [ -d $downloadDir ] || mkdir $downloadDir
-archiveDir="$downloadDir/archive";      [ -d $archiveDir  ] || mkdir $archiveDir
-audioDir="$downloadDir/audio";          [ -d $audioDir    ] || mkdir $audioDir
-documentDir="$downloadDir/document";    [ -d $documentDir ] || mkdir $documentDir
-imageDir="$downloadDir/image";          [ -d $imageDir    ] || mkdir $imageDir
-textDir="$downloadDir/text";            [ -d $textDir     ] || mkdir $textDir
-torrentDir="$downloadDir/torrent";      [ -d $torrentDir  ] || mkdir $torrentDir
-videoDir="$downloadDir/video";          [ -d $videoDir    ] || mkdir $videoDir
-scriptDir="$downloadDir/script";        [ -d $scriptDir   ] || mkdir $scriptDir
+downloadDir=$(xdg-user-dir DOWNLOAD) ;  [ -d $downloadDir ] || mkdir $downloadDir
+archiveDir="$downloadDir/archive" ;     [ -d $archiveDir  ] || mkdir $archiveDir
+audioDir="$downloadDir/audio" ;         [ -d $audioDir    ] || mkdir $audioDir
+documentDir="$downloadDir/document" ;   [ -d $documentDir ] || mkdir $documentDir
+imageDir="$downloadDir/image" ;         [ -d $imageDir    ] || mkdir $imageDir
+textDir="$downloadDir/text" ;           [ -d $textDir     ] || mkdir $textDir
+torrentDir="$downloadDir/torrent" ;     [ -d $torrentDir  ] || mkdir $torrentDir
+videoDir="$downloadDir/video" ;         [ -d $videoDir    ] || mkdir $videoDir
+scriptDir="$downloadDir/script" ;       [ -d $scriptDir   ] || mkdir $scriptDir
 
 inotifywait -m $downloadDir -e create -e moved_to | 
-    while read filepath action file_name; do
+    while read filepath action file_name ; do
         case ${file_name##*.} in
             # archive
             7z|gz|rar|tar|tgz|Z|zip)

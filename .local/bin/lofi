@@ -1,21 +1,31 @@
 #!/bin/sh
 
-music=("ChilledCow Sleep/Chill", "ChilledCow Study/Relax");
+# setting URLs
 url_chilledcow_sleep="https://www.youtube.com/watch?v=DWcJFNfaw9c";
 url_chilledcow_study="https://www.youtube.com/watch?v=5qap5aO4i9A";
 url_relaxedguy_brown="https://www.youtube.com/watch?v=hXetO_bYcMo&t";
 
+# help menu
+__usage=" Usage: $(basename $0) [N]
+  1 = ChilledCow  - lofi hip hop radio  : sleep/chill
+  2 = ChilledCow  - lofi hip hop radio  : relax/study
+  3 = Relaxed Guy - brown noise blocker : sleep/study/tinntun/insomnia"
 
+# if not 1 then exit after printing usage
+[[ $# -ne 1 ]] && echo "$__usage" >&2 && exit 1
+
+# if $1
 case $1 in
-	chilledcow_sleep)
-		url="https://www.youtube.com/watch?v=DWcJFNfaw9c" ;;
-	chilledcow_study)
-		url="https://www.youtube.com/watch?v=5qap5aO4i9A" ;;
-	relaxedguy_brown)
-		url=$url_relaxedguy_brown ;;
+	-h | --help) echo "$__usage" && exit ;;
+	1) url="$url_chilledcow_sleep" ;;
+	2) url="$url_chilledcow_study" ;;
+	3) url="$url_relaxedguy_brown" ;;
+	*) echo "$__usage" >&2 && exit 2 ;;
 esac
 
+#echo "$url"
+[[ -n "$url" ]] &&
 mpv --no-resume-playback --no-video \
 	--term-osd-bar --term-osd-bar-chars="[-|-]" \
-	--vo=tct --vo-tct-algo=plain --vo-tct-256=yes --profile=sw-fast \
-	--ytdl "$url"
+	--profile=sw-fast --ytdl "$url"
+

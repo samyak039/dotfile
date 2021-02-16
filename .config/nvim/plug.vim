@@ -38,7 +38,7 @@ let g:netrw_list_hide = netrw_gitignore#Hide().'\(^\|\s\s\)\zs\.\S\+'
 autocmd FileType netrw set nolist
 autocmd FileType netrw setl bufhidden=wipe
 " auto-open and focus on text file
-autocmd VimEnter * if argc() != 0 | Lexplore | wincmd p | else | Lexplore | endif
+"autocmd VimEnter * if argc() != 0 | Lexplore | wincmd p | else | Lexplore | endif
 " Close Netrw if it's the only buffer open
 autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' | q! | endif
 " when netrw should not be called

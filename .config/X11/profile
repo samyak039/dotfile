@@ -25,7 +25,7 @@
 ####################################################################################################
 
 # path variable
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
 # DND mode
 export DND=0

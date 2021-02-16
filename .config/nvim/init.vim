@@ -81,9 +81,9 @@ nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprevious<CR>
 nnoremap <A-q> :q<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
-nnoremap <A-t> :set expandtab!<CR>
 nnoremap <A-w> :w!<CR>
 nnoremap <leader>Q :q!<CR>
+nnoremap <leader>t :set expandtab!<CR>
 nnoremap <leader>wq :wq<CR>
 nnoremap <leader>W :W<CR>
 
@@ -121,9 +121,9 @@ augroup end
 augroup competitiveProgramming
 	autocmd! competitiveProgramming
 	" for initial template
-	autocmd Filetype c nnoremap <A-i> :-1 read ~/.config/templates/cp.c<CR>/<++><CR>cc
-	autocmd Filetype cpp nnoremap <A-i> :-1read ~/.config/templates/cp.cpp<CR>/<++><CR>cc
-	autocmd Filetype sh nnoremap <A-i> :-1read ~/.config/templates/template.sh<CR>/<++><CR>cc
+	autocmd Filetype c nnoremap <A-i> :-1 read ~/.local/share/templates/comp_prog.c<CR>/<++><CR>cc
+	autocmd Filetype cpp nnoremap <A-i> :-1read ~/.local/share/templates/comp_prog.cc<CR>/<++><CR>cc
+	autocmd Filetype sh nnoremap <A-i> :-1read ~/.local/share/templates/template.sh<CR>/<++><CR>cc
 	" for compiling
 	autocmd Filetype c nnoremap <A-c> :!gcc -o %:r %<CR>
 	autocmd Filetype cpp nnoremap <A-c> :!g++ -o %:r %<CR>

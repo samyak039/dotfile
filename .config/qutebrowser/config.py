@@ -447,7 +447,7 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/53
 
 # Enable host blocking.
 # Type: Bool
-c.content.host_blocking.enabled = True
+c.content.blocking.enabled = True
 
 # List of URLs of lists which contain hosts to block.  The file can be
 # in one of the following formats:  - An `/etc/hosts`-like file - One
@@ -458,17 +458,17 @@ c.content.host_blocking.enabled = True
 # The file `~/.config/qutebrowser/blocked-hosts` is always read if it
 # exists.
 # Type: List of Url
-c.content.host_blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+c.content.blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 # A list of patterns that should always be loaded, despite being ad-
 # blocked. Note this whitelists blocked hosts, not first-party URLs. As
 # an example, if `example.org` loads an ad from `ads.example.org`, the
 # whitelisted host should be `ads.example.org`. If you want to disable
-# the adblocker on a given page, use the `content.host_blocking.enabled`
+# the adblocker on a given page, use the `content.blocking.enabled`
 # setting with a URL pattern instead. Local domains are always exempt
 # from hostblocking.
 # Type: List of UrlPattern
-c.content.host_blocking.whitelist = []
+c.content.blocking.whitelist = []
 
 # Enable hyperlink auditing (`<a ping>`).
 # Type: Bool
@@ -2057,16 +2057,9 @@ config.bind('<Escape>', 'mode-leave', mode='hint')
 config.bind('<Return>', 'hint-follow', mode='hint')
 
 # Bindings for insert mode
-config.unbind('<Ctrl+h>', mode='insert')
-config.unbind('<Ctrl+w>', mode='insert')
 config.bind('<Ctrl+Shift+b>', 'spawn --userscript qute-bitwarden -w', mode='insert')
 config.bind('<Ctrl+b>', 'spawn --userscript qute-bitwarden', mode='insert')
 config.bind('<Ctrl+e>', 'edit-text', mode='insert')
-config.bind('<Ctrl+h>', 'scroll left', mode='insert')
-config.bind('<Ctrl+j>', 'scroll down', mode='insert')
-config.bind('<Ctrl+k>', 'scroll up', mode='insert')
-config.bind('<Ctrl+l>', 'scroll right', mode='insert')
-config.bind('<Ctrl+w>', 'rl-backward-kill-word', mode='insert')
 config.bind('<Escape>', 'mode-leave', mode='insert')
 config.bind('<Shift+Ins>', 'insert-text -- {primary}', mode='insert')
 
