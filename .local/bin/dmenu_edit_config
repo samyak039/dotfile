@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: expandtab:
 
 _usage="
 $(basename $0) is a dmenu script to open all configuration file of any packages mentioned below
@@ -7,7 +8,7 @@ $(basename $0) is a dmenu script to open all configuration file of any packages 
 
 _dmenu="dmenu -l 10 -c -bw 3 -p config"
 _edit="$TERMINAL -e nvim -p"
-_config=$(tail -n +15 $0 | head -n -1 | $_dmenu | cut -d '|' -f2)
+_config=$(tail -n +16 $0 | head -n -1 | $_dmenu | cut -d '|' -f2)
 
 [[ -n $_config ]] && eval "$_edit $_config"
 
@@ -24,11 +25,12 @@ i3                  | $CONFIG/i3/config
 i3blocks            | $CONFIG/i3blocks/{config,*}
 lf                  | $CONFIG/lf/lfrc
 lofi                | $BIN/lofi
+mime                | $CONFIG/mimeapps.list
 mpd                 | $CONFIG/mpd/mpd.conf
-mpv                 | $CONFIG/mpv/{mpv.conf,input.conf}
+mpv                 | $CONFIG/mpv/{mpv,input}.conf
 ncmpcpp             | $CONFIG/ncmpcpp/{config,bindings}
 neofetch            | $CONFIG/neofetch/config.conf
-nvim                | $CONFIG/nvim/{init.vim,plug.vim}
+nvim                | $CONFIG/nvim/{init,plug,filetype}.vim
 paru                | $CONFIG/paru/paru.conf
 picom               | $CONFIG/picom/picom.conf
 qtile               | $CONFIG/qtile/{config.py,autostart.sh}
@@ -40,14 +42,17 @@ statusbar/          | $BIN/statusbar
 sxhkd               | $CONFIG/sxhkd/sxhkdrc
 templates           | $DATA/templates/*
 transmission-daemon | $CONFIG/transmission-daemon/settings.json
-transmission-remote | $CONFIG/transmisison-remote-gtk/config.json
+transmission-remote | $CONFIG/transmission-remote-gtk/config.json
+transmission-rss    | $CONFIG/transmission-rss/config.yml
 tremc               | $CONFIG/tremc/settings.cfg
 tremc               | $CONFIG/tremc/settings.cfg
 tty-screen          | $CONFIG/issue
+tuir                | $CONFIG/tuir/{tuir.cfg,mailcap}
 userscripts         | $DATA/qutebrowser/userscripts/
 vifm                | $CONFIG/vifm/vifmrc
 xinitrc             | $CONFIG/X11/xinitrc
 xmodmap             | $CONFIG/X11/Xmodmap*
 xprofile            | $CONFIG/X11/profile
-zsh                 | $CONFIG/zsh/{.zsh,prompt}
+zathura             | $CONFIG/zathura/zathurarc
+zsh                 | $CONFIG/zsh/{.zshrc,prompt}
 "
