@@ -36,7 +36,6 @@ alias shit='fuck'                                           # sfw of fuck
 
 # nvim
 alias v='nvim'
-alias nam='vman'                                # man page in man (vim-superman)
 
 # advanced cp, mv
 alias c='$HOME/.local/bin/advcp -ig'

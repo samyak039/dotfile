@@ -63,14 +63,22 @@ let maplocalleader = " "
 
 command! W execute 'w !doas -u root -- tee > /dev/null %' <bar> edit!
 
-"noremap ; :
-"noremap : ;
+inoremap {{ {<esc>o}<esc>O
+nnoremap <silent> < v<
+nnoremap <silent> > v>
+nnoremap <silent> Y y$
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+
+nnoremap <leader>Q :q!<CR>
+nnoremap <leader>W :W<CR>
+nnoremap <leader>t :set expandtab!<CR>
+nnoremap <leader>wq :wqa<CR>
+
 noremap <C-n> :Lexplore<CR>
 noremap <C-s> :UndotreeToggle<CR>
 noremap <C-t> :TagbarToggle<CR>
 
-nnoremap <silent> < v<
-nnoremap <silent> > v>
 nnoremap <A-d> :tabclose<CR>
 nnoremap <A-e> :tabe 
 nnoremap <A-h> <C-w>h
@@ -79,22 +87,15 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprevious<CR>
-nnoremap <A-q> :q<CR>
+nnoremap <A-q> :wqa<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
 nnoremap <A-w> :w!<CR>
-nnoremap <leader>Q :q!<CR>
-nnoremap <leader>t :set expandtab!<CR>
-nnoremap <leader>wq :wq<CR>
-nnoremap <leader>W :W<CR>
 
 "inoremap '' ''<left>
 "inoremap "" ""<left>
 "inoremap (( ()<left>
 "inoremap [[ []<left>
-inoremap {{ {<esc>o}<esc>O
 
-vnoremap <silent> < <gv
-vnoremap <silent> > >gv
 
 
 "---------------------------------------------------------------------------------------------------

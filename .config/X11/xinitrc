@@ -24,6 +24,7 @@ nitrogen --restore &
 pcmanfm -d &
 syncthing --no-browser &
 transmission-daemon &
+transmission-rss &
 unclutter &
 
 # start WM

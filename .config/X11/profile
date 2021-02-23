@@ -36,11 +36,12 @@ export GHAR="/home/samyak039"
 #       _DEFAULT PROGRAMS
 ####################################################################################################
 
+export BROWSER="qutebrowser"
 export EDITOR="nvim"
+export MANPAGER="nvim -c 'set ft=man' -"
+export READER="zathura"
 export TERM="st-256color"
 export TERMINAL="st"
-export BROWSER="qutebrowser"
-export READER="zathura"
 
 
 ####################################################################################################

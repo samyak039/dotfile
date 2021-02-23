@@ -1,11 +1,7 @@
-"---------------------------------------------------------------------------------------------------
-" luochen1990/rainbow
-"---------------------------------------------------------------------------------------------------
+"" luochen1990/rainbow
 let g:rainbow_active = 1
 
-"---------------------------------------------------------------------------------------------------
-" morhetz/gruvbox
-"---------------------------------------------------------------------------------------------------
+"" morhetz/gruvbox
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
@@ -17,17 +13,13 @@ let g:gruvbox_invert_indent_guides=1
 let g:gruvbox_invert_tabline=1
 let g:gruvxox_improved_warnings=1
 
-"---------------------------------------------------------------------------------------------------
-" mbbill/undotree
-"---------------------------------------------------------------------------------------------------
+"" mbbill/undotree
 let g:undotree_WindowLayout = 4
 let g:undotree_ShortIndicators = 0
 let g:undotree_RelativeTimestamp = 1
 let g:undotree_HighlightChangedWithSign = 1
 
-"---------------------------------------------------------------------------------------------------
-" vim/netrw
-"---------------------------------------------------------------------------------------------------
+"" vim/netrw
 set modifiable
 let g:netrw_altv = 1
 let g:netrw_banner = 1
@@ -44,10 +36,7 @@ autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype
 " when netrw should not be called
 "autocmd FileType man Lexplore
 
-
-"---------------------------------------------------------------------------------------------------
-" preservim/tagbar
-"---------------------------------------------------------------------------------------------------
+"" preservim/tagbar
 "autocmd FileType c,cpp nested :call tagbar#autoopen(1)
 ""autocmd VimEnter * nested :call tagbar#autoopen(1)
 let g:tagbar_position = 'botright vertical'
@@ -94,18 +83,14 @@ let g:tagbar_type_vimwiki = {
 "          \ , 'ctagsargs': 'default'
 "          \ }
 
-"---------------------------------------------------------------------------------------------------
-" plasticboy/vim-markdown
-"---------------------------------------------------------------------------------------------------
+"" plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 let g:vim_markdown_conceal_code_blocks = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
-"---------------------------------------------------------------------------------------------------
-" scrooloose/syntastic
-"---------------------------------------------------------------------------------------------------
+"" scrooloose/syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
@@ -114,14 +99,10 @@ let g:vim_markdown_frontmatter = 1
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
 
-"---------------------------------------------------------------------------------------------------
-" sheerun/vim-polyglot
-"---------------------------------------------------------------------------------------------------
+"" sheerun/vim-polyglot
 let g:polyglot_disabled = ['autoindent']
 
-"---------------------------------------------------------------------------------------------------
-" vim-airline/vim-airline
-"---------------------------------------------------------------------------------------------------
+"" vim-airline/vim-airline
 "set showtabline=1
 set noshowmode
 let g:airline_theme='gruvbox'
@@ -139,12 +120,11 @@ let g:airline#extensions#default#layout = [
 if !exists('g:airline_symbols')
 	let g:airline_symbols = {}
 endif
+let g:airline_symbols.crypt = 'RO'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 
-"---------------------------------------------------------------------------------------------------
-" vimwiki/vimwiki
-"---------------------------------------------------------------------------------------------------
+"" vimwiki/vimwiki
 " wiki: default, study, college
 let g:vimwiki_list = [ { 'name' : 'wiki',
                        \ 'path' : '~/wiki/vimwiki',
@@ -168,9 +148,7 @@ hi VimwikiHeader5 guifg=#B8BB26 gui=bold
 hi VimwikiHeader6 guifg=#FABD2F gui=bold
 
 
-"---------------------------------------------------------------------------------------------------
-" junegunn/vim-plug
-"---------------------------------------------------------------------------------------------------
+"" junegunn/vim-plug
 if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim -- create-dirs
   \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -182,7 +160,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'godlygeek/tabular'
-Plug 'jez/vim-superman'
+Plug 'junegunn/goyo.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'mbbill/undotree'
@@ -197,6 +175,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/loremipsum'
+Plug 'vim-scripts/restore_view.vim'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
