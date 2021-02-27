@@ -1,6 +1,15 @@
 "" luochen1990/rainbow
 let g:rainbow_active = 1
 
+"" machakann/vim-highlightedyank
+let g:highlightedyank_highlight_duration = 200
+
+"" mbbill/undotree
+let g:undotree_WindowLayout = 4
+let g:undotree_ShortIndicators = 0
+let g:undotree_RelativeTimestamp = 1
+let g:undotree_HighlightChangedWithSign = 1
+
 "" morhetz/gruvbox
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='hard'
@@ -12,12 +21,6 @@ let g:gruvbox_invert_signs=1
 let g:gruvbox_invert_indent_guides=1
 let g:gruvbox_invert_tabline=1
 let g:gruvxox_improved_warnings=1
-
-"" mbbill/undotree
-let g:undotree_WindowLayout = 4
-let g:undotree_ShortIndicators = 0
-let g:undotree_RelativeTimestamp = 1
-let g:undotree_HighlightChangedWithSign = 1
 
 "" vim/netrw
 set modifiable
@@ -163,6 +166,7 @@ Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
+Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'plasticboy/vim-markdown'

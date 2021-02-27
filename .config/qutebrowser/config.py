@@ -1308,7 +1308,8 @@ c.url.open_base_url = False
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {  'DEFAULT' : 'https://searx.bar/search?q={}',
+                               'd' : 'https://duckduckgo.com/?q={}'   }
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl

@@ -10,6 +10,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
+# as root
+doas darkstat -i enp1s0 -p 669 &
+doas darkstat -i wlp2s0 -p 667 &
+
 # start scripts
 sort_download_dir &
 remap && sxhkd &
@@ -25,7 +29,7 @@ pcmanfm -d &
 syncthing --no-browser &
 transmission-daemon &
 transmission-rss &
-unclutter &
+unclutter --timeout 3 --ignore-scrolling &
 
 # start WM
 exec dwm

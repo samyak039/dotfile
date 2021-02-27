@@ -87,7 +87,7 @@ nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprevious<CR>
-nnoremap <A-q> :wqa<CR>
+nnoremap <A-'> :wqa<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
 nnoremap <A-w> :w!<CR>
 

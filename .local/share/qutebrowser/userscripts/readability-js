@@ -1,9 +1,11 @@
 #!/usr/bin/env node
+// vim: set expandtab:
 //
 // # Description
 //
 // Summarize the current page in a new tab, by processing it with the standalone readability
 // library used for Firefox Reader View.
+// and uses gruvbox-dark theme (solarized-everything-css)
 //
 // # Prerequisites
 //
@@ -35,11 +37,25 @@ const HEADER = `
     </meta>
     <title>%s</title>
     <style type="text/css">
+        * {
+            border-color: #fabd2f !important;
+        }
+        a {
+        color: #83a598 !important;
+        }
+        a:visited {
+            color: #d3869b !important;
+        }
         body {
             margin: 30px auto;
             max-width: 650px;
             line-height: 1.4;
             padding: 0 10px;
+            background-color: #282828 !important;
+            color: #ebdbb2 !important;
+        }
+        html {
+            background-color: #282828 !important;
         }
         h1, h2, h3 {
             line-height: 1.2;

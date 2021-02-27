@@ -8,7 +8,7 @@ $(basename $0) is a dmenu script to open all configuration file of any packages 
 
 _dmenu="dmenu -l 10 -c -bw 3 -p config"
 _edit="$TERMINAL -e nvim -p"
-_config=$(tail -n +16 $0 | head -n -1 | $_dmenu | cut -d '|' -f2)
+_config=$(tail -n +16 $0 | head -n -1 | shuf | $_dmenu | cut -d '|' -f2)
 
 [[ -n $_config ]] && eval "$_edit $_config"
 
@@ -20,6 +20,7 @@ doas                | $CONFIG/doas.conf
 doom-emacs          | $CONFIG/doom/*
 dosbox              | $CONFIG/dosbox/dosbox.conf
 dunst               | $CONFIG/dunst/dunstrc
+gentleman           | $BIN/gentleman
 greasemonkey        | $DATA/qutebrowsr/greasemonkey/
 i3                  | $CONFIG/i3/config
 i3blocks            | $CONFIG/i3blocks/{config,*}
@@ -35,7 +36,7 @@ paru                | $CONFIG/paru/paru.conf
 picom               | $CONFIG/picom/picom.conf
 qtile               | $CONFIG/qtile/{config.py,autostart.sh}
 qutebrowser         | $CONFIG/qutebrowser/config.py
-remap.sh            | $BIN/remap
+remap               | $BIN/remap
 rofi                | $CONFIG/rofi/config.rasi
 sort_download_dir   | $BIN/sort_download_dir
 statusbar/          | $BIN/statusbar
