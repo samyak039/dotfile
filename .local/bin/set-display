@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ -n $(xrandr | rg 'HDMI1 connected') ]]; then
+	autorandr dual
+else
+	autorandr laptop
+fi
+

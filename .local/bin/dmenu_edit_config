@@ -36,8 +36,9 @@ paru                | $CONFIG/paru/paru.conf
 picom               | $CONFIG/picom/picom.conf
 qtile               | $CONFIG/qtile/{config.py,autostart.sh}
 qutebrowser         | $CONFIG/qutebrowser/config.py
-remap               | $BIN/remap
 rofi                | $CONFIG/rofi/config.rasi
+set-display         | $BIN/set-display
+set-keymap          | $BIN/set-keymap
 sort_download_dir   | $BIN/sort_download_dir
 statusbar/          | $BIN/statusbar
 sxhkd               | $CONFIG/sxhkd/sxhkdrc
@@ -49,6 +50,7 @@ tremc               | $CONFIG/tremc/settings.cfg
 tremc               | $CONFIG/tremc/settings.cfg
 tty-screen          | $CONFIG/issue
 tuir                | $CONFIG/tuir/{tuir.cfg,mailcap}
+update-mirrorlist   | $BIN/update-mirrorlist
 userscripts         | $DATA/qutebrowser/userscripts/
 vifm                | $CONFIG/vifm/vifmrc
 xinitrc             | $CONFIG/X11/xinitrc

@@ -23,21 +23,38 @@ let g:gruvbox_invert_tabline=1
 let g:gruvxox_improved_warnings=1
 
 "" vim/netrw
-set modifiable
-let g:netrw_altv = 1
-let g:netrw_banner = 1
-let g:netrw_browse_split = 4
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 15
-let g:netrw_list_hide = netrw_gitignore#Hide().'\(^\|\s\s\)\zs\.\S\+'
-autocmd FileType netrw set nolist
-autocmd FileType netrw setl bufhidden=wipe
-" auto-open and focus on text file
-"autocmd VimEnter * if argc() != 0 | Lexplore | wincmd p | else | Lexplore | endif
-" Close Netrw if it's the only buffer open
-autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' | q! | endif
-" when netrw should not be called
-"autocmd FileType man Lexplore
+"set modifiable
+"let g:netrw_altv = 1
+"let g:netrw_banner = 1
+"let g:netrw_browse_split = 4
+"let g:netrw_liststyle = 3
+"let g:netrw_winsize = 15
+"let g:netrw_list_hide = netrw_gitignore#Hide().'\(^\|\s\s\)\zs\.\S\+'
+"autocmd FileType netrw set nolist
+"autocmd FileType netrw setl bufhidden=wipe
+"" auto-open and focus on text file
+""autocmd VimEnter * if argc() != 0 | Lexplore | wincmd p | else | Lexplore | endif
+"" Close Netrw if it's the only buffer open
+"autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw" || &buftype == 'quickfix' | q! | endif
+"" when netrw should not be called
+""autocmd FileType man Lexplore
+
+"" preservim/nerdtree
+let NERDTreeNaturalSort = 1
+let NERDTreeBookmarksFile = "$DATA/nvim/plugged/nerdtree"
+let NERDTreeMouseMode = 2
+let NERDTreeSortOrder = ['\/$', '*', '[[extension]]']
+let NERDTreeWinSize = 25
+autocmd FileType nerdtree setlocal cursorline nocursorcolumn
+autocmd StdinReadPre * let s:std_in=1
+" start NERDTree when Vim is started without file arguments
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" Start NERDTree when Vim starts with a directory argument.
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | wincmd p | endif
+"" Exit Vim if NERDTree is the only window left.
+"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"    \ quit | endif
 
 "" preservim/tagbar
 "autocmd FileType c,cpp nested :call tagbar#autoopen(1)
@@ -105,6 +122,9 @@ let g:vim_markdown_frontmatter = 1
 "" sheerun/vim-polyglot
 let g:polyglot_disabled = ['autoindent']
 
+"" tiagofumo/vim-nerd-tree-syntax-highlight
+let NERDTreeLimitedSyntax = 1
+
 "" vim-airline/vim-airline
 "set showtabline=1
 set noshowmode
@@ -159,6 +179,8 @@ if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
 endif
 call plug#begin('$DATA/nvim/plugged')
 
+"Plug 'samyak039/nerdtree'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', {'as':'dracula'}
@@ -169,9 +191,13 @@ Plug 'luochen1990/rainbow'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
+Plug 'philrunninger/nerdtree-visual-selection'
 Plug 'plasticboy/vim-markdown'
+Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'

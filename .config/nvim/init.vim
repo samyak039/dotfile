@@ -75,7 +75,7 @@ nnoremap <leader>W :W<CR>
 nnoremap <leader>t :set expandtab!<CR>
 nnoremap <leader>wq :wqa<CR>
 
-noremap <C-n> :Lexplore<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 noremap <C-s> :UndotreeToggle<CR>
 noremap <C-t> :TagbarToggle<CR>
 
@@ -121,10 +121,10 @@ augroup end
 
 augroup competitiveProgramming
 	autocmd! competitiveProgramming
-	" for initial template
-	autocmd Filetype c nnoremap <A-i> :-1 read ~/.local/share/templates/comp_prog.c<CR>/<++><CR>cc
-	autocmd Filetype cpp nnoremap <A-i> :-1read ~/.local/share/templates/comp_prog.cc<CR>/<++><CR>cc
-	autocmd Filetype sh nnoremap <A-i> :-1read ~/.local/share/templates/template.sh<CR>/<++><CR>cc
+	" boiler plate
+	autocmd Filetype c nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/c_lang.c<CR>/<++><CR>cc
+	autocmd Filetype cpp nnoremap <A-i> :-1read ~/.local/share/boiler_plate/c_plus_plus.cc<CR>/<++><CR>cc
+	autocmd Filetype sh nnoremap <A-i> :-1read ~/.local/share/boiler_plate/shell.sh<CR>/<++><CR>cc
 	" for compiling
 	autocmd Filetype c nnoremap <A-c> :!gcc -o %:r %<CR>
 	autocmd Filetype cpp nnoremap <A-c> :!g++ -o %:r %<CR>

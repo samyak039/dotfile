@@ -15,20 +15,21 @@ doas darkstat -i enp1s0 -p 669 &
 doas darkstat -i wlp2s0 -p 667 &
 
 # start scripts
+set-display &
+set-keymap && sxhkd &
 sort_download_dir &
-remap && sxhkd &
 
 # start background application
 dwmblocks &
 flameshot &
 /usr/lib/kdeconnectd &
-mpd &
 mpDris2 &
+mpd &
 nitrogen --restore &
 pcmanfm -d &
 syncthing --no-browser &
-transmission-daemon &
-transmission-rss &
+#transmission-daemon &
+#transmission-rss &
 unclutter --timeout 3 --ignore-scrolling &
 
 # start WM

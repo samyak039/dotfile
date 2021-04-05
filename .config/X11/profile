@@ -27,10 +27,11 @@
 # path variable
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
-# DND mode
-export DND=0
 
-export GHAR="/home/samyak039"
+# ssh
+eval `ssh-agent -s`
+ssh-add "$HOME"/.ssh/id_rsa_zer039
+trap 'kill $SSH_AGENT_PID' EXIT
 
 ####################################################################################################
 #       _DEFAULT PROGRAMS
@@ -43,6 +44,7 @@ export READER="zathura"
 export TERM="st-256color"
 export TERMINAL="st"
 
+export XDG_SESSION_TYPE=X11
 
 ####################################################################################################
 #       _HOME DIR CLEAN UP
@@ -85,6 +87,9 @@ export DRACULA_THEME="$CONFIG/dracula-theme"
 ####################################################################################################
 #       _EXTRA
 ####################################################################################################
+
+# macOS
+export MACOS="$HOME/xyz/macOS-Simple-KVM"
 
 # Android Studio in DWM
 export _JAVA_AWT_WM_NONREPARENTING=1
