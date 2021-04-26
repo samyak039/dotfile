@@ -11,8 +11,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # as root
-doas darkstat -i enp1s0 -p 669 &
-doas darkstat -i wlp2s0 -p 667 &
+#doas darkstat -i enp1s0 -p 669 &
+#doas darkstat -i wlp2s0 -p 667 &
+dwmblocks && doas cmst &
 
 # start scripts
 set-display &
@@ -20,7 +21,6 @@ set-keymap && sxhkd &
 sort_download_dir &
 
 # start background application
-dwmblocks &
 flameshot &
 /usr/lib/kdeconnectd &
 mpDris2 &

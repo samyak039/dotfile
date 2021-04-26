@@ -26,7 +26,8 @@ alias doas='doas --'
 alias doom='$XDG_DATA_HOME/doom-emacs/bin/doom'
 alias dfh='df -h'                                            # human readable format
 alias duh='du -h'
-alias s='duh -s * | sort -hr | head'
+alias s='du -h -s * | sort -hr | head'
+alias ss='du -h -s .* | sort -hr | head'
 alias grep='grep --color=auto'
 #alias sxiv='sxiv-rifle'
 

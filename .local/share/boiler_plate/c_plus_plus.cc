@@ -8,6 +8,7 @@ using namespace std;                                                            
 #define f(i,a,n) for(long i=a; a<n ? i<n : i>n; a<n ? ++i : --i)                                  //
 #define fo(i,n) for(long i=0; i<n; ++i)                                                           //
 #define foe(i,n) for(auto i : n)                                                                  //
+#define tc lli t; cin>>t; while(t--)                                                              //
 #define var(x) cout << #x << ":";                                                                 //
 #define pi 3.1415926535897932384626                                                               //
 const int mod = 1000000007;                                                                       //

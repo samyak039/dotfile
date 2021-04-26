@@ -132,7 +132,7 @@ augroup competitiveProgramming
 	autocmd Filetype c,cpp nnoremap <A-r> :!time ./%:r<CR>
 	autocmd Filetype sh nnoremap <A-r> :!time bash %<CR>
 	" for running with TESTCASES
-	autocmd Filetype c,cpp nnoremap <A-t> :!for f in *_test; do echo "\n$f\n======="; time ./%:r < $f; done<CR>
+	autocmd Filetype c,cpp nnoremap <A-t> :!for f in in*.txt; do echo "\n$f\n======="; time ./%:r < $f; done<CR>
 	autocmd Filetype sh nnoremap <A-t> :!for f in *_test; do echo "\n$f\n======="; time bash % < $f; done<CR>
 	" for convinence
 	nnoremap <A-w :w<CR>

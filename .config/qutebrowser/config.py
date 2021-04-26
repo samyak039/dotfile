@@ -458,7 +458,7 @@ c.content.blocking.enabled = True
 # The file `~/.config/qutebrowser/blocked-hosts` is always read if it
 # exists.
 # Type: List of Url
-c.content.blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
+#c.content.blocking.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 
 # A list of patterns that should always be loaded, despite being ad-
 # blocked. Note this whitelists blocked hosts, not first-party URLs. As
