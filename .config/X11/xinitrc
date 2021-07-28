@@ -10,27 +10,30 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
+# priority
+dwmblocks &
+
 # as root
-#doas darkstat -i enp1s0 -p 669 &
-#doas darkstat -i wlp2s0 -p 667 &
-dwmblocks && doas cmst &
 
 # start scripts
-set-display &
+set-display
 set-keymap && sxhkd &
 sort_download_dir &
 
 # start background application
+connman-gtk &
 flameshot &
 /usr/lib/kdeconnectd &
-mpDris2 &
-mpd &
-nitrogen --restore &
+#mpDris2 &
+#mpd &
 pcmanfm -d &
+redshift &
 syncthing --no-browser &
-#transmission-daemon &
-#transmission-rss &
+transmission-daemon &
 unclutter --timeout 3 --ignore-scrolling &
+#xmobar {$CONFIG:-$HOME/.config}/xmonad/xmobarrc &
 
 # start WM
 exec dwm
+#exec i3
+#exec xmonad

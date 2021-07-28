@@ -13,6 +13,7 @@ _config=$(tail -n +16 $0 | head -n -1 | shuf | $_dmenu | cut -d '|' -f2)
 [[ -n $_config ]] && eval "$_edit $_config"
 
 config_files="
+alacritty           | $CONFIG/alacritty/alacritty.yml
 alias               | $CONFIG/aliasrc
 directories         | $CONFIG/directories
 dmenu_edit_config   | $BIN/dmenu_edit_config
@@ -21,7 +22,7 @@ doom-emacs          | $CONFIG/doom/*
 dosbox              | $CONFIG/dosbox/dosbox.conf
 dunst               | $CONFIG/dunst/dunstrc
 gentleman           | $BIN/gentleman
-greasemonkey        | $DATA/qutebrowsr/greasemonkey/
+greasemonkey        | $DATA/qutebrowser/greasemonkey/
 i3                  | $CONFIG/i3/config
 i3blocks            | $CONFIG/i3blocks/{config,*}
 lf                  | $CONFIG/lf/lfrc
@@ -32,10 +33,12 @@ mpv                 | $CONFIG/mpv/{mpv,input}.conf
 ncmpcpp             | $CONFIG/ncmpcpp/{config,bindings}
 neofetch            | $CONFIG/neofetch/config.conf
 nvim                | $CONFIG/nvim/{init,plug,filetype}.vim
+pacman              | /etc/pacman.conf
 paru                | $CONFIG/paru/paru.conf
 picom               | $CONFIG/picom/picom.conf
 qtile               | $CONFIG/qtile/{config.py,autostart.sh}
 qutebrowser         | $CONFIG/qutebrowser/config.py
+redshift            | $CONFIG/redshift/redshift.conf
 rofi                | $CONFIG/rofi/config.rasi
 set-display         | $BIN/set-display
 set-keymap          | $BIN/set-keymap

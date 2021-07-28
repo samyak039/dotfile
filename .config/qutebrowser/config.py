@@ -306,7 +306,7 @@ c.content.frame_flattening = False
 # Enable quirks (such as faked user agent headers) needed to get
 # specific sites to work properly.
 # Type: Bool
-c.content.site_specific_quirks = True
+c.content.site_specific_quirks.enabled = True
 
 # Allow websites to request geolocations.
 # Type: BoolAsk
@@ -564,7 +564,7 @@ c.content.netrc_file = None
 #   - true
 #   - false
 #   - ask
-c.content.notifications = 'ask'
+c.content.notifications.enabled = False
 
 # Allow pdf.js to view PDF files in the browser. Note that the files can
 # still be downloaded by clicking the download button in the pdf.js
@@ -623,7 +623,7 @@ c.content.register_protocol_handler = 'ask'
 #   - true
 #   - false
 #   - ask
-c.content.ssl_strict = 'ask'
+#c.content.ssl_strict = 'ask'
 
 # List of user stylesheet filenames to use.
 # Type: List of File, or File
@@ -1308,9 +1308,21 @@ c.url.open_base_url = False
 # the search engine name to the search term, e.g. `:open google
 # qutebrowser`.
 # Type: Dict
-c.url.searchengines = {  'DEFAULT' : 'https://duckduckgo.com/?q={}' ,
-                               'd' : 'https://duckduckgo.com/?q={}'  ,
-                               's' : 'https://searx.bar/search?q={}'   }
+c.url.searchengines = {
+    'DEFAULT':'https://searx.bar/search?q={}',
+         'at':'https://animetosho.org/search?q={}',
+        'aur':'https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&SB=p&SO=d',
+         'aw':'https://wiki.archlinux.org/index.php?search={}',
+          'd':'https://duckduckgo.com/?q={}',
+          'g':'https://google.com/search?q={}',
+         'gh':'https://github.com/search?q={}',
+         'gl':'https://gitlab.com/search?search={}',
+         'gw':'https://wiki.gentoo.org/index.php?search={}',
+          'p':'https://start.paulgo.io/search?q={}',
+          's':'https://searx.bar/search?q={}',
+         'wt':'https://en.wiktionary.org/wiki/{}',
+         'yt':'https://www.youtube.com/results?search_query={}',
+}
 
 # Page(s) to open at the start.
 # Type: List of FuzzyUrl, or FuzzyUrl
@@ -1605,28 +1617,28 @@ c.colors.tabs.even.fg = base05
 c.colors.tabs.even.bg = base00
 
 # Background color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.bg = base0B
+c.colors.tabs.pinned.even.bg = base00
 
 # Foreground color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.fg = base00
+c.colors.tabs.pinned.even.fg = base05
 
 # Background color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.bg = base0B
+c.colors.tabs.pinned.odd.bg = base00
 
 # Foreground color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.fg = base00
+c.colors.tabs.pinned.odd.fg = base05
 
 # Background color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.bg = base02
+c.colors.tabs.pinned.selected.even.bg = base04
 
 # Foreground color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.fg = base05
+c.colors.tabs.pinned.selected.even.fg = base00
 
 # Background color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.bg = base02
+c.colors.tabs.pinned.selected.odd.bg = base04
 
 # Foreground color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.fg = base05
+c.colors.tabs.pinned.selected.odd.fg = base00
 
 # Foreground color of selected odd tabs.
 c.colors.tabs.selected.odd.fg = base00

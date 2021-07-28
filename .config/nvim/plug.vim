@@ -136,12 +136,12 @@ let g:airline#extensions#tabline#show_tabs = 1
 let g:airline#extensions#whitespace#enabled = 0
 "let g:airline_section_z = '%p%% %3l:%-2c'
 let g:airline#extensions#default#layout = [
-	\[ 'a', 'b', 'c' ],
-	\[ 'x', 'z', 'error', 'warning' ]
-	\]
+    \[ 'a', 'b', 'c' ],
+    \[ 'x', 'z', 'error', 'warning' ]
+    \]
 " dict needed to be declared
 if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 let g:airline_symbols.crypt = 'RO'
 let g:airline_symbols.linenr = ''
@@ -171,6 +171,12 @@ hi VimwikiHeader5 guifg=#B8BB26 gui=bold
 hi VimwikiHeader6 guifg=#FABD2F gui=bold
 
 
+"" Yggdroot/indentLine
+let g:indentLine_enabled = 1
+let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_char = '|'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
 "" junegunn/vim-plug
 if empty(glob('$HOME/.local/share/nvim/site/autoload/plug.vim'))
   silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim -- create-dirs
@@ -182,6 +188,7 @@ call plug#begin('$DATA/nvim/plugged')
 "Plug 'samyak039/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
+"Plug 'andymass/vim-matlab'
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', {'as':'dracula'}
 Plug 'godlygeek/tabular'
@@ -207,5 +214,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'vimwiki/vimwiki'
+Plug 'yggdroot/indentLine'
 
 call plug#end()

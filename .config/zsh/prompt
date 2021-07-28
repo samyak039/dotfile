@@ -4,8 +4,9 @@ setopt promptsubst
 PROMPT=""
 RPROMPT=""
 
-# blank line
-PROMPT+="$FG[008]${(r:$COLUMNS::-:)}${RESET}"
+# dashed line
+#PROMPT+="$FG[008]${(r:$COLUMNS::-:)}${RESET}"$'\n'
+
 # username for ssh session
 [[ -n "$SSH_CLIENT" ]] && PROMPT+="${BOLD_RED}%n${WHITE}@${RED}%M${RESET} "
 #PROMPT+="${BOLD_RED}%n${RESET} "
