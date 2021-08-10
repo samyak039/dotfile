@@ -31,10 +31,10 @@ echo "=> Backing-up the old files"
 
 # rank mirrors top 9
 echo "=> Mirroring Artix Linux"
-[[ -e $_mirrorlist_artix ]] && rankmirrors-artix -n 9 $_mirrorlist_artix > "$_nine_artix" &&
+[[ -e $_mirrorlist_artix ]] && rankmirrors -n 9 $_mirrorlist_artix > "$_nine_artix" &&
 	notify-send "rankmirror" "Artix mirrorlist updated at $_date"
 echo "=> Mirroring Arch Linux"
-[[ -e $_mirrorlist_arch ]] && rankmirrors-arch -n 9 $_mirrorlist_arch > "$_nine_arch" &&
+[[ -e $_mirrorlist_arch ]] && rankmirrors -n 9 $_mirrorlist_arch > "$_nine_arch" &&
 	notify-send "rankmirror" "Arch mirrorlist updated at $_date"
 
 echo "=> Mirrored at $(date +%F-%a--%T)"

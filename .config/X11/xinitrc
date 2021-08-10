@@ -34,6 +34,6 @@ unclutter --timeout 3 --ignore-scrolling &
 #xmobar {$CONFIG:-$HOME/.config}/xmonad/xmobarrc &
 
 # start WM
-exec dwm
+exec dwm 2> $CACHE/dwm.log
 #exec i3
 #exec xmonad

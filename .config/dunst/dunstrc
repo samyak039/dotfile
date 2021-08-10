@@ -29,14 +29,30 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "300x5-30+20"
+    geometry = "-20x0+10+10"
+
+    # Turn on the progess bar
+    progress_bar = true
+
+    # Set the progress bar height. This includes the frame, so make sure
+    # it's at least twice as big as the frame width.
+    progress_bar_height = 10
+
+    # Set the frame width of the progress bar
+    progress_bar_frame_width = 1
+
+    # Set the minimum width for the progress bar
+    progress_bar_min_width = 150
+
+    # Set the maximum width for the progress bar
+    progress_bar_max_width = 300
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
@@ -51,7 +67,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 1
 
     # Padding between text and separator.
     padding = 8
@@ -59,12 +75,15 @@
     # Horizontal padding.
     horizontal_padding = 8
 
+    # Padding between text and icon.
+    text_icon_padding = 0
+
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
     frame_width = 1
 
     # Defines color of the frame around the notification window.
-    #frame_color = "#ebdbb2"
+    frame_color = "#ebdbb2"
 
     # Define a color for the separator.
     # possible values are:
@@ -86,11 +105,11 @@
 
     ### Text ###
 
-    font = Fira Code Nerd Font 8
+    font = Fira Code Nerd Font 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 1
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -126,12 +145,15 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%a\n<b>%s</b>\n%p%b"
-    #format = "<b>%a</b>\n<b>%s</b>\n%p%b"
+    format = "<b>%s</b> -- %p%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = left
+    alignment = center
+
+    # Vertical alignment of message text and icon.
+    # Possible values are "top", "center" and "bottom".
+    vertical_alignment = center
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
@@ -153,7 +175,7 @@
     stack_duplicates = true
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
     show_indicators = yes
@@ -161,10 +183,15 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = right
+    icon_position = left
+
+    # Scale small icons up to this size, set to 0 to disable. Helpful
+    # for e.g. small files or high-dpi screens. In case of conflict,
+    # max_icon_size takes precedence over this.
+    min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 64
+    max_icon_size = 0
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -181,7 +208,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/local/bin/dmenu -l 5 -c -bw 5 -p dunst
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/qutebrowser
@@ -190,7 +217,7 @@
     always_run_script = true
 
     # Define the title of the windows spawned by dunst
-    title = Dunst
+    title = Notification
 
     # Define the class of the windows spawned by dunst
     class = Dunst
@@ -216,6 +243,22 @@
     # notification height to avoid clipping text and/or icons.
     corner_radius = 5
 
+    # Ignore the dbus closeNotification message.
+    # Useful to enforce the timeout set by dunst configuration. Without this
+    # parameter, an application may close the notification sent before the
+    # user defined timeout.
+    ignore_dbusclose = false
+
+    ### Wayland ###
+    # These settings are Wayland-specific. They have no effect when using X11
+
+    # Uncomment this if you want to let notications appear under fullscreen
+    # applications (default: overlay)
+    # layer = top
+
+    # Set this to true to use X11 output on Wayland.
+    force_xwayland = false
+
     ### Legacy
 
     # Use the Xinerama extension instead of RandR for multi-monitor support.
@@ -237,9 +280,11 @@
     #              invoke it. If there are multiple and no default, open the context menu.
     # * close_current: Close current notification.
     # * close_all: Close all notifications.
-    mouse_left_click = do_acion
+    # These values can be strung together for each mouse event, and
+    # will be executed in sequence.
+    mouse_left_click = do_acion,close_current
     mouse_middle_click = close_all
-    mouse_right_click = close_current
+    mouse_right_click = close_all
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -251,6 +296,10 @@
     # where there are multiple screens with very different dpi values.
     per_monitor_dpi = false
 
+# The internal keyboard shortcut support in dunst is now considered deprecated
+# and should be replaced by dunstctl calls. You can use the configuration of your
+# WM or DE to bind these to shortcuts of your choice.
+# Check the dunstctl manual page for more info.
 [shortcuts]
 
     # Shortcuts are specified as [modifier+][modifier+]...key
@@ -258,33 +307,34 @@
     # "mod3" and "mod4" (windows-key).
     # Xev might be helpful to find names for keys.
 
-    # Close notification.
+    # Close notification. Equivalent dunstctl command:
+    # dunstctl close
     close = ctrl+space
 
-    # Close all notifications.
+    # Close all notifications. Equivalent dunstctl command:
+    # dunstctl close-all
     close_all = ctrl+shift+space
 
-    # Redisplay last message(s).
-    # On the US keyboard layout "grave" is normally above TAB and left
-    # of "1". Make sure this key actually exists on your keyboard layout,
-    # e.g. check output of 'xmodmap -pke'
+    # Redisplay last message(s). Equivalent dunstctl command:
+    # dunstctl history-pop
     history = ctrl+grave
 
-    # Context menu.
+    # Context menu. Equivalent dunstctl command:
+    # dunstctl context
     context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1d2021"
-    foreground = "#bdae93"
-    frame_color = "#665c54"
+    background = "#282828"
+    foreground = "#928374"
+    frame_color = "#928374"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#1d2021"
+    background = "#282828"
     foreground = "#ebdbb2"
     frame_color = "#ebdbb2"
     timeout = 10
@@ -292,9 +342,9 @@
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#1d2021"
-    foreground = "#ebdbb2"
-    frame_color = "#cc241d"
+    background = "#282828"
+    foreground = "#fabd2f"
+    frame_color = "#fabd2f"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon

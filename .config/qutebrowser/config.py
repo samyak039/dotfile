@@ -1309,7 +1309,7 @@ c.url.open_base_url = False
 # qutebrowser`.
 # Type: Dict
 c.url.searchengines = {
-    'DEFAULT':'https://searx.bar/search?q={}',
+    'DEFAULT':'https://google.com/search?q={}',
          'at':'https://animetosho.org/search?q={}',
         'aur':'https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&SB=p&SO=d',
          'aw':'https://wiki.archlinux.org/index.php?search={}',

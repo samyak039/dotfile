@@ -28,7 +28,7 @@ endif
 set background=dark
 set clipboard+=unnamedplus
 set hidden
-set list lcs=tab:\|\ ,extends:>,precedes:<,nbsp:+
+set list lcs=tab:\¦\ ,extends:>,precedes:<,nbsp:+
 set mouse=a
 set shell=/usr/bin/zsh
 set termguicolors

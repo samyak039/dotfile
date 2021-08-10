@@ -16,6 +16,7 @@ alias gc='git commit --verbose'
 alias gcm='git commit --verbose -m'
 alias gco='git checkout'
 alias glo='git log --oneline'
+alias gl='git log --graph --pretty=format:"%C(auto)%w(140,0,8)%h%d %s %Cblue(%cd)" --abbrev-commit --date=relative --branches'
 alias gp='git pull'
 alias gs='git status --short'
 
