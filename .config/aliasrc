@@ -16,7 +16,7 @@ alias gc='git commit --verbose'
 alias gcm='git commit --verbose -m'
 alias gco='git checkout'
 alias glo='git log --oneline'
-alias gl='git log --graph --pretty=format:"%C(auto)%w(140,0,8)%h%d %s %Cblue(%cd)" --abbrev-commit --date=relative --branches'
+alias gl='git log --graph --date-order --pretty=format:"%C(auto)%w(140,0,8)%h%d %s %Cblue(%cd)" --abbrev-commit --date=relative --branches'
 alias gp='git pull'
 alias gs='git status --short'
 
@@ -42,7 +42,11 @@ alias duh='du -h'
 alias s='du -h -s * | sort -hr | head'
 alias ss='du -h -s .* | sort -hr | head'
 alias grep='grep --color=auto'
+alias h='history'
+alias hg='history | rg'
+alias hgi='history | rg -i'
 #alias sxiv='sxiv-rifle'
+alias batman='export MANPAGER="bat -p" && man'
 
 #alias cat='ccat'                                            # colorised cat
 alias restart-qtile='qshell-cmd -o cmd -f restart'          # restart qtile
@@ -65,14 +69,15 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias yay='yay --sudo /usr/bin/doas'
 
 # changing "ls" to "exa"
-alias l='exa --grid --group-directories-first --classify --color=always'
-alias la='exa --long --time-style=long-iso --group-directories-first --classify --color=always'
-alias ld='exa --grid --only-dirs'
-alias le='exa --long --time-style=long-iso --all --group-directories-first --classify --sort=extension --color=always'
-alias ll='exa --long --time-style=long-iso --all --group-directories-first --classify --color=always'
-alias lt='exa --long --time-style=long-iso --all --sort=time --classify --color=always'
-alias ltree='exa --tree --all --group-directories-first --classify --color=always'
-alias ltree2='exa --tree --level 2 --all --group-directories-first --classify --color=always'
+alias xx='xl'
+alias xs='exa --grid --group-directories-first --classify --color=always'
+alias xa='exa --long --time-style=long-iso --group-directories-first --classify --color=always'
+alias xd='exa --grid --only-dirs'
+alias xe='exa --long --time-style=long-iso --all --group-directories-first --classify --sort=extension --color=always'
+alias xl='exa --long --time-style=long-iso --all --group-directories-first --classify --color=always'
+alias xt='exa --long --time-style=long-iso --all --sort=time --classify --color=always'
+alias xtree='exa --tree --all --group-directories-first --classify --color=always'
+alias xtree2='exa --tree --level 2 --all --group-directories-first --classify --color=always'
 
 # rm more careful
 alias rm='rm -i'
@@ -101,7 +106,7 @@ xxev() {
 alias dosbox='dosbox -conf "$XDG_CONFIG_HOME"/dosbox/dosbox.conf'
 
 # startx
-alias x='startx $XDG_CONFIG_HOME/X11/xinitrc'
+alias stx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 
 
 #################################################
@@ -115,7 +120,7 @@ function mkcd {
 	cd $1
 }
 
-# cd -> cd + ll
+# cd -> cd + exa
 function cd {
     if [ ! "$1" ]; then
         builtin cd $HOME
@@ -124,7 +129,7 @@ function cd {
     fi
     echo -n "PWD -->> "
     pwd;
-    ll;
+    xx;
 }
 
 function suckpatch {

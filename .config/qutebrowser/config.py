@@ -18,6 +18,7 @@ config.load_autoconfig(False)
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
 c.aliases = {'w': 'session-save', 'q': 'close', 'qa': 'quit', 'wq': 'quit --save', 'wqa': 'quit --save'}
+c.aliases = {'readability' : 'spawn --userscript readability-js'}
 
 ## Time interval (in milliseconds) between auto-saves of
 ## config/cookies/etc.
@@ -516,7 +517,7 @@ c.colors.tabs.selected.odd.fg = col_black
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
 ## Type: QtColor
-c.colors.webpage.bg = col_black
+#c.colors.webpage.bg = ''
 
 ## Which algorithm to use for modifying how colors are rendered with
 ## darkmode. The `lightness-cielab` value was added with QtWebEngine 5.14
@@ -715,6 +716,12 @@ c.content.autoplay = False
 ## Type: Bool
 # c.content.blocking.enabled = True
 
+## Block subdomains of blocked hosts. Note: If only a single subdomain is
+## blocked but should be allowed, consider using content.blocking.whitelist
+## instead.
+## Type: Bool
+# content.blocking.hosts.block_subdomains = True
+
 ## List of URLs to host blocklists for the host blocker.  Only used when
 ## the simple host-blocker is used (see `content.blocking.method`).  The
 ## file can be in one of the following formats:  - An `/etc/hosts`-like
@@ -749,7 +756,7 @@ c.content.blocking.method = 'both'
 ## given page, use the `content.blocking.enabled` setting with a URL
 ## pattern instead.
 ## Type: List of UrlPattern
-# c.content.blocking.whitelist = []
+c.content.blocking.whitelist = ['https://geeksforgeeks.org/*']
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -1187,7 +1194,7 @@ c.downloads.position = 'bottom'
 ## Duration (in milliseconds) to wait before removing finished downloads.
 ## If set to -1, downloads are never removed.
 ## Type: Int
-c.downloads.remove_finished = 10
+c.downloads.remove_finished = -1
 
 ## Editor (and arguments) to use for the `edit-*` commands. The following
 ## placeholders are defined:
@@ -1936,7 +1943,7 @@ c.tabs.padding = {'top': 2, 'bottom': 2, 'left': 5, 'right': 5}
 ##   - prev: Select the tab which came before the closed one (left in horizontal, above in vertical).
 ##   - next: Select the tab which came after the closed one (right in horizontal, below in vertical).
 ##   - last-used: Select the previously selected tab.
-c.tabs.select_on_remove = 'last-used'
+c.tabs.select_on_remove = 'next'
 # TODO: check if alright
 
 ## When to show the tab bar.
@@ -1987,7 +1994,7 @@ c.tabs.title.format = '{audio}{private}{current_title}'
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
 ## Type: FormatString
-c.tabs.title.format_pinned = '{audio}{aligned_index}'
+c.tabs.title.format_pinned = '{audio}'
 
 ## Show tooltips on tabs. Note this setting only affects windows opened
 ## after it has been set.
@@ -2059,7 +2066,7 @@ c.url.default_page = 'file:///home/samyak039/.config/startpages/simpleClock/inde
 ## Type: Dict
 # c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
 c.url.searchengines = {
-    'DEFAULT':'https://google.com/search?q={}',
+    'DEFAULT':'https://duckduckgo.com/?q={}',
          'at':'https://animetosho.org/search?q={}',
         'aur':'https://aur.archlinux.org/packages/?O=0&SeB=nd&K={}&SB=p&SO=d',
          'aw':'https://wiki.archlinux.org/index.php?search={}',
@@ -2124,6 +2131,7 @@ c.url.searchengines = {
 # config.bind('/', 'set-cmd-text /')
 # config.bind(':', 'set-cmd-text :')
 # config.bind(';I', 'hint images tab')
+config.bind(';M', 'hint links userscript stream_in_mpv')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
 # config.bind(';R', 'hint --rapid links window')
 # config.bind(';Y', 'hint links yank-primary')
@@ -2132,6 +2140,7 @@ c.url.searchengines = {
 # config.bind(';f', 'hint all tab-fg')
 # config.bind(';h', 'hint all hover')
 # config.bind(';i', 'hint images')
+config.bind(';m', 'hint links userscript play_in_mpv')
 # config.bind(';o', 'hint links fill :open {hint-url}')
 # config.bind(';r', 'hint --rapid links tab-bg')
 # config.bind(';t', 'hint inputs')
@@ -2146,8 +2155,10 @@ c.url.searchengines = {
 # config.bind('<Alt-8>', 'tab-focus 8')
 # config.bind('<Alt-9>', 'tab-focus -1')
 # config.bind('<Alt-m>', 'tab-mute')
+config.bind('<Alt-r>', 'spawn --userscript readability-js')
 # config.bind('<Ctrl-A>', 'navigate increment')
 # config.bind('<Ctrl-Alt-p>', 'print')
+config.bind('<Ctrl-b>', 'spawn --userscript qute-bitwarden')
 # config.bind('<Ctrl-B>', 'scroll-page 0 -1')
 # config.bind('<Ctrl-D>', 'scroll-page 0 0.5')
 # config.bind('<Ctrl-F5>', 'reload -f')
@@ -2157,6 +2168,9 @@ c.url.searchengines = {
 # config.bind('<Ctrl-PgUp>', 'tab-prev')
 # config.bind('<Ctrl-Q>', 'quit')
 # config.bind('<Ctrl-Return>', 'selection-follow -t')
+config.bind('<Ctrl-m>', 'spawn --userscript play_in_mpv')
+config.bind('<Ctrl-Shift-b>', 'spawn --userscript qute-bitwarden -w')
+config.bind('<Ctrl-Shift-m>', 'spawn --userscript stream_in_mpv')
 # config.bind('<Ctrl-Shift-N>', 'open -p')
 # config.bind('<Ctrl-Shift-T>', 'undo')
 # config.bind('<Ctrl-Shift-Tab>', 'nop')
@@ -2165,7 +2179,6 @@ c.url.searchengines = {
 # config.bind('<Ctrl-Tab>', 'tab-focus last')
 # config.bind('<Ctrl-U>', 'scroll-page 0 -0.5')
 config.unbind('<Ctrl-V>')
-config.bind('<Shift-Escape>', 'mode-enter passthrough')
 # config.bind('<Ctrl-W>', 'tab-close')
 # config.bind('<Ctrl-X>', 'navigate decrement')
 # config.bind('<Ctrl-^>', 'tab-focus last')
@@ -2178,6 +2191,7 @@ config.bind('<Shift-Escape>', 'mode-enter passthrough')
 # config.bind('<Return>', 'selection-follow')
 # config.bind('<back>', 'back')
 # config.bind('<forward>', 'forward')
+config.bind('<Shift-Escape>', 'mode-enter passthrough')
 # config.bind('=', 'zoom')
 # config.bind('?', 'set-cmd-text ?')
 # config.bind('@', 'macro-run')
@@ -2380,6 +2394,8 @@ config.bind('<Shift-Escape>', 'mode-enter passthrough')
 # config.bind('<Return>', 'hint-follow', mode='hint')
 
 ## Bindings for insert mode
+config.bind('<Ctrl+b>', 'spawn --userscript qute-bitwarden', mode='insert')
+config.bind('<Ctrl+Shift+b>', 'spawn --userscript qute-bitwarden -w', mode='insert')
 # config.bind('<Ctrl-E>', 'edit-text', mode='insert')
 # config.bind('<Escape>', 'mode-leave', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text -- {primary}', mode='insert')
@@ -2425,3 +2441,7 @@ config.bind('<Shift-Escape>', 'mode-enter passthrough')
 # config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
+
+## UNBIND
+config.unbind('Meta-J')
+config.unbind('Meta-K')

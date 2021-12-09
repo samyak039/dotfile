@@ -66,6 +66,7 @@ command! W execute 'w !doas -u root -- tee > /dev/null %' <bar> edit!
 inoremap {{ {<esc>o}<esc>O
 nnoremap <silent> < v<
 nnoremap <silent> > v>
+nnoremap <silent> Y y$
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
 
@@ -89,7 +90,6 @@ nnoremap <A-p> :tabprevious<CR>
 "nnoremap <A-'> :wqa<CR>
 nnoremap <A-s> :%s//gI<Left><Left><Left>
 nnoremap <A-w> :w!<CR>
-nnoremap <A-y> :%y<CR>
 
 "inoremap '' ''<left>
 "inoremap "" ""<left>
@@ -138,5 +138,3 @@ augroup competitiveProgramming
     nnoremap <A-w :w<CR>
 augroup end
 
-
-lua require('plugin')

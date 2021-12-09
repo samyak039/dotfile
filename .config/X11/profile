@@ -27,7 +27,9 @@
 # path variable
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
 
-
+# locale
+export LANG="en_IN.UTF-8"
+export LC_COLLATE="C"
 # ssh
 eval `ssh-agent -s`
 ssh-add "$HOME"/.ssh/id_rsa_zer039
@@ -39,12 +41,14 @@ trap 'kill $SSH_AGENT_PID' EXIT
 
 export BROWSER="qutebrowser"
 export EDITOR="nvim"
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
+#export MANPAGER="nvim -c 'set ft=man' -"
 export READER="zathura"
 export TERM="st-256color"
 export TERMINAL="st"
 
 export XDG_SESSION_TYPE=X11
+export $(dbus-launch)
 
 ####################################################################################################
 #       _HOME DIR CLEAN UP
@@ -59,6 +63,7 @@ export BIN=$XDG_BIN_HOME
 export CONFIG=$XDG_CONFIG_HOME
 export CACHE=$XDG_CACHE_HOME
 export DATA=$XDG_DATA_HOME
+export PROG="$HOME/.local/program"
 
 export ZDOTDIR="$CONFIG/zsh"
 
@@ -80,6 +85,7 @@ export NVM_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nvm"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/password-store"
 export STACK_ROOT="$XDG_DATA_HOME/stack"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
 export UNISON="${XDG_DATA_HOME:-$HOME/.local/share}/unison"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority" # This line will break some DMs.
@@ -89,6 +95,10 @@ export DRACULA_THEME="$CONFIG/dracula-theme"
 ####################################################################################################
 #       _EXTRA
 ####################################################################################################
+
+# private 
+## IFTTT_WEBHOOK
+source $DATA/privateVAR
 
 # macOS
 export MACOS="$HOME/xyz/macOS-Simple-KVM"
@@ -126,4 +136,5 @@ export LF_ICONS="\ tw=:\ st=:\ ow=:\ dt=:\ di=:\ fi=:\ ln=:
 ####################################################################################################
 
 # auto run xinit on tty1 after login
-[[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"

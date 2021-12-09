@@ -50,14 +50,18 @@ source /usr/share/zsh/share/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle adb
+antigen bundle branch
 antigen bundle command-not-found
 antigen bundle copydir
 antigen bundle copyfile
+antigen bundle cp
 antigen bundle dircycle
 antigen bundle extract; alias ex=extract
-antigen bundle history
 antigen bundle history-substring-search
+antigen bundle man
 antigen bundle rand-quote
+antigen bundle thefuck
 antigen bundle vi-mode
 antigen bundle spectrum
 

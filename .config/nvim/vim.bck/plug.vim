@@ -110,9 +110,6 @@ let g:vim_markdown_conceal_code_blocks = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
-"" sainnhe/gruvbox-material
-let g:gruvbox_material_palette = 'original'
-
 "" scrooloose/syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -173,6 +170,7 @@ hi VimwikiHeader4 guifg=#FE8019 gui=bold
 hi VimwikiHeader5 guifg=#B8BB26 gui=bold
 hi VimwikiHeader6 guifg=#FABD2F gui=bold
 
+
 "" Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_defaultGroup = 'SpecialKey'
@@ -191,11 +189,11 @@ call plug#begin('$DATA/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 "Plug 'andymass/vim-matlab'
-"--Plug 'arcticicestudio/nord-vim'
-"--Plug 'dracula/vim', {'as':'dracula'}
+Plug 'arcticicestudio/nord-vim'
+Plug 'dracula/vim', {'as':'dracula'}
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
-"--Plug 'lilydjwg/colorizer'
+Plug 'lilydjwg/colorizer'
 Plug 'luochen1990/rainbow'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
@@ -205,7 +203,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'preservim/nerdtree'
 Plug 'preservim/tagbar'
 Plug 'ryanoasis/vim-devicons'
-Plug 'sainnhe/gruvbox-material'
 Plug 'sheerun/vim-polyglot'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-eunuch'
@@ -218,6 +215,6 @@ Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
-"--Plug 'yggdroot/indentLine'
+Plug 'yggdroot/indentLine'
 
 call plug#end()

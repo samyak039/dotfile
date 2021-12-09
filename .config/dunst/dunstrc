@@ -1,3 +1,5 @@
+# See dunst(5) for all configuration options
+
 [global]
     ### Display ###
 
@@ -17,21 +19,32 @@
     # will be ignored.
     follow = none
 
-    # The geometry of the window:
-    #   [{width}]x{height}[+/-{x}+/-{y}]
-    # The geometry of the message window.
-    # The height is measured in number of notifications everything else
-    # in pixels.  If the width is omitted but the height is given
-    # ("-geometry x2"), the message window expands over the whole screen
-    # (dmenu-like).  If width is 0, the window expands to the longest
-    # message displayed.  A positive x is measured from the left, a
-    # negative from the right side of the screen.  Y is measured from
-    # the top and down respectively.
-    # The width can be negative.  In this case the actual width is the
-    # screen width minus the width defined in within the geometry option.
-    geometry = "-20x0+10+10"
+    ### Geometry ###
 
-    # Turn on the progess bar
+    # dynamic width from 0 to 300
+    # width = (0, 300)
+    # constant width of 300
+    width = (300,1800)
+
+    # The maximum height of a single notification, excluding the frame.
+    height = 300
+
+    # Position the notification in the top right corner
+    origin = top-center
+
+    # Offset from the origin
+    offset = 0x30
+
+    # Scale factor. It is auto-detected if value is 0.
+    scale = 0
+
+    # Maximum number of notification (0 means no limit)
+    notification_limit = 5
+
+    ### Progress bar ###
+
+    # Turn on the progess bar. It appears when a progress hint is passed with
+    # for example dunstify -h int:value:12
     progress_bar = true
 
     # Set the progress bar height. This includes the frame, so make sure
@@ -47,40 +60,33 @@
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
 
-    # Show how many messages are currently hidden (because of geometry).
-    indicate_hidden = yes
 
-    # Shrink window if it's smaller than the width.  Will be ignored if
-    # width is 0.
-    shrink = yes
+    # Show how many messages are currently hidden (because of
+    # notification_limit).
+    indicate_hidden = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
     transparency = 0
 
-    # The height of the entire notification.  If the height is smaller
-    # than the font height and padding combined, it will be raised
-    # to the font height and padding.
-    notification_height = 0
-
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 1
+    separator_height = 2
 
     # Padding between text and separator.
     padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 20
 
     # Padding between text and icon.
     text_icon_padding = 0
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 1
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
     frame_color = "#ebdbb2"
@@ -145,7 +151,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b> -- %p%b"
+    format = "%a -- <b>%s</b>\n%p%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -169,7 +175,7 @@
     ellipsize = middle
 
     # Ignore newlines '\n' in notifications.
-    ignore_newline = no
+    ignore_newline = yes
 
     # Stack together notifications with the same content
     stack_duplicates = true
@@ -183,15 +189,15 @@
     ### Icons ###
 
     # Align icons left/right/off
-    icon_position = left
+    icon_position = off
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 0
+    min_icon_size = 16
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 0
+    max_icon_size = 32
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -203,7 +209,7 @@
     sticky_history = yes
 
     # Maximum amount of notifications kept in history
-    history_length = 20
+    history_length = 100
 
     ### Misc/Advanced ###
 
@@ -211,7 +217,7 @@
     dmenu = /usr/local/bin/dmenu -l 5 -c -bw 5 -p dunst
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/qutebrowser
+    browser = /home/samyak039/.local/bin/qutebrowser
 
     # Always run rule-defined scripts, even if the notification is suppressed
     always_run_script = true
@@ -221,20 +227,6 @@
 
     # Define the class of the windows spawned by dunst
     class = Dunst
-
-    # Print a notification on startup.
-    # This is mainly for error detection, since dbus (re-)starts dunst
-    # automatically after a crash.
-    startup_notification = false
-
-    # Manage dunst's desire for talking
-    # Can be one of the following values:
-    #  crit: Critical features. Dunst aborts
-    #  warn: Only non-fatal warnings
-    #  mesg: Important Messages
-    #  info: all unimportant stuff
-    # debug: all less than unimportant stuff
-    verbosity = mesg
 
     # Define the corner radius of the notification window
     # in pixel size. If the radius is 0, you have no rounded
@@ -282,9 +274,9 @@
     # * close_all: Close all notifications.
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
-    mouse_left_click = do_acion,close_current
+    mouse_left_click = close_current
     mouse_middle_click = close_all
-    mouse_right_click = close_all
+    mouse_right_click = do_action
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
@@ -294,7 +286,7 @@
     # dunst will attempt to calculate an appropriate dpi value for each monitor
     # using the resolution and physical size. This might be useful in setups
     # where there are multiple screens with very different dpi values.
-    per_monitor_dpi = false
+    per_monitor_dpi = true
 
 # The internal keyboard shortcut support in dunst is now considered deprecated
 # and should be replaced by dunstctl calls. You can use the configuration of your
@@ -309,19 +301,19 @@
 
     # Close notification. Equivalent dunstctl command:
     # dunstctl close
-    close = ctrl+space
+    #close = ctrl+space
 
     # Close all notifications. Equivalent dunstctl command:
     # dunstctl close-all
-    close_all = ctrl+shift+space
+    #close_all = ctrl+shift+space
 
     # Redisplay last message(s). Equivalent dunstctl command:
     # dunstctl history-pop
-    history = ctrl+grave
+    #history = ctrl+grave
 
     # Context menu. Equivalent dunstctl command:
     # dunstctl context
-    context = ctrl+shift+period
+    #context = ctrl+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -337,7 +329,7 @@
     background = "#282828"
     foreground = "#ebdbb2"
     frame_color = "#ebdbb2"
-    timeout = 30
+    timeout = 60
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
@@ -392,6 +384,16 @@
 # to "".
 # NOTE: It might be helpful to run dunst -print in a terminal in order
 # to find fitting options for rules.
+
+# quick timeout for spotify
+[spotify]
+    appname = Spotify
+    timeout = 2
+
+# quick timeout for Trakt Scrobber
+#[trakt-scrobbler]
+#    match_appname = 'Trakt'
+#    timeout = 1
 
 # Disable the transient hint so that idle_threshold cannot be bypassed from the
 # client
