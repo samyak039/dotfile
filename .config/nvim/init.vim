@@ -123,8 +123,8 @@ augroup competitiveProgramming
     autocmd! competitiveProgramming
     " boiler plate
     autocmd Filetype c nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/c_lang.c<CR>/<++><CR>cc
-    autocmd Filetype cpp nnoremap <A-i> :-1read ~/.local/share/boiler_plate/c_plus_plus.cc<CR>/<++><CR>cc
-    autocmd Filetype sh nnoremap <A-i> :-1read ~/.local/share/boiler_plate/shell.sh<CR>/<++><CR>cc
+    autocmd Filetype cpp nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/c_plus_plus.cc<CR>/<++><CR>cc
+    autocmd Filetype sh nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/shell.sh<CR>/<++><CR>cc
     " for compiling
     autocmd Filetype c nnoremap <A-c> :!gcc -o %:r %<CR>
     autocmd Filetype cpp nnoremap <A-c> :!g++ -o %:r %<CR>

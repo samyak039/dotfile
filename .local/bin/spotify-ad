@@ -1,3 +1,2 @@
 #!/bin/sh
-export LD_PRELOAD=/usr/local/lib/spotify-adblock.so
-exec /opt/spotify/spotify 
+env LD_PRELOAD=/usr/lib/spotify-adblock.so /opt/spotify/spotify 

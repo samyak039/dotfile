@@ -2441,7 +2441,3 @@ config.bind('<Ctrl+Shift+b>', 'spawn --userscript qute-bitwarden -w', mode='inse
 # config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 # config.bind('n', 'prompt-accept no', mode='yesno')
 # config.bind('y', 'prompt-accept yes', mode='yesno')
-
-## UNBIND
-config.unbind('Meta-J')
-config.unbind('Meta-K')

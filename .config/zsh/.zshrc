@@ -82,4 +82,7 @@ antigen apply
 source $CONFIG/aliasrc
 source $ZDOTDIR/prompt
 
+# z-cd | https://github.com/ajeetdsouza/zoxide
+eval "$(zoxide init zsh)"
+
 #eval "$(starship init zsh)"

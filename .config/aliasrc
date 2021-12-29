@@ -69,6 +69,7 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 alias yay='yay --sudo /usr/bin/doas'
 
 # changing "ls" to "exa"
+alias exa='exa --icons'
 alias xx='xl'
 alias xs='exa --grid --group-directories-first --classify --color=always'
 alias xa='exa --long --time-style=long-iso --group-directories-first --classify --color=always'
@@ -85,6 +86,8 @@ alias rm='rm -i'
 # keyboard shit
 alias amma="setxkbmap -layout us -option"
 alias setkeeb="setxkbmap -model 'pc104' -layout 'us,us,us' -variant 'dvp,dvorak,' -option 'grp:alt_space_toggle,grp_led:caps,grp_led:scroll,caps:backspace,shift:both_capslock_cancel,rupeesign:i1,terminate:ctrl_alt_bksp,altwin:swap_lalt_lwin' && xmodmap -e 'clear Lock'"
+
+alias spot="spotdl -p '{artist}/{album}/{title}.{ext}' --m3u"
 
 # nordvpn -> vpn
 alias vpn="doas protonvpn"
