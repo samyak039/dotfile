@@ -1,6 +1,9 @@
 !! default font
 *.font: Fira code Nerd Font:size=11
 
+!! default cursor
+Xcursor.theme: Bibata-Modern-Ice
+
 !! GRUVBOX DARK
 *background: #1d2021
 ! medium contrash: *background: #282828

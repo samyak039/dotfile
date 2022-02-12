@@ -16,5 +16,5 @@ UUID=d097df8a-6348-43dd-892d-2d70583bbdbd	/home     				ext4		rw,relatime							
 UUID=6765031873795F6B						/home/samyak039/image	ntfs-3g		uid=1000,gid=1000,umask=022,dmask=022,fmask=133																0		0
 
 # /dev/sda5 LABEL=shitOS
-UUID=D278E9A378E98697						/shitos   				ntfs-3g    	ro,nosuid,nodev,user_id=0,group_id=0,allow_other,blksize=4096												0		0
+#UUID=D278E9A378E98697						/shitos   				ntfs-3g    	ro,nosuid,nodev,user_id=0,group_id=0,allow_other,blksize=4096												0		0
 

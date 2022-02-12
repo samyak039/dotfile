@@ -26,6 +26,7 @@
 
 # path variable
 export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+export PATH="$PATH:$(du "$HOME/.local/script" | cut -f2 | paste -sd ':')"
 
 # locale
 export LANG="en_IN.UTF-8"
@@ -96,6 +97,9 @@ export DRACULA_THEME="$CONFIG/dracula-theme"
 #       _EXTRA
 ####################################################################################################
 
+# Bitwarden
+export BW_SESSION="yKnWy0eKevH42GDqxPxCSnYoQKveJh1SIhNauz6+I19aFT9R+uqQ+6V+KNjlZ0p8NWAhAQKh0XfOAjQjjv2vlw=="
+
 # private 
 ## IFTTT_WEBHOOK
 source $DATA/privateVAR
@@ -105,6 +109,7 @@ export MACOS="$HOME/xyz/macOS-Simple-KVM"
 
 # Android Studio in DWM
 export _JAVA_AWT_WM_NONREPARENTING=1
+export CHROME_EXECUTABLE='/usr/bin/brave'
 
 # colorful LESS
 export LESSHISTFILE=-

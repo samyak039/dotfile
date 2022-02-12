@@ -35,18 +35,21 @@ alias cfzsh='$EDITOR $CONFIG/zsh/.zshrc'
 
 alias 5sem='cd $HOME/wiki/college/5sem'
 
+alias batman='export MANPAGER="bat -p" && man'
+alias dfh='df -h'                                            # human readable format
 alias doas='doas --'
 alias doom='$XDG_DATA_HOME/doom-emacs/bin/doom'
-alias dfh='df -h'                                            # human readable format
 alias duh='du -h'
-alias s='du -h -s * | sort -hr | head'
-alias ss='du -h -s .* | sort -hr | head'
 alias grep='grep --color=auto'
 alias h='history'
 alias hg='history | rg'
 alias hgi='history | rg -i'
+alias s='du -h -s * | sort -hr | head'
+alias ss='du -h -s .* | sort -hr | head'
 #alias sxiv='sxiv-rifle'
-alias batman='export MANPAGER="bat -p" && man'
+
+# ledger-cli
+alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
 
 #alias cat='ccat'                                            # colorised cat
 alias restart-qtile='qshell-cmd -o cmd -f restart'          # restart qtile
@@ -71,14 +74,15 @@ alias yay='yay --sudo /usr/bin/doas'
 # changing "ls" to "exa"
 alias exa='exa --icons'
 alias xx='xl'
-alias xs='exa --grid --group-directories-first --classify --color=always'
 alias xa='exa --long --time-style=long-iso --group-directories-first --classify --color=always'
 alias xd='exa --grid --only-dirs'
 alias xe='exa --long --time-style=long-iso --all --group-directories-first --classify --sort=extension --color=always'
+alias xg='exa --long --group --time-style=long-iso --all --group-directories-first --classify --color=always'
 alias xl='exa --long --time-style=long-iso --all --group-directories-first --classify --color=always'
+alias xs='exa --grid --group-directories-first --classify --color=always'
 alias xt='exa --long --time-style=long-iso --all --sort=time --classify --color=always'
-alias xtree='exa --tree --all --group-directories-first --classify --color=always'
 alias xtree2='exa --tree --level 2 --all --group-directories-first --classify --color=always'
+alias xtree='exa --tree --all --group-directories-first --classify --color=always'
 
 # rm more careful
 alias rm='rm -i'
