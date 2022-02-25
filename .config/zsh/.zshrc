@@ -53,7 +53,7 @@ antigen use oh-my-zsh
 antigen bundle adb
 antigen bundle branch
 antigen bundle command-not-found
-antigen bundle copydir
+antigen bundle copypath
 antigen bundle copyfile
 antigen bundle cp
 antigen bundle dircycle
@@ -79,10 +79,10 @@ antigen apply
 ################################################################################
 #   MY-CONFIG
 ################################################################################
-source $CONFIG/aliasrc
-source $ZDOTDIR/prompt
+source "${XDG_CONFIG_HOME:-$HOME/.config}"/aliasrc
+#source $ZDOTDIR/prompt
 
 # z-cd | https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"

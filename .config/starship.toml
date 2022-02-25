@@ -1,0 +1,115 @@
+############
+# starship #
+############
+
+add_newline = false
+
+format = """
+$jobs\
+$shell\
+$memory_usage\
+$hostname\
+$username\
+$directory\
+$status\
+$character\
+"""
+
+right_format = """$all"""
+
+[line_break]
+disabled = true
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[X](bold red)"
+vicmd_symbol = "[<](bold yellow)"
+
+[cmd_duration]
+format = "[ﮫ$duration]($style)"
+show_notifications = true
+
+[directory]
+#truncation_length = "1"
+truncation_symbol = "…/"
+fish_style_pwd_dir_length = "1"
+
+[jobs]
+symbol = "✦"
+
+[shell]
+disabled = false
+zsh_indicator = ""
+
+[shlvl]
+disabled = false
+threshold = 3
+
+[status]
+disabled = false
+symbol = " "
+map_symbol = true
+sigint_symbol = "ﳼ "
+
+##########
+# system #
+##########
+
+[battery]
+unknown_symbol = " "
+[[battery.display]]
+threshold = 10
+style = "bold red"
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+[[battery.display]]
+threshold = 30
+style = "bold"
+
+[hostname]
+format = "[$hostname]($style)@"
+
+[memory_usage]
+disabled = false
+symbol = ""
+format = "$symbol [${ram_pct}|(${swap_pct})]($style) "
+
+[username]
+#format = "$[user]($style) "
+format = "[$user]($style) "
+
+###############
+# development #
+###############
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[dart]
+symbol = " "
+format = "[$symbol($version)]($style) "
+
+[java]
+symbol = " "
+style = "red"
+format = "[$symbol($version)]($style) "
+
+[kotlin]
+format = "[$symbol($version)]($style) "
+
+[lua]
+format = "[$symbol($version)]($style) "
+
+[package]
+symbol = ""
+format = "[$symbol $version]($style) "
+
+[python]
+symbol = ""
+format = "[$symbol($version)]($style) "
+
+[rust]
+symbol = ""
+format = "[$symbol($version)]($style) "

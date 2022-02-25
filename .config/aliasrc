@@ -57,6 +57,7 @@ alias shit='fuck'                                           # sfw of fuck
 
 # nvim
 alias v='nvim'
+alias t='crt'
 
 # advanced cp, mv
 alias c='$HOME/.local/bin/advcp -ig'
