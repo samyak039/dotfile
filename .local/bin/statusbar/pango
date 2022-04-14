@@ -1,7 +1,0 @@
-#!/bin/sh
-
-printf "<span "
-
-printf "background='green'"
-
-printf ">sample TEXT</span>"

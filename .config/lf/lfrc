@@ -66,14 +66,15 @@ cmd bulkrename ${{
     vidir
 }}
 
-cmd trash ${{
-	clear; tput cup $(($(tput lines)/3)); tput bold
-	set -f
-	printf "%s\n\t" "$fx"
-	printf "trash?[Y/n]"
-	read ans
-	[ -z $ans ] && trash $fx
-}}
+cmd trash %trash-put $fx
+#cmd trash ${{
+#	clear; tput cup $(($(tput lines)/3)); tput bold
+#	set -f
+#	printf "%s\n\t" "$fx"
+#	printf "trash?[Y/n]"
+#	read ans
+#	[ -z $ans ] && trash $fx
+#}}
 
 cmd bulk-rename ${{
     old=$(mktemp)

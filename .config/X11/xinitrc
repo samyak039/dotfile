@@ -30,6 +30,7 @@ sort_download_dir &
 dunst &
 #easyeffects --gapplication-service &
 flameshot &
+flexget-headless daemon start -d
 /usr/lib/kdeconnectd &
 mpDris2 &
 mpd &

@@ -18,3 +18,5 @@ UUID=6765031873795F6B						/home/samyak039/image	ntfs-3g		uid=1000,gid=1000,umas
 # /dev/sda5 LABEL=shitOS
 #UUID=D278E9A378E98697						/shitos   				ntfs-3g    	ro,nosuid,nodev,user_id=0,group_id=0,allow_other,blksize=4096												0		0
 
+# swap file
+/swapfile									none					swap		default	    																								0		0

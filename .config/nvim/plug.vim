@@ -1,8 +1,6 @@
 "" luochen1990/rainbow
 let g:rainbow_active = 1
 
-"" machakann/vim-highlightedyank
-let g:highlightedyank_highlight_duration = 200
 
 "" mbbill/undotree
 let g:undotree_WindowLayout = 4
@@ -111,7 +109,12 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 
 "" sainnhe/gruvbox-material
-let g:gruvbox_material_palette = 'original'
+let g:gruvbox_material_palette = 'material'
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_disable_italic_comment = 1
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_enable_italic = 0
+let g:gruvbox_material_ui_contrast = 'low'
 
 "" scrooloose/syntastic
 "set statusline+=%#warningmsg#
@@ -131,7 +134,7 @@ let NERDTreeLimitedSyntax = 1
 "" vim-airline/vim-airline
 "set showtabline=1
 set noshowmode
-let g:airline_theme='gruvbox'
+let g:airline_theme='gruvbox_material'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 1
 let g:airline#extensions#tabline#show_buffers = 1
@@ -190,17 +193,17 @@ call plug#begin('$DATA/nvim/plugged')
 "Plug 'samyak039/nerdtree'
 
 Plug 'airblade/vim-gitgutter'
-"Plug 'andymass/vim-matlab'
+"--Plug 'andymass/vim-matlab'
 "--Plug 'arcticicestudio/nord-vim'
+Plug 'dhruvasagar/vim-table-mode'
 "--Plug 'dracula/vim', {'as':'dracula'}
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim'
 "--Plug 'lilydjwg/colorizer'
 Plug 'ledger/vim-ledger'
 Plug 'luochen1990/rainbow'
-Plug 'machakann/vim-highlightedyank'
 Plug 'mbbill/undotree'
-Plug 'morhetz/gruvbox'
+"--Plug 'morhetz/gruvbox'
 Plug 'philrunninger/nerdtree-visual-selection'
 Plug 'plasticboy/vim-markdown'
 Plug 'preservim/nerdtree'
@@ -213,11 +216,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
+Plug 'tridactyl/vim-tridactyl'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/restore_view.vim'
-Plug 'vimwiki/vimwiki'
+"--Plug 'vimwiki/vimwiki'
 Plug 'wakatime/vim-wakatime'
 "--Plug 'yggdroot/indentLine'
 

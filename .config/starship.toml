@@ -2,8 +2,6 @@
 # starship #
 ############
 
-add_newline = false
-
 format = """
 $jobs\
 $shell\
@@ -17,6 +15,10 @@ $character\
 
 right_format = """$all"""
 
+#command_timeout = 1_000
+
+add_newline = false
+
 [line_break]
 disabled = true
 
@@ -28,11 +30,14 @@ vicmd_symbol = "[<](bold yellow)"
 [cmd_duration]
 format = "[ﮫ$duration]($style)"
 show_notifications = true
+notification_timeout = 2_000
+
 
 [directory]
 #truncation_length = "1"
+style = "cyan"
 truncation_symbol = "…/"
-fish_style_pwd_dir_length = "1"
+#fish_style_pwd_dir_length = "1"
 
 [jobs]
 symbol = "✦"
@@ -100,6 +105,10 @@ format = "[$symbol($version)]($style) "
 format = "[$symbol($version)]($style) "
 
 [lua]
+format = "[$symbol($version)]($style) "
+
+[nodejs]
+symbol = " "
 format = "[$symbol($version)]($style) "
 
 [package]

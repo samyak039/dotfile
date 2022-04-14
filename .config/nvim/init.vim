@@ -22,7 +22,7 @@
 "---------------------------------------------------------------------------------------------------
 if !exists('g:vscode')
     source ~/.config/nvim/plug.vim
-    colorscheme gruvbox
+    colorscheme gruvbox-material
 endif
 
 set background=dark
@@ -124,9 +124,9 @@ augroup end
 augroup competitiveProgramming
     autocmd! competitiveProgramming
     " boiler plate
-    autocmd Filetype c nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/c_lang.c<CR>/<++><CR>cc
-    autocmd Filetype cpp nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/c_plus_plus.cc<CR>/<++><CR>cc
-    autocmd Filetype sh nnoremap <A-i> :-1 read ~/.local/share/boiler_plate/shell.sh<CR>/<++><CR>cc
+    autocmd Filetype c nnoremap <A-i> :-1 read ~/template/c.c<CR>/<++><CR>cc
+    autocmd Filetype cpp nnoremap <A-i> :-1 read ~/template/cpp.cpp<CR>/<++><CR>cc
+    autocmd Filetype sh nnoremap <A-i> :-1 read ~/template/sh.sh<CR>/<++><CR>cc
     " for compiling
     autocmd Filetype c nnoremap <A-c> :!gcc -o %:r %<CR>
     autocmd Filetype cpp nnoremap <A-c> :!g++ -o %:r %<CR>
@@ -135,7 +135,7 @@ augroup competitiveProgramming
     autocmd Filetype sh nnoremap <A-r> :!time bash %<CR>
     " for running with TESTCASES
     autocmd Filetype c,cpp nnoremap <A-t> :!for f in in*.txt; do echo "\n$f\n======="; time ./%:r < $f; done<CR>
-    autocmd Filetype sh nnoremap <A-t> :!for f in *_test; do echo "\n$f\n======="; time bash % < $f; done<CR>
+    autocmd Filetype sh nnoremap <A-t> :!for f in in*.txt; do echo "\n$f\n======="; time bash % < $f; done<CR>
     " for convinence
     nnoremap <A-w :w<CR>
 augroup end

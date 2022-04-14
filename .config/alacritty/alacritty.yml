@@ -34,19 +34,33 @@ scrolling:
 tabspaces: 4
 
 font:
+### FiraCode
+  #normal:
+  #  family: Fira Code Nerd Font
+  #  style: Regular
+  #bold:
+  #  family: Fira Code Nerd Font
+  #  style: Bold
+  #italic:
+  #  family: Fira Code Nerd Font
+  #  style: Italic
+  #bold_italic:
+  #  family: Fira Code Nerd Font
+  #  style: Bold Italic
+## Mononoki
   normal:
-    family: Fira Code Nerd Font
+    family: Mononoki Nerd Font
     style: Regular
   bold:
-    family: Fira Code Nerd Font
+    family: Mononoki Nerd Font
     style: Bold
   italic:
-    family: Fira Code Nerd Font
+    family: Mononoki Nerd Font
     style: Italic
   bold_italic:
-    family: Fira Code Nerd Font
+    family: Mononoki Nerd Font
     style: Bold Italic
-  size: 10
+  size: 11
   offset:
     x: 0
     y: 0
@@ -132,7 +146,7 @@ colors:
 #    program: notify-send
 #    args: ["Hello, World!"]
 
-background_opacity: 1.0
+window.opacity: 1.0
 
 selection:
 #  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

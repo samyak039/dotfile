@@ -63,6 +63,8 @@ alias t='crt'
 alias c='$HOME/.local/bin/advcp -ig'
 alias m='$HOME/.local/bin/advmv -ig'
 
+alias vs.='codium .'
+
 # [pac]kage-[man]ager
 alias pacman='pacman --color auto'                     # pacman colored and auto-sudo
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"

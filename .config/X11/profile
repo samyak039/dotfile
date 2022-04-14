@@ -25,8 +25,18 @@
 ####################################################################################################
 
 # path variable
-export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
-export PATH="$PATH:$(du "$HOME/.local/script" | cut -f2 | paste -sd ':')"
+#export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':')"
+#export PATH="$PATH:$(du "$HOME/.local/script" | cut -f2 | paste -sd ':')"
+export PATH="${PATH}:${HOME}/.local/bin/"
+export PATH="${PATH}:${HOME}/.local/bin/luke_smith"
+export PATH="${PATH}:${HOME}/.local/bin/statusbar"
+export PATH="${PATH}:${HOME}/.local/bin/vim-wiki"
+export PATH="${PATH}:${HOME}/.local/script"
+export PATH="${PATH}:${HOME}/.local/script/crt"
+export PATH="${PATH}:${HOME}/.local/script/statusbar"
+export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/cmdline-tools/latest/bin"
+export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/emulator"
+export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doom-emacs/bin"
 
 # locale
 export LANG="en_IN.UTF-8"
@@ -40,7 +50,7 @@ trap 'kill $SSH_AGENT_PID' EXIT
 #       _DEFAULT PROGRAMS
 ####################################################################################################
 
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 export EDITOR="nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 #export MANPAGER="nvim -c 'set ft=man' -"
@@ -65,6 +75,7 @@ export CONFIG=$XDG_CONFIG_HOME
 export CACHE=$XDG_CACHE_HOME
 export DATA=$XDG_DATA_HOME
 export PROG="$HOME/.local/program"
+export SCRIPT="$HOME/.local/script"
 
 export ZDOTDIR="$CONFIG/zsh"
 
