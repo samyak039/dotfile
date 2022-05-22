@@ -1,0 +1,6 @@
+[submodule ".local/share/emacs"]
+	path = .local/share/emacs
+	url = git@github.com:plexus/chemacs2.git
+[submodule ".local/share/doom-emacs"]
+	path = .local/share/doom-emacs
+	url = git@github.com:doomemacs/doomemacs.git
