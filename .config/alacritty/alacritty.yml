@@ -35,31 +35,31 @@ tabspaces: 4
 
 font:
 ### FiraCode
-  #normal:
-  #  family: Fira Code Nerd Font
-  #  style: Regular
-  #bold:
-  #  family: Fira Code Nerd Font
-  #  style: Bold
-  #italic:
-  #  family: Fira Code Nerd Font
-  #  style: Italic
-  #bold_italic:
-  #  family: Fira Code Nerd Font
-  #  style: Bold Italic
-## Mononoki
   normal:
-    family: Mononoki Nerd Font
+    family: Fira Code Nerd Font
     style: Regular
   bold:
-    family: Mononoki Nerd Font
+    family: Fira Code Nerd Font
     style: Bold
   italic:
-    family: Mononoki Nerd Font
+    family: Fira Code Nerd Font
     style: Italic
   bold_italic:
-    family: Mononoki Nerd Font
+    family: Fira Code Nerd Font
     style: Bold Italic
+  ### Mononoki
+  #  normal:
+  #    family: Mononoki Nerd Font
+  #    style: Regular
+  #  bold:
+  #    family: Mononoki Nerd Font
+  #    style: Bold
+  #  italic:
+  #    family: Mononoki Nerd Font
+  #    style: Italic
+  #  bold_italic:
+  #    family: Mononoki Nerd Font
+  #    style: Bold Italic
   size: 11
   offset:
     x: 0
@@ -267,6 +267,10 @@ key_bindins:
   - { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
   - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
+
+  # CUSTOM
+  - { key: Y,   mods: Alt|Shift,    mode: ~Vi,    action: Copy }
+  - { key: P,   mods: Alt|Shift,    mode: ~Vi,    action: Paste }
 
 #debug:
 #  render_timer: false

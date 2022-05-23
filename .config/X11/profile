@@ -36,14 +36,14 @@ export PATH="${PATH}:${HOME}/.local/script/crt"
 export PATH="${PATH}:${HOME}/.local/script/statusbar"
 export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/cmdline-tools/latest/bin"
 export PATH="${PATH}:${ANDROID_HOME:-/opt/android-sdk}/emulator"
-export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doom-emacs/bin"
+export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doomemacs/bin"
 
 # locale
 export LANG="en_IN.UTF-8"
 export LC_COLLATE="C"
 # ssh
 eval `ssh-agent -s`
-ssh-add "$HOME"/.ssh/id_rsa_zer039
+ssh-add "$HOME"/.ssh/id_ed25519_github
 trap 'kill $SSH_AGENT_PID' EXIT
 
 ####################################################################################################
@@ -152,5 +152,5 @@ export LF_ICONS="\ tw=:\ st=:\ ow=:\ dt=:\ di=:\ fi=:\ ln=:
 ####################################################################################################
 
 # auto run xinit on tty1 after login
-[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx
-#[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+#[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z "${DISPLAY}" ]] && [[ $XDG_VTNR -eq 1 ]] && exec startx "$XDG_CONFIG_HOME/X11/xinitrc"

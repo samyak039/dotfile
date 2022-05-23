@@ -1,0 +1,6 @@
+[Added Associations]
+x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;
+
+[Default Applications]
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;

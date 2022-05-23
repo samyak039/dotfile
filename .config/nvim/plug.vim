@@ -222,7 +222,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/loremipsum'
 Plug 'vim-scripts/restore_view.vim'
 "--Plug 'vimwiki/vimwiki'
-Plug 'wakatime/vim-wakatime'
+"--Plug 'wakatime/vim-wakatime'
 "--Plug 'yggdroot/indentLine'
 
 call plug#end()

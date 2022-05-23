@@ -10,39 +10,44 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
-## dbus
-#if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-#    eval `dbus-launch --sh-syntax --exit-with-session`
-#fi
-
-# priority
+#########################
+# priority applications #
+#########################
 dwmblocks &
 
-# start scripts
+###########
+# scripts #
+###########
 set-display
 set-keymap && sxhkd &
 sort_download_dir &
-# 202020.sh &
 
-# start background application
-#connman-gtk &
+##########################
+# background application #
+##########################
+#cmst &
 #discord --start-minimized &
 dunst &
-#easyeffects --gapplication-service &
+easyeffects --gapplication-service &
+emacs --daemon &
 flameshot &
-flexget-headless daemon start -d
 /usr/lib/kdeconnectd &
-mpDris2 &
-mpd &
+#mpDris2 &
+#mpd &
 nm-applet &
 pcmanfm -d &
-#pipewire &
 redshift &
 syncthing --no-browser &
-trakts run &
 transmission-daemon &
 unclutter --timeout 3 --ignore-scrolling &
 
-# start WM
+################
+# wait and run #
+################
+pidof dwmblocks && aw-qt &
+
+##################
+# Window Manager #
+##################
 exec dwm 2>> $CACHE/dwm.log
 #exec i3 2> $CACHE/i3wm.log

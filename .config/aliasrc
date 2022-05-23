@@ -21,7 +21,7 @@ alias gp='git pull'
 alias gs='git status --short'
 
 # configuration file
-alias cfg='/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME'
 alias cfalias='$EDITOR $CONFIG/aliasrc'
 alias cfdarkreader='$EDITOR $DATA/qutebrowser/greasemonkey/darkreader.js'
 alias cfi3='$EDITOR -p $CONFIG/{i3,i3blocks}/config'

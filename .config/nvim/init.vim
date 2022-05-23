@@ -141,4 +141,4 @@ augroup competitiveProgramming
 augroup end
 
 
-lua require('plugin')
+"lua require('plugin')
