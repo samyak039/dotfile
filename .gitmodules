@@ -7,3 +7,12 @@
 [submodule ".config/spicetify/gitRepo/Volume-Profiles-Spicetify-Extension-v2"]
 	path = .config/spicetify/gitRepo/Volume-Profiles-Spicetify-Extension-v2
 	url = git@github.com:notPlancha/Volume-Profiles-Spicetify-Extension-v2.git
+[submodule "/home/samyak039/.config/emacs"]
+	path = /home/samyak039/.config/emacs
+	url = git@github.com:doomemacs/doomemacs.git
+[submodule ".local/share/doomemacs"]
+	path = .local/share/doomemacs
+	url = git@github.com:doomemacs/doomemacs.git
+[submodule ".local/share/chemacs2"]
+	path = .local/share/chemacs2
+	url = git@github.com:plexus/chemacs2.git
