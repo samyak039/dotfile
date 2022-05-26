@@ -16,3 +16,15 @@
 [submodule ".local/share/chemacs2"]
 	path = .local/share/chemacs2
 	url = git@github.com:plexus/chemacs2.git
+[submodule "code/dwm"]
+	path = code/dwm
+	url = git@github.com:samyak039/dwm.git
+[submodule "code/dmenu"]
+	path = code/dmenu
+	url = git@github.com:samyak039/dmenu.git
+[submodule "code/dwmblocks"]
+	path = code/dwmblocks
+	url = git@github.com:samyak039/dwmblocks.git
+[submodule "code/st"]
+	path = code/st
+	url = git@github.com:samyak039/st.git
