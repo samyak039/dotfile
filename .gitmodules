@@ -28,3 +28,6 @@
 [submodule "code/st"]
 	path = code/st
 	url = git@github.com:samyak039/st.git
+[submodule ".local/scripts"]
+	path = .local/scripts
+	url = git@github.com:samyak039/scripts.git
