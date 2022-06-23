@@ -1,0 +1,33 @@
+
+:root {
+    
+    /*---+---+---+---+---+---+---+
+     | C | O | L | O | U | R | S |
+     +---+---+---+---+---+---+---*/
+     
+     
+    /* Comment this block out if you want to keep the default theme colour. */
+    /* This will also work with custom colours from color.firefox.com. */
+  
+    /* Theme Colour Suggestions
+     *                              Dark        Light   */
+    --window-colour:               #101010; /* #F2E5BC; */
+    --secondary-colour:            #45403d; /* #e0cfa9; */
+    --inverted-colour:             #D4BE98; /* #654735; */
+
+     
+    /* Containter Tab Colours */
+    --uc-identity-color-blue:      #7DAEA3;
+    --uc-identity-color-turquoise: #55E6C1;
+    --uc-identity-color-green:     #A9B665;
+    --uc-identity-color-yellow:    #D8A657;
+    --uc-identity-color-orange:    #E78A4E;
+    --uc-identity-color-red:       #EA6962;
+    --uc-identity-color-pink:      #F78FB3;
+    --uc-identity-color-purple:    #D3869B;
+     
+    
+    /* URL colour in URL bar suggestions */
+    --urlbar-popup-url-color: var(--uc-identity-color-purple) !important;
+     
+}    

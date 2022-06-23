@@ -31,3 +31,15 @@
 [submodule ".local/scripts"]
 	path = .local/scripts
 	url = git@github.com:samyak039/scripts.git
+[submodule ".local/share/librewolf/profile/chrome/cascade"]
+	path = .local/share/librewolf/profile/chrome/cascade
+	url = git@github.com:andreasgrafen/cascade.git
+[submodule ".local/share/librewolf/profile/chrome/Firefox-UI-Fix"]
+	path = .local/share/librewolf/profile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/mozilla/firefox/CustomProfile/chrome/cascade"]
+	path = .local/share/mozilla/firefox/CustomProfile/chrome/cascade
+	url = git@github.com:andreasgrafen/cascade.git
+[submodule ".local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix"]
+	path = .local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
