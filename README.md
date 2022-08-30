@@ -1,1 +1,1 @@
-.config/dotfiles/README.md
+/home/samyak039/.config/dotfile/README.md

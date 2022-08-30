@@ -62,7 +62,7 @@ antigen bundle history-substring-search
 antigen bundle man
 antigen bundle rand-quote
 antigen bundle thefuck
-antigen bundle vi-mode
+# antigen bundle vi-mode
 antigen bundle spectrum
 
 # Syntax highlighting bundle.

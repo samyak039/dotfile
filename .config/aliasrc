@@ -11,6 +11,8 @@
 alias g='git'
 alias ga='git add'
 alias gaa='git add .'
+alias gac='git add . ; git commit --verbose'
+alias gacm='git add . ; git commit --verbose -m'
 alias gb='git branch'
 alias gc='git commit --verbose'
 alias gcm='git commit --verbose -m'
@@ -19,6 +21,7 @@ alias glo='git log --oneline'
 alias gl='git log --graph --date-order --pretty=format:"%C(auto)%w(140,0,8)%h%d %s %Cblue(%cd)" --abbrev-commit --date=relative --branches'
 alias gp='git pull'
 alias gs='git status --short'
+alias gt='git tag'
 
 # configuration file
 alias cfg='/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME'
@@ -38,7 +41,7 @@ alias 5sem='cd $HOME/wiki/college/5sem'
 alias batman='export MANPAGER="bat -p" && man'
 alias dfh='df -h'                                            # human readable format
 alias doas='doas --'
-alias doom='$XDG_DATA_HOME/doom-emacs/bin/doom'
+#alias doom='$XDG_DATA_HOME/doom-emacs/bin/doom'
 alias duh='du -h'
 alias grep='grep --color=auto'
 alias h='history'
@@ -88,7 +91,7 @@ alias xtree2='exa --tree --level 2 --all --group-directories-first --classify --
 alias xtree='exa --tree --all --group-directories-first --classify --color=always'
 
 # rm more careful
-alias rm='rm -i'
+alias rm='rmtrash'
 
 # keyboard shit
 alias amma="setxkbmap -layout us -option"
@@ -166,3 +169,20 @@ function suckpatch {
 alias ktc='kotlinc -include-runtime -d'
 alias ktct='ktc /tmp/run.jar'
 alias javart='java -jar /tmp/run.jar'
+
+# leetcode-cli
+alias ll="leetcode"
+alias lld="leetcode data"
+alias lls="leetcode stat"
+function llp { leetcode pick $q; }
+# function llp {
+#          if [[ -z $q ]]; then
+#             clear
+#             leetcode pick $q
+#          else
+#             echo "--- set \$q ---" >&2
+#          fi
+# }
+function lle { leetcode edit $q; }
+function llt { leetcode test $q; }
+function llx { leetcode exec $q; }

@@ -1,1 +1,0 @@
-chrome/FirefoxUIFix/user.js

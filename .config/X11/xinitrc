@@ -25,15 +25,14 @@ sort_download_dir &
 ##########################
 # background application #
 ##########################
-#cmst &
-#discord --start-minimized &
+# cmst &
+# discord --start-minimized &
 dunst &
 easyeffects --gapplication-service &
 emacs --daemon &
 flameshot &
 /usr/lib/kdeconnectd &
-#mpDris2 &
-#mpd &
+# mpDris2 &
 nm-applet &
 pcmanfm -d &
 redshift &
@@ -41,13 +40,17 @@ syncthing --no-browser &
 transmission-daemon &
 unclutter --timeout 3 --ignore-scrolling &
 
-################
-# wait and run #
-################
-pidof dwmblocks && aw-qt &
+#############
+# huge apps #
+#############
+DeskTime &
+ticktick &
+morgen &
+# thunderbird-beta
 
 ##################
 # Window Manager #
 ##################
 exec dwm 2>> $CACHE/dwm.log
-#exec i3 2> $CACHE/i3wm.log
+
+# exec xmonad 2>> $CACHE/xmonad.log

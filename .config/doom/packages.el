@@ -1,12 +1,17 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
+(package! activity-watch-mode)
+(package! company-prescient)
+(package! company-lsp)
+(package! crontab-mode)
+(package! doas-edit
+  :recipe (:host github :repo "cemkeylan/doas-edit"))
+(package! treemacs-all-the-icons)
+
 ;; To install a package with Doom you must declare them here and run 'doom sync'
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
-
-(package! crontab-mode)
-(package! activity-watch-mode)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)

@@ -43,3 +43,18 @@
 [submodule ".local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix"]
 	path = .local/share/mozilla/firefox/CustomProfile/chrome/Firefox-UI-Fix
 	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/librewolf/profile/chrome/FlyingFox"]
+	path = .local/share/librewolf/profile/chrome/FlyingFox
+	url = git@github.com:akshat46/FlyingFox.git
+[submodule "code/scroll"]
+	path = code/scroll
+	url = git@github.com:samyak039/scroll.git
+[submodule ".local/share/mozilla/firefox/profile/chrome/Firefox-UI-Fix"]
+	path = .local/share/mozilla/firefox/profile/chrome/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule ".local/share/mozilla/firefox/arkenfox"]
+	path = .local/share/mozilla/firefox/arkenfox
+	url = git@github.com:arkenfox/user.js.git
+[submodule ".local/share/mozilla/firefox/Firefox-UI-Fix"]
+	path = .local/share/mozilla/firefox/Firefox-UI-Fix
+	url = git@github.com:black7375/Firefox-UI-Fix.git

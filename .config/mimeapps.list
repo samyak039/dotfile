@@ -1,6 +1,42 @@
 [Added Associations]
 x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;
+x-scheme-handler/http=librewolf.desktop;firefox-developer-edition.desktop;
+x-scheme-handler/https=librewolf.desktop;firefox-developer-edition.desktop;
+x-scheme-handler/chrome=librewolf.desktop;firefox-developer-edition.desktop;
+text/html=librewolf.desktop;firefox-developer-edition.desktop;
+application/x-extension-htm=librewolf.desktop;firefox-developer-edition.desktop;
+application/x-extension-html=librewolf.desktop;firefox-developer-edition.desktop;
+application/x-extension-shtml=librewolf.desktop;firefox-developer-edition.desktop;
+application/xhtml+xml=librewolf.desktop;firefox-developer-edition.desktop;
+application/x-extension-xhtml=librewolf.desktop;firefox-developer-edition.desktop;
+application/x-extension-xht=librewolf.desktop;firefox-developer-edition.desktop;
+image/jpeg=eom.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-YGG4P1.desktop;userapp-Thunderbird-UVKXP1.desktop;userapp-Thunderbird-EY01P1.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-YGG4P1.desktop;userapp-Thunderbird-UVKXP1.desktop;userapp-Thunderbird-EY01P1.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-PXM9P1.desktop;userapp-Thunderbird-AXIHQ1.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-PXM9P1.desktop;userapp-Thunderbird-AXIHQ1.desktop;
 
 [Default Applications]
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
+application/pdf=org.pwmt.zathura.desktop;okularApplication_pdf.desktop;
 x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-EY01P1.desktop
+message/rfc822=userapp-Thunderbird-EY01P1.desktop
+x-scheme-handler/mid=userapp-Thunderbird-EY01P1.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-AXIHQ1.desktop
+text/calendar=userapp-Thunderbird-AXIHQ1.desktop
+application/x-extension-ics=userapp-Thunderbird-AXIHQ1.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-AXIHQ1.desktop
+x-scheme-handler/http=firefox-developer-edition.desktop
+x-scheme-handler/https=firefox-developer-edition.desktop
+x-scheme-handler/chrome=firefox-developer-edition.desktop
+text/html=firefox-developer-edition.desktop
+application/x-extension-htm=firefox-developer-edition.desktop
+application/x-extension-html=firefox-developer-edition.desktop
+application/x-extension-shtml=firefox-developer-edition.desktop
+application/xhtml+xml=firefox-developer-edition.desktop
+application/x-extension-xhtml=firefox-developer-edition.desktop
+application/x-extension-xht=firefox-developer-edition.desktop
+image/jpeg=eom.desktop
+x-scheme-handler/kite=kite-copilot.desktop
+x-scheme-handler/discord-881480706545573918=discord-881480706545573918.desktop
+x-scheme-handler/desktime=DeskTime.desktop
