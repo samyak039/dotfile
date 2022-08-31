@@ -1,88 +1,150 @@
-################################################################################
-#   COMPINSTALL
-################################################################################
-zstyle ':completion:*' completer _list _oldlist _expand _complete _match _correct _approximate _prefix
-zstyle ':completion:*' completions 1
-zstyle ':completion:*' expand prefix suffix
-zstyle ':completion:*' glob 1
-zstyle ':completion:*' ignore-parents parent pwd
-zstyle ':completion:*' list-suffixes true
-zstyle ':completion:*' matcher-list '+m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=* r:|=*' '+l:|=* r:|=*'
-zstyle ':completion:*' max-errors 5 numeric
-zstyle ':completion:*' menu select
-zstyle ':completion:*' prompt '%e'
-zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*' substitute 1
-zstyle ':completion:*' word true
-zstyle :compinstall filename '/home/samyak039/.config/zsh/.zshrc'
+#
+#            _
+#    _______| |__  _ __ ___
+#   |_  / __| '_ \| '__/ __|
+#  _ / /\__ \ | | | | | (__
+# (_)___|___/_| |_|_|  \___|
+#
+#
+# @samyak039
 
-autoload -Uz compinit
-compinit
 
-autoload -Uz promptinit
-promptinit
-################################################################################
-#   ZSH-NEWUSER-INSTALL
-################################################################################
-HISTFILE=~/.local/share/zsh/history
-HISTSIZE=1000
-SAVEHIST=100000
-setopt autocd extendedglob nomatch notify
+#######
+# zsh #
+#######
+
+## History
+# Remove older command from the history if a duplicate is to be added.
+setopt HIST_IGNORE_ALL_DUPS
+
+## input / output
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -e
+# Prompt for spelling correction of commands.
+setopt CORRECT
+# Customize spelling correction prompt.
+#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+# Remove path separator from WORDCHARS.
+WORDCHARS=${WORDCHARS//[\/]}
+
+# history
+
+# beep-beep
 unsetopt beep
 
-################################################################################
-#   colors
-#load colors
-autoload colors && colors
-for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
-    eval $COLOR='%{$fg_no_bold[${(L)COLOR}]%}'  #wrap colours between %{ %} to avoid weird gaps in autocomplete
-    eval BOLD_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
-	eval BG_$COLOR='%{$bg_no_bold[${(L)COLOR}]%}'
-done
-eval RESET='%{$reset_color%}'
+#######################
+# aliases & functions #
+#######################
+# source ${ZDOTDIR}/aliasrc
 
-################################################################################
-#   ANTIGEN
-################################################################################
-source /usr/share/zsh/share/antigen.zsh
+# advcp
+alias c='$HOME/.local/bin/advcp -ig'
+# advmv
+alias m='$HOME/.local/bin/advmv -ig'
+# dotfile config
+alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
+# no confusion between doas --option or cmd --option
+alias doas='doas --'
 
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# leetcode-cli
+alias ll="leetcode"
+alias lld="leetcode data"
+alias lls="leetcode stat"
+llp() { leetcode pick $q; }
+lle() { leetcode edit $q; }
+llt() { leetcode test $q; }
+llx() { leetcode exec $q; }
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle adb
-antigen bundle branch
-antigen bundle command-not-found
-antigen bundle copypath
-antigen bundle copyfile
-antigen bundle cp
-antigen bundle dircycle
-antigen bundle extract; alias ex=extract
-antigen bundle history-substring-search
-antigen bundle man
-antigen bundle rand-quote
-antigen bundle thefuck
-# antigen bundle vi-mode
-antigen bundle spectrum
+# better X tools
+xxev() {
+  xev | awk -F'[ )]+' ' /^KeyPress/ {a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+xxprop() {
+  xprop | awk '
+      /^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/, "\nclass:"); print}
+      /^WM_NAME/{sub(/.* =/, "title:"); print}'
+}
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
+###########################
+# pre zimfw customization #
+###########################
 
-# Load the theme.
-#antigen theme bureau
-#antigen theme denysdovhan/spaceship-prompt
+### completion
+zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 
-# Tell Antigen that you're done.
-antigen apply
+### fzf-zsh-plugin
+export FZF_PREVIEW_ADVANCED=true
 
-################################################################################
-#   MY-CONFIG
-################################################################################
-source "${XDG_CONFIG_HOME:-$HOME/.config}"/aliasrc
-#source $ZDOTDIR/prompt
+### git
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+# zstyle ':zim:git' aliases-prefix 'g'
 
-# z-cd | https://github.com/ajeetdsouza/zoxide
+### pacman
+# zstyle ':zim:pacman' frontend 'powerpill'
+# zstyle ':zim:pacman' helpers 'paru'
+
+### termtitle TODO
+# zstyle ':zim:termtitle' format '%~'
+
+### zim
+# use degit instead of git
+zstyle ':zim:zmodule' use 'degit'
+
+### zsh-autosuggestion
+# Disable automatic widget re-binding on each precmd. This can be set when
+# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+### zsh-syntax-highlighting
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
+
+
+#########
+# zimfw #
+#########
+ZIM_HOME=${XDG_CONFIG_HOME}/zim
+
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  if (( ${+commands[curl]} )); then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  else
+    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  fi
+fi
+
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+
+
+#####################
+# post zimfw config #
+#####################
+
+zmodload -F zsh/terminfo +p:terminfo
+
+# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
+for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
+for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
+for key ('k') bindkey -M vicmd ${key} history-substring-search-up
+for key ('j') bindkey -M vicmd ${key} history-substring-search-down
+unset key
+
+##########
+# zoxide #
+##########
 eval "$(zoxide init zsh)"
 
+############
+# starship #
+############
 eval "$(starship init zsh)"

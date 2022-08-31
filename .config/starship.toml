@@ -44,8 +44,7 @@ symbol = "✦"
 
 [shell]
 disabled = false
-fish_indicator = "F"
-zsh_indicator = "Z"
+zsh_indicator = ""
 
 [shlvl]
 disabled = false

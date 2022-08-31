@@ -1,0 +1,57 @@
+#
+#        _ _
+#   __ _| (_) __ _ ___ _ __ ___
+#  / _` | | |/ _` / __| '__/ __|
+# | (_| | | | (_| \__ \ | | (__
+#  \__,_|_|_|\__,_|___/_|  \___|
+#
+#
+# @ samyak039
+
+
+###########
+# aliases #
+###########
+
+# advcp
+alias c='$HOME/.local/bin/advcp -ig'
+# advmv
+alias m='$HOME/.local/bin/advmv -ig'
+# dotfile config
+alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
+# no confusion between doas --option or cmd --option
+alias doas='doas --'
+
+# #######
+# # XDG #
+# #######
+# alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
+# alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+# alias codium=code --extensions-dir "$XDG_DATA_HOME/vscode"
+# alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
+
+#############
+# functions #
+#############
+
+# better X tools
+xxev() {
+  xev | awk -F'[ )]+' ' /^KeyPress/ {a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+}
+xxprop() {
+  xprop | awk '
+      /^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/, "\nclass:"); print}
+      /^WM_NAME/{sub(/.* =/, "title:"); print}'
+}
+
+################
+# leetcode-cli #
+################
+
+alias ll="leetcode"
+alias lld="leetcode data"
+alias lls="leetcode stat"
+llp() { leetcode pick $q; }
+lle() { leetcode edit $q; }
+llt() { leetcode test $q; }
+llx() { leetcode exec $q; }
