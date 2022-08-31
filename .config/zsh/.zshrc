@@ -38,9 +38,9 @@ unsetopt beep
 # source ${ZDOTDIR}/aliasrc
 
 # advcp
-alias c='$HOME/.local/bin/advcp -ig'
+alias c='advcp -ig'
 # advmv
-alias m='$HOME/.local/bin/advmv -ig'
+alias m='advmv -ig'
 # dotfile config
 alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
 # no confusion between doas --option or cmd --option
@@ -138,6 +138,9 @@ for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search
 for key ('k') bindkey -M vicmd ${key} history-substring-search-up
 for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
+
+# exa
+alias ls='exa --group-directories-first --icons --classify'
 
 ##########
 # zoxide #
