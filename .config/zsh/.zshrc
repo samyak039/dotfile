@@ -38,7 +38,7 @@ unsetopt beep
 # source ${ZDOTDIR}/aliasrc
 
 # advcp
-alias c='advcp -ig'
+alias c='advcp -igr'
 # advmv
 alias m='advmv -ig'
 # dotfile config
@@ -64,6 +64,14 @@ xxprop() {
       /^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/, "\nclass:"); print}
       /^WM_NAME/{sub(/.* =/, "title:"); print}'
 }
+
+#######
+# XDG #
+#######
+alias codium=code --extensions-dir "$XDG_DATA_HOME/vscode"
+alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
+alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 
 ###########################
 # pre zimfw customization #

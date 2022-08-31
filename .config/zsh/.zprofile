@@ -45,17 +45,14 @@ export SCRIPT="$HOME/script"
 #######
 # XDG #
 #######
-alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
-alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+export FZF_PATH="$XDG_DATA_HOME/fzf"
 
 
 #############
 # XDG-Ninja #
 #############
-alias codium=code --extensions-dir "$XDG_DATA_HOME/vscode"
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
 export ATOM_HOME="$XDG_DATA_HOME/atom"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
