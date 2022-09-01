@@ -52,5 +52,6 @@ morgen &
 # Window Manager #
 ##################
 exec dwm 2>> $CACHE/dwm.log
+#exec i3 2>> $XDG_CACHE_HOME/i3.log
 
 # exec xmonad 2>> $CACHE/xmonad.log

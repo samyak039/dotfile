@@ -15,10 +15,10 @@ btop
 calibre
 chaotic-keyring
 chaotic-mirrorlist
-cht.sh
+cht.sh-git
 clang
 dart
-desktime-app-electron
+desktime
 discord
 duf
 dunst
@@ -32,9 +32,9 @@ fd
 figlet
 firefox
 firefox-developer-edition
-firefox-developer-edition-i18n-en-gb 104.0b9-1
-firefox-developer-edition-i18n-en-us 104.0b9-1
-firefox-developer-edition-i18n-hi-in 104.0b9-1
+firefox-developer-edition-i18n-en-gb
+firefox-developer-edition-i18n-en-us
+firefox-developer-edition-i18n-hi-in
 fish
 flameshot
 flex
@@ -59,7 +59,7 @@ intel-ucode
 jdk17-openjdk
 jdk8-openjdk
 jdk-openjdk
-jre-17-openjdk
+jre17-openjdk
 jre8-openjdk
 jre-openjdk
 kdeconnect
@@ -73,11 +73,11 @@ libreoffice-fresh-en-gb
 libreoffice-fresh-hi
 linux
 linux-firmware
-linux-header
+linux-headers
 linux-lts
-linux-lts-heder
+linux-lts-headers
 linux-zen
-linux-zen-header
+linux-zen-headers
 lua
 lxappearance-gtk3
 morgen-bin
@@ -92,7 +92,7 @@ nodejs
 noto-fonts-emoji
 nsxiv
 ntfs-3g
-nvim
+neovim
 obsidian
 okular
 opendoas
@@ -125,7 +125,7 @@ speedtest-cli
 spicetify-cli
 starship
 syncthing
-texlive-biberextra
+texlive-bibtexextra
 texlive-fontsextra
 texlive-latexindent-meta
 texlive-most

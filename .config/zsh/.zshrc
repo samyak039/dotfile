@@ -112,7 +112,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
 #########
 # zimfw #
 #########
-ZIM_HOME=${XDG_CONFIG_HOME}/zim
+ZIM_HOME=${XDG_CONFIG_HOME:-$HOME/.config}/zim
 
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
