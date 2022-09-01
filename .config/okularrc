@@ -1,0 +1,43 @@
+HDMI-1 Height 1920x1080=1062
+HDMI-1 Width 1920x1080=1920
+HDMI-1 XPosition 1920x1080=0
+HDMI-1 YPosition 1920x1080=0
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAQAAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+HDMI-1 Height 1920x1080=1056
+HDMI-1 Width 1920x1080=761
+HDMI-1 XPosition 1920x1080=3
+HDMI-1 YPosition 1920x1080=3
+LVDS-1 Height 1366x768=750
+LVDS-1 Width 1366x768=1366
+LVDS-1 XPosition 1366x768=0
+LVDS-1 YPosition 1366x768=0
+State=AAAA/wAAAAD9AAAAAAAABVYAAAKtAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/college/8sem/project/srs/srs.pdf
+File10[$e]=$HOME/paper/Calibre/Michael Katz/Flutter Apprentice (3)/Flutter Apprentice - Michael Katz.pdf
+File2[$e]=$HOME/college/8sem/project/_others_data/robins_report.pdf
+File3[$e]=$HOME/paper/career/_certificate/2021-12--Udemy--Git_and_Github.pdf
+File4[$e]=$HOME/paper/career/_certificate/2020-07--Internshala--Android_App_Development.pdf
+File5[$e]=$HOME/paper/career/_certificate/2020-08--Internshala--Ethical_Hacking.pdf
+File6[$e]=$HOME/paper/career/_archive/1_resume/resume.pdf
+File7[$e]=$HOME/paper/resume.bck/BardiyaSamyak_RESUME.pdf
+File8[$e]=$HOME/paper/career/BardiyaSamyak_RESUME.pdf
+File9[$e]=$HOME/paper/Calibre/Jonathan Sande/Dart Apprentice (2)/Dart Apprentice - Jonathan Sande.pdf
+Name1[$e]=srs.pdf
+Name10[$e]=Flutter Apprentice - Michael Katz.pdf
+Name2[$e]=robins_report.pdf
+Name3[$e]=2021-12--Udemy--Git_and_Github.pdf
+Name4[$e]=2020-07--Internshala--Android_App_Development.pdf
+Name5[$e]=2020-08--Internshala--Ethical_Hacking.pdf
+Name6[$e]=resume.pdf
+Name7[$e]=BardiyaSamyak_RESUME.pdf
+Name8[$e]=BardiyaSamyak_RESUME.pdf
+Name9[$e]=Dart Apprentice - Jonathan Sande.pdf

@@ -1,0 +1,133 @@
+# KEYBOARD LAYOUT
+shift + F1
+    set-keymap ; notify-send -a 'Keyboard Layout' 'DVORAK'
+shift + F2
+    setxkbmap in eng ; notify-send -a 'Keyboard Layout' 'QWERTY'
+
+# DISPLAY
+shift + F5
+    set-display
+shift + F6
+    pkill -USR1 redshift
+
+# IFTTT bulb
+shift + F11
+    notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/c0sQxa1JbI032R1GOWzzgX`"
+    #notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/$IFTTT_WEBHOOK`"
+shift + F12
+    notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/c0sQxa1JbI032R1GOWzzgX`"
+    #notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/$IFTTT_WEBHOOK`"
+
+# dmenu
+super + Up
+    $BIN/dmoji
+
+# Screenshot
+Print
+    flameshot gui
+Print + shift
+    flameshot screen
+Print + control
+    flameshot screen --clipboard
+Print + control + shift
+    flameshot gui --clipboard --delay 3000
+
+# brightness
+XF86MonBrightness{Down,Up}
+    light -{U,A} 5
+    #xbacklight -{dec,inc} 10 && pkill -RTMIN+20 i3blocks
+super + {F9,F10}
+    light -{U,A} 5
+    #xbacklight -{dec,inc} 10 && pkill -RTMIN+20 i3blocks
+
+# volume
+XF86Audio{Mute,LowerVolume,RaiseVolume}
+    pamixer --allow-boost {-t,-d,-i} 5 && pkill -RTMIN+10 blocks
+super + {F2,F3,F4}
+    pamixer --allow-boost {-d,-i,-t} 5 && pkill -RTMIN+10 blocks
+
+# media control (music)
+XF86Audio{Stop,Prev,Play,Next}
+    playerctl -p 'mpv,spotify,%any' -i 'mpd' {stop,previous,play-pause,next} && pkill -RTMIN+10 i3blocks
+control + XF86Audio{Stop,Prev,Play,Next}
+    mpc {stop,prev,toggle,next} && pkill -RTMIN+10 i3blocks
+super + {F5,F6,F7,F8}
+    playerctl -p 'mpv,spotify,%any' -i 'mpd' {stop,previous,play-pause,next} && pkill -RTMIN+10 i3blocks
+super + control + {F5,F6,F7,F8}
+    mpc {stop,prev,toggle,next} && pkill -RTMIN+10 i3blocks
+
+# notification
+super + BackSpace
+    dunstctl close
+super + ctrl + BackSpace
+    dunstctl close-all
+super + backslash
+    dunstctl context
+super + ctrl + backslash
+    dunstctl history-pop
+super + ctrl + shift + BackSpace
+    dunstctl set-paused true
+super + ctrl + bar
+    dunstctl set-paused false
+#super + shift + BackSpace
+#    killall -SIGUSR1 dunst
+#super + shift + backslash
+#    killall -SIGUSR2 dunst
+
+# hyper keybinding / application keybinding
+hyper + comma
+    morgen
+hyper + period
+    $TERMINAL -t lf -e lf
+hyper + Return
+    $TERMINAL
+hyper + a
+    $TERMINAL -t ncpamixer -e ncpamixer
+hyper + b
+    firefox-developer-edition
+hyper + shift + b
+    firefox-developer-edition -p dev
+hyper + c
+    dmenu_edit_config
+#hyper + d
+#    dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
+hyper + d
+    discord-canary
+hyper + e
+    emacsclient -c -s doom -a 'emacs'
+hyper + alt + e
+    emacsclient -s doom --eval "emacs-everywhere"
+hyper + g
+    gentleman
+hyper + h
+    $TERMINAL -t btop -e btop
+hyper + i
+    gimp
+hyper + k
+    keepassxc
+hyper + m
+    morgen
+hyper + n
+    $TERMINAL -t nvim -e nvim
+hyper + o
+    ticktick
+hyper + p
+    pcmanfm
+hyper + q
+    $TERMINAL -t qalc -e qalc
+hyper + r
+    $TERMINAL -t tremc -e tremc
+hyper + s
+    spotify
+hyper + t
+    kotatogram-desktop
+hyper + v
+    vscodium
+hyper + w
+    whatsapp-nativefier
+
+# restart scripts or daemon
+alt + shift + control + s
+    killnotify sxhkd "config reloaded" && sxhkd &
+alt + shift + control + d
+    killnotify dwm "dwm restarted"
