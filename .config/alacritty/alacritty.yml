@@ -1,5 +1,5 @@
 env:
-  TERM: alacritty
+  TERM: xterm-256color
 
 window:
   dimensions:
@@ -53,12 +53,12 @@ colors:
     foreground: "#d4be98" # '#ebdbb2'
     bright_foreground: "#ddc7a1" # '#fbf1c7'
     dim_foreground: "#c5b18d" # '#a89984'
-  cursor:
-    text: CellBackground
-    cursor: CellForeground
-  vi_mode_cursor:
-    text: CellBackground
-    cursor: CellForeground
+  # cursor:
+  #   text: CellBackground
+  #   cursor: CellForeground
+  # vi_mode_cursor:
+  #   text: CellBackground
+  #   cursor: CellForeground
   search:
     matches:
       foreground: "#202020"

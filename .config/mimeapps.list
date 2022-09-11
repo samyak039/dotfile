@@ -40,3 +40,4 @@ image/jpeg=eom.desktop
 x-scheme-handler/kite=kite-copilot.desktop
 x-scheme-handler/discord-881480706545573918=discord-881480706545573918.desktop
 x-scheme-handler/desktime=DeskTime.desktop
+x-scheme-handler/postman=Postman.desktop

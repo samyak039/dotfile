@@ -29,8 +29,6 @@ zmodule archive
 zmodule exa
 # Configures fzf for faster fetching of files and directories names.
 zmodule fzf
-# Provides nice git aliases and functions.
-zmodule git
 # # Adds aliases for the pacman package manager.
 # # Also includes optional helper aliases.
 # zmodule pacman
@@ -44,13 +42,14 @@ zmodule git
 zmodule unixorn/fzf-zsh-plugin
 # Replace zsh's default completion selection menu with fzf
 zmodule Aloxaf/fzf-tab
-# A utility tool powered by fzf for using git interactively
-zmodule wfxr/forgit
+## A utility tool powered by fzf for using git interactively
+#zmodule wfxr/forgit
 ## just print a hacker quote randomly when open a terminal
 # TODO zmodule oldratlee/hacker-quotes
 ## Real-time type-ahead completion for Zsh.
 ## Asynchronous find-as-you-type autocompletion.
 # FIXME zmodule marlonrichert/zsh-autocomplete
+
 
 ##############
 # completion #

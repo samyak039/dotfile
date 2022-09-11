@@ -13,7 +13,7 @@
 # DEFAULTS #
 ############
 export BROWSER="firefox"
-export EDITOR="neovim"
+export EDITOR="nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 export READER="zathura"
 export TERMINAL="alacritty"

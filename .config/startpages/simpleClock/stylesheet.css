@@ -2,7 +2,7 @@
 
 
 body {
-    background-color: #282828;
+    background-color: #292828;
     margin: 0px;
 }
 
@@ -16,7 +16,7 @@ body {
 }
 
 #clock {
-    font-family: sans-serif;
+    font-family: "FiraCode Nerd Font", sans-serif;
     font-size: 6.0rem;
     font-weight: 800;
     font-family: "Fira Code";

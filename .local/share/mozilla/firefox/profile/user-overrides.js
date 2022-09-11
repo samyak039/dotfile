@@ -1,12 +1,53 @@
-// ---------samyak039---------
+//
+//                                                    _     _         _
+//  _   _ ___  ___ _ __       _____   _____ _ __ _ __(_) __| | ___   (_)___
+// | | | / __|/ _ \ '__|____ / _ \ \ / / _ \ '__| '__| |/ _` |/ _ \  | / __|
+// | |_| \__ \  __/ | |_____| (_) \ V /  __/ |  | |  | | (_| |  __/_ | \__ \
+//  \__,_|___/\___|_|        \___/ \_/ \___|_|  |_|  |_|\__,_|\___(_)/ |___/
+//                                                                 |__/
+//
+// @samyak039
 
-// --------- arken fox ---------
+
+////////////
+// CUSTOM //
+////////////
+
+/* removes auto-focus from website, useful in Tridactly */
+user_pref("browser.autofocus", false);
+
+
+///////////////
+// arken fox //
+///////////////
 
 /* 0102: set startup page [SETUP-CHROME]
  * 0=blank, 1=home, 2=last visited page, 3=resume previous session
  * [NOTE] Session Restore is cleared with history (2811, 2820), and not used in Private Browsing mode
  * [SETTING] General>Startup>Restore previous session ***/
 user_pref("browser.startup.page", 3);
+
+/* 0104: set NEWTAB page
+ * true=Activity Stream (default, see 0105), false=blank page
+ * [SETTING] Home>New Windows and Tabs>New tabs ***/
+// user_pref("browser.newtabpage.enabled", false);
+// user_pref("browser.newtab.preload", false);
+
+/* 0105: disable some Activity Stream items
+ * Activity Stream is the default homepage/newtab based on metadata and browsing behavior
+ * [SETTING] Home>Firefox Home Content>...  to show/hide what you want ***/
+// user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+// user_pref("browser.newtabpage.activity-stream.telemetry", false);
+// user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); // [DEFAULT: false]
+// user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+// user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+// user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+// user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false); // [FF66+]
+// user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // [FF83+]
+
+/* 0106: clear default topsites
+ * [NOTE] This does not block you from adding your own ***/
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
 /* 0801: disable location bar using search
  * Don't leak URL typos to a search engine, give an error message instead
@@ -93,7 +134,9 @@ user_pref("signon.rememberSignons", false);
 /* UX BEHAVIOR ***/
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 
-// --------- Firefox-UI-Fix ---------
+////////////////////
+// Firefox-UI-Fix //
+////////////////////
 
 // ** Theme Default Options ****************************************************
 // userchrome.css usercontent.css activate

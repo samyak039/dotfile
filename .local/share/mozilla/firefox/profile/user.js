@@ -1248,27 +1248,7 @@ user_pref("browser.startup.homepage_override.mstone", "ignore"); // master switc
    // user_pref("extensions.getAddons.cache.enabled", false); // disable extension metadata (extension detail tab)
 /* APPEARANCE ***/
    // user_pref("browser.download.autohideButton", false); // [FF57+]
-   // user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // [FF68+] allow userChrome/userContent
-   // user_pref("ui.prefersReducedMotion", 1); // disable chrome animations [FF77+] [RESTART] [HIDDEN PREF]
-      // 0=no-preference, 1=reduce: with RFP this only affects chrome
-   // user_pref("ui.systemUsesDarkTheme", 1); // [FF67+] [HIDDEN PREF]
-      // 0=light, 1=dark: with RFP this only affects chrome
-/* CONTENT BEHAVIOR ***/
-   // user_pref("accessibility.typeaheadfind", true); // enable "Find As You Type"
-   // user_pref("clipboard.autocopy", false); // disable autocopy default [LINUX]
-   // user_pref("layout.spellcheckDefault", 2); // 0=none, 1-multi-line, 2=multi-line & single-line
-/* HTML5 MEDIA AUTOPLAY ***/
-   // [NOTE] You can set exceptions under site permissions
-   // user_pref("media.autoplay.default", 5); // [FF63+]
-      // 0=Allow all, 1=Block non-muted media (default), 5=Block all
-      // [SETTING] Privacy & Security>Permissions>Autoplay>Settings>Default for all websites
-   // user_pref("media.autoplay.blocking_policy", 2); // disable autoplay if you interacted with the site [FF78+]
-      // 0=sticky (default), 1=transient, 2=user
-      // [1] https://support.mozilla.org/questions/1293231 // links to Autoplay Policy Documentation (PDF)
-/* UX BEHAVIOR ***/
-   // user_pref("browser.backspace_action", 2); // 0=previous page, 1=scroll up, 2=do nothing
-   // user_pref("browser.quitShortcut.disabled", true); // disable Ctrl-Q quit shortcut [LINUX] [MAC] [FF87+]
-   // user_pref("browser.tabs.closeWindowWithLastTab", false);
+   // user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
    // user_pref("browser.tabs.loadBookmarksInTabs", true); // open bookmarks in a new tab [FF57+]
    // user_pref("browser.urlbar.decodeURLsOnCopy", true); // see bugzilla 1320061 [FF53+]
    // user_pref("general.autoScroll", false); // middle-click enabling auto-scrolling [DEFAULT: false on Linux]
@@ -1361,15 +1341,56 @@ user_pref("security.pki.sha1_enforcement_level", 1); // [DEFAULT: 1 FF102+]
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
 
-// ---------samyak039---------
+//
+//                                                    _     _         _
+//  _   _ ___  ___ _ __       _____   _____ _ __ _ __(_) __| | ___   (_)___
+// | | | / __|/ _ \ '__|____ / _ \ \ / / _ \ '__| '__| |/ _` |/ _ \  | / __|
+// | |_| \__ \  __/ | |_____| (_) \ V /  __/ |  | |  | | (_| |  __/_ | \__ \
+//  \__,_|___/\___|_|        \___/ \_/ \___|_|  |_|  |_|\__,_|\___(_)/ |___/
+//                                                                 |__/
+//
+// @samyak039
 
-// --------- arken fox ---------
+
+////////////
+// CUSTOM //
+////////////
+
+/* removes auto-focus from website, useful in Tridactly */
+user_pref("browser.autofocus", false);
+
+
+///////////////
+// arken fox //
+///////////////
 
 /* 0102: set startup page [SETUP-CHROME]
  * 0=blank, 1=home, 2=last visited page, 3=resume previous session
  * [NOTE] Session Restore is cleared with history (2811, 2820), and not used in Private Browsing mode
  * [SETTING] General>Startup>Restore previous session ***/
 user_pref("browser.startup.page", 3);
+
+/* 0104: set NEWTAB page
+ * true=Activity Stream (default, see 0105), false=blank page
+ * [SETTING] Home>New Windows and Tabs>New tabs ***/
+// user_pref("browser.newtabpage.enabled", false);
+// user_pref("browser.newtab.preload", false);
+
+/* 0105: disable some Activity Stream items
+ * Activity Stream is the default homepage/newtab based on metadata and browsing behavior
+ * [SETTING] Home>Firefox Home Content>...  to show/hide what you want ***/
+// user_pref("browser.newtabpage.activity-stream.feeds.telemetry", false);
+// user_pref("browser.newtabpage.activity-stream.telemetry", false);
+// user_pref("browser.newtabpage.activity-stream.feeds.snippets", false); // [DEFAULT: false]
+// user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
+// user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+// user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+// user_pref("browser.newtabpage.activity-stream.feeds.discoverystreamfeed", false); // [FF66+]
+// user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // [FF83+]
+
+/* 0106: clear default topsites
+ * [NOTE] This does not block you from adding your own ***/
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
 
 /* 0801: disable location bar using search
  * Don't leak URL typos to a search engine, give an error message instead
@@ -1456,7 +1477,9 @@ user_pref("signon.rememberSignons", false);
 /* UX BEHAVIOR ***/
 user_pref("browser.tabs.closeWindowWithLastTab", false);
 
-// --------- Firefox-UI-Fix ---------
+////////////////////
+// Firefox-UI-Fix //
+////////////////////
 
 // ** Theme Default Options ****************************************************
 // userchrome.css usercontent.css activate

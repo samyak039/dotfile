@@ -1,5 +1,6 @@
 /* Full Auto-show/hide Theme
 https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#full-auto-showhide-theme */
+
 /* Hide main tabs toolbar */
 #main-window[tabsintitlebar="true"]:not([extradragspace="true"])
   #TabsToolbar

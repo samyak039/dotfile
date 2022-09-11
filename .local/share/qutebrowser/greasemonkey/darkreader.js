@@ -24,13 +24,14 @@
 // @exclude         /^https?://.*iitkgp\.ac\.in/?/
 // @exclude         /^https?://.*keybr\.com/?/
 // @exclude         /^https?://.*keyma\.sh/?/
-// @exclude         /^https?://.*leetcode\.com/?/
 // @exclude         /^https?://.*learnxinyminutes\.com/?/
+// @exclude         /^https?://.*leetcode\.com/?/
 // @exclude         /^https?://.*monkeytype\.com/?/
 // @exclude         /^https?://.*myanimelist\.net/?/
 // @exclude         /^https?://.*nordtheme\.com/?/
 // @exclude         /^https?://.*onlinegdb\.com/?/
 // @exclude         /^https?://.*reddit\.com/?/
+// @exclude         /^https?://.*searx\.be/?/
 // @exclude         /^https?://.*time\.is/?/
 // @exclude         /^https?://.*todoist\.com/?/
 // @exclude         /^https?://.*typenconquer\.io/?/
@@ -55,12 +56,12 @@ DarkReader.enable({
     sepia: 0,
     engine: 'dynamicTheme',
     stylesheet: '',
-    darkSchemeBackgroundColor: '#1d2021',   // hard contrast
-    //darkSchemeBackgroundColor: '#282828',   // medium contrast
-    //darkSchemeBackgroundColor: '#32302f',   // soft contrast
-    lightSchemeBackgroundColor: '#ebdbb2',
-    //darkSchemeTextColor: '#fbf1c7',
-    //lightSchemeTextColor: '#282828',
+    // darkSchemeBackgroundColor: '#202020',    /// hard contrast
+    darkSchemeBackgroundColor: '#292828',       /// medium contrast
+    // darkSchemeBackgroundColor: '#32302f',    /// soft contrast
+    // darkSchemeTextColor: '#d4be98',
+    // lightSchemeBackgroundColor: '#d4be98',
+    // lightSchemeTextColor: '#282828',
     scrollbarColor: 'auto',
     selectionColor: 'auto',
     styleSystemColors: true,

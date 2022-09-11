@@ -1,12 +1,9 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-(package! activity-watch-mode)
 (package! company-prescient)
-(package! company-lsp)
+;; (package! company-lsp)
 (package! crontab-mode)
-(package! doas-edit
-  :recipe (:host github :repo "cemkeylan/doas-edit"))
 (package! treemacs-all-the-icons)
 
 ;; To install a package with Doom you must declare them here and run 'doom sync'

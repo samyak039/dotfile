@@ -17,9 +17,10 @@
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
+
 ## input / output
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -e
+bindkey -v
 # Prompt for spelling correction of commands.
 setopt CORRECT
 # Customize spelling correction prompt.
@@ -39,12 +40,22 @@ unsetopt beep
 
 # advcp
 alias c='advcp -igr'
+# emacs
+alias e="emacsclient -t -s doom -a 'emacs'"
 # advmv
 alias m='advmv -ig'
+# neovim
+alias v="nvim"
+
 # dotfile config
 alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
 # no confusion between doas --option or cmd --option
 alias doas='doas --'
+# dart & flutter pub
+alias dpub='dart pub'
+alias fpub='flutter pub'
+# vs-codium in cwd
+alias vsc='codium .'
 
 # leetcode-cli
 alias ll="leetcode"
@@ -68,10 +79,9 @@ xxprop() {
 #######
 # XDG #
 #######
-alias codium=code --extensions-dir "$XDG_DATA_HOME/vscode"
 alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
 alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
-alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 ###########################
 # pre zimfw customization #
@@ -85,7 +95,7 @@ export FZF_PREVIEW_ADVANCED=true
 
 ### git
 # Set a custom prefix for the generated aliases. The default prefix is 'G'.
-# zstyle ':zim:git' aliases-prefix 'g'
+zstyle ':zim:git' aliases-prefix 'g'
 
 ### pacman
 # zstyle ':zim:pacman' frontend 'powerpill'

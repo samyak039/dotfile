@@ -5,10 +5,10 @@ shift + F2
     setxkbmap in eng ; notify-send -a 'Keyboard Layout' 'QWERTY'
 
 # DISPLAY
-shift + F5
-    set-display
 shift + F6
     pkill -USR1 redshift
+shift + F7
+    set-display
 
 # IFTTT bulb
 shift + F11
@@ -35,10 +35,13 @@ Print + control + shift
 # brightness
 XF86MonBrightness{Down,Up}
     light -{U,A} 5
-    #xbacklight -{dec,inc} 10 && pkill -RTMIN+20 i3blocks
+    # xbacklight -{dec,inc} 10
 super + {F9,F10}
     light -{U,A} 5
-    #xbacklight -{dec,inc} 10 && pkill -RTMIN+20 i3blocks
+    # xbacklight -{dec,inc} 10
+super + hyper + {Down,Up}
+    light -{U,A} 5
+    # xbacklight -{dec,inc} 10
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
@@ -88,7 +91,7 @@ hyper + b
 hyper + shift + b
     firefox-developer-edition -p dev
 hyper + c
-    dmenu_edit_config
+    $TERMINAL -t qalc -e qalc
 #hyper + d
 #    dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 hyper + d
@@ -114,7 +117,7 @@ hyper + o
 hyper + p
     pcmanfm
 hyper + q
-    $TERMINAL -t qalc -e qalc
+    qutebrowser
 hyper + r
     $TERMINAL -t tremc -e tremc
 hyper + s
