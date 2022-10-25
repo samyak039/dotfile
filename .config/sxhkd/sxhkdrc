@@ -11,12 +11,12 @@ shift + F7
     set-display
 
 # IFTTT bulb
-shift + F11
-    notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/c0sQxa1JbI032R1GOWzzgX`"
-    #notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/$IFTTT_WEBHOOK`"
-shift + F12
-    notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/c0sQxa1JbI032R1GOWzzgX`"
-    #notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/$IFTTT_WEBHOOK`"
+# shift + F11
+#     notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/c0sQxa1JbI032R1GOWzzgX`"
+#     #notify-send -a 'IFTTT' 'Study OFF' "`curl -X POST https://maker.ifttt.com/trigger/study_off/with/key/$IFTTT_WEBHOOK`"
+# shift + F12
+#     notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/c0sQxa1JbI032R1GOWzzgX`"
+#     #notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/$IFTTT_WEBHOOK`"
 
 # dmenu
 super + Up
@@ -59,6 +59,10 @@ super + {F5,F6,F7,F8}
 super + control + {F5,F6,F7,F8}
     mpc {stop,prev,toggle,next} && pkill -RTMIN+10 i3blocks
 
+# toggle trackpad
+XF86Search
+    toggle_trackpad.sh
+
 # notification
 super + BackSpace
     dunstctl close
@@ -91,7 +95,7 @@ hyper + b
 hyper + shift + b
     firefox-developer-edition -p dev
 hyper + c
-    $TERMINAL -t qalc -e qalc
+    qalculate-gtk
 #hyper + d
 #    dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 hyper + d

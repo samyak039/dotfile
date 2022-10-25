@@ -6,6 +6,7 @@ android-platform
 android-sdk
 android-studio
 anydesk-bin
+appimagelauncher
 awesome-terminal-fonts
 bat
 bibata-cursor-theme

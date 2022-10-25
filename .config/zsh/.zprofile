@@ -16,6 +16,7 @@ export PATH="${PATH}:${XDG_BIN_HOME:-$HOME/.local/bin}"
 export PATH="${PATH}:${SCRIPT:-$HOME/script}"
 export PATH="${PATH}:${SCRIPT:-$HOME/script}/crt"
 export PATH="${PATH}:${SCRIPT:-$HOME/script}/statusbar"
+export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doomemacs/bin"
 export PATH="${PATH}:${JAVA_HOME:-/usr/lib/jvm/default}/bin"
 export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/emulator"
@@ -56,6 +57,7 @@ export CHROME_EXECUTABLE="/usr/bin/brave"
 # XDG #
 #######
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
+export FVM_HOME="$XDG_DATA_HOME/fvm"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export FZF_PATH="$XDG_DATA_HOME/fzf"
 

@@ -29,7 +29,7 @@ inotifywait -m $downloadDir -e create -e moved_to |
 			gif|jpeg|jpg|png)
 				move_to_dir=$imageDir ;;
 			# program
-			apk|deb)
+			apk|AppImage|deb)
 				move_to_dir=$programDir ;;
 			# text
 			md|pdf|tex|txt)

@@ -52,6 +52,8 @@ alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
 # no confusion between doas --option or cmd --option
 alias doas='doas --'
 # dart & flutter pub
+alias drt='fvm dart'
+alias fltr='fvm flutter'
 alias dpub='dart pub'
 alias fpub='flutter pub'
 # vs-codium in cwd
@@ -65,6 +67,22 @@ llp() { leetcode pick $q; }
 lle() { leetcode edit $q; }
 llt() { leetcode test $q; }
 llx() { leetcode exec $q; }
+
+# adb quick connect connect
+adbcon() {
+  if ( adb connect "192.168.$1.93:5555" | rg connected ); then
+    if ( adb devices | rg 'device$' ); then
+      if ( flutter devices | rg -i android ); then
+      else
+        echo '\e[1;33mNOT CONNECTED\e[m' && return 2;
+      fi
+    else
+      echo 'echo';
+    fi
+  else
+    echo '\e[1;33mADB cannot reach Device\e[m';  return 1;
+  fi
+}
 
 # better X tools
 xxev() {
