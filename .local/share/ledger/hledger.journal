@@ -1,0 +1,74 @@
+; journal created 2022-11-03 by hledger
+
+2022-11-03 Raghvendra
+    expenses:beverage:tea               10 INR
+    expenses:snacks                     20 INR ; egg-puff
+    assets:savings:fi                  -30 INR
+
+2022-11-03 ATM
+    assets:wallet            6500 INR
+    assets:savings:fi        -900 INR
+    assets:savings:fi        -900 INR
+    assets:savings:fi       -4700 INR
+
+2022-11-03 Stationary
+    expenses:groceries                      54 INR ; batteries
+    assets:savings:fi                      -54 INR
+
+2022-11-03 Raghvendra
+    expenses:beverage:tea                       20 INR
+    assets:reimbursements:kunal-sharma          20 INR
+    assets:savings:fi                          -40 INR
+
+2022-11-03 Kunal Sharma
+    assets:savings:fi                                 20 INR
+    assets:reimbursements:kunal-sharma               -20 INR ; tea
+
+2022-10-31 Cumulations Technology
+    assets:savings:icici       25000 INR
+    revenue:salary            -25000 INR
+
+2022-10-31 Raghvendra
+    expenses:snacks:chips               60 INR
+    expenses:snacks:soft-drink          40 INR
+    assets:savings:fi                 -100 INR
+
+2022-11-01 Chena Ram  ; tea
+    expenses:beverage:tea          40 INR
+    assets:savings:fi             -40 INR
+
+2022-11-01 DMart
+    expenses:groceries                         562 INR
+    assets:reimbursements:devansh-benz        -562 INR
+    assets:reimbursements:devansh-benz         562 INR
+    assets:savings:fi                         -562 INR
+
+2022-11-01 Udupi
+    expenses:beverage:coffee          20 INR
+    assets:savings:fi                -20 INR
+
+2022-11-01 Utkarsh  ; saloni-gift
+    expenses:gifts           2400 INR  ;  op-3t screen repair
+    assets:savings:fi       -2400 INR
+
+2022-11-01 Pharmacy
+    expenses:medicines          10 INR  ;  chest-on-cold
+    assets:savings:fi          -10 INR
+
+2022-11-01 Pharmacy
+    expenses:medicines                       43.50 INR
+    assets:reimbursements:kunal-sharma      -43.50 INR
+    assets:reimbursements:kunal-sharma       43.50 INR
+    assets:savings:fi                       -43.50 INR
+
+2022-11-04 Sri Vinakaya PG  ; rent
+    expenses:rent        6500 INR
+    assets:wallet       -6500 INR
+
+2022-11-04 Raghvendra
+    expenses:beverage:coffee          20 INR
+    assets:savings:fi                -20 INR
+
+2022-11-04 Raghvendra
+    expenses:beverage:tea          20 INR
+    assets:savings:fi             -20 INR
