@@ -19,6 +19,7 @@ export READER="zathura"
 export TERMINAL="alacritty"
 export VISUAL="emacsclient -c -s doom -a 'emacs'"
 
+export LEDGER_FILE="$XDG_DATA_HOME/ledger/hledger.journal"
 ########
 # PATH #
 ########

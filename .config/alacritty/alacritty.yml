@@ -14,7 +14,7 @@ window:
   startup_mode: Maximized
   # title: Alacritty
   dynamic_title: true
-  gtk_theme_variant: dark
+  decorations_theme_variant: dark
 
 scrolling:
   history: 10000
@@ -33,7 +33,7 @@ font:
   bold_italic:
     family: FiraCode Nerd Font
     style: Bold Italic
-  size: 7
+  size: 10
   offset:
     x: 0
     y: 0
@@ -66,9 +66,6 @@ colors:
     focused_match:
       foreground: "#202020"
       background: "#e78a4e"
-    bar:
-      background: "#d4be98"
-      foreground: "#202020"
   hints:
     start:
       background: "#e78a4e"
@@ -76,6 +73,9 @@ colors:
     end:
       background: "#202020"
       foreground: "#e78a4e"
+  footer_bar:
+    background: "#d4be98"
+    foreground: "#202020"
   line_indicator:
     backgronud: "#d4be98"
     foreground: "#202020"

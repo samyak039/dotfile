@@ -30,7 +30,7 @@ fixamo_quiet
 guiset_quiet statuspanel right
 
 " reddit -> old.reddit
-autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
+"autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
 
 
 """"""""""""

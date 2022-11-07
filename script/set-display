@@ -1,12 +1,15 @@
 #!/bin/sh
 
-if [[ -n $(xrandr | rg 'HDMI-1 connected') ]]; then
+_one='eDP1'
+_two='HDMI1'
+
+if [[ -n $(xrandr | rg "$_two connected") ]]; then
     #autorandr dual-vert
     #xrandr --output HDMI1 --primary --mode 1920x1080 --pos 0x0 --output LVDS1 --mode 1366x768 --pos 277x1080
-    xrandr --output HDMI-1 --primary --mode 1920x1080 --output LVDS-1 --off
+    xrandr --output $_two --primary --mode 1920x1080 --output LVDS-1 --off
 else
 	#autorandr laptop
-    xrandr --output LVDS-1 --primary --auto --output HDMI-1 --off
+    xrandr --output $_one --primary --auto --scale 1 --output $_two --off
 fi
 
-nitrogen --restore
+nitrogen --restore &> /dev/null

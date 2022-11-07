@@ -1,3 +1,6 @@
+!! scaling
+Xft.dpi: 125
+
 !! default font
 *.font: Fira code Nerd Font:size=11
 

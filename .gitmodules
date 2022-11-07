@@ -58,3 +58,6 @@
 [submodule ".local/share/mozilla/firefox/Firefox-UI-Fix"]
 	path = .local/share/mozilla/firefox/Firefox-UI-Fix
 	url = git@github.com:black7375/Firefox-UI-Fix.git
+[submodule "image/walls"]
+	path = image/walls
+	url = git@gitlab.com:samyak039/wallpaper.git
