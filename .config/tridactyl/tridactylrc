@@ -32,6 +32,10 @@ guiset_quiet statuspanel right
 " reddit -> old.reddit
 "autocmd DocStart ^http(s?)://www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
 
+" disable by default
+":autocmd DocStart monkeytype\.com mode ignore
+blacklistadd monkeytype\.com
+
 
 """"""""""""
 " commands "

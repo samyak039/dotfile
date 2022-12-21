@@ -45,7 +45,21 @@ alias e="emacsclient -t -s doom -a 'emacs'"
 # advmv
 alias m='advmv -ig'
 # neovim
-alias v="nvim"
+function v() {
+	if [ $# -gt 0 ]; then
+		nvim $@
+	else
+		nvim .
+	fi
+}
+# vs code
+function vs() {
+    if [ $# -gt 0 ]; then
+        code $@
+    else
+        code .
+    fi
+}
 
 # dotfile config
 alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
@@ -56,8 +70,12 @@ alias drt='fvm dart'
 alias fltr='fvm flutter'
 alias dpub='dart pub'
 alias fpub='flutter pub'
-# vs-codium in cwd
-alias vsc='codium .'
+# fvm
+alias ffvm='fvm flutter'
+alias dfvm='fvm dart'
+
+# color
+alias ip='ip -c'
 
 # leetcode-cli
 alias ll="leetcode"

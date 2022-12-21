@@ -1,4 +1,3 @@
-Section "InputClass"
 	Identifier "touchpad"
 	MatchIsTouchpad "yes"
 	Driver "libinput"

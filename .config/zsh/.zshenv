@@ -12,14 +12,18 @@
 ############
 # DEFAULTS #
 ############
-export BROWSER="firefox"
+export BROWSER="firefox-developer-edition"
 export EDITOR="nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 export READER="zathura"
 export TERMINAL="alacritty"
 export VISUAL="emacsclient -c -s doom -a 'emacs'"
 
-export LEDGER_FILE="$XDG_DATA_HOME/ledger/hledger.journal"
+########
+# TEMP #
+########
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+
 ########
 # PATH #
 ########

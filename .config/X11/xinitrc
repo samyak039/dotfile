@@ -28,23 +28,22 @@ dwmblocks &
 ###########
 set-display
 set-keymap && sxhkd &
-sort_download_dir &
+sort_download_dir.sh &
 
 ##########################
 # background application #
 ##########################
-# cmst &
-# discord --start-minimized &
 blueman-applet &
 dunst &
 easyeffects --gapplication-service &
 emacs --daemon &
 flameshot &
 /usr/lib/kdeconnectd &
-lxpolkit &
 # mpDris2 &
 nm-applet &
 pcmanfm -d &
+picom -b
+polkit-dumb-agent &
 redshift &
 syncthing --no-browser &
 transmission-daemon &
@@ -54,8 +53,10 @@ unclutter --timeout 3 --ignore-scrolling &
 # huge apps #
 #############
 DeskTime &
-ticktick &
-morgen &
+# discord --start-minimized &
+[ $(date +%H) -gt 9 ] && [ $(date +%H) -lt 19 ] && ferdium &
+# ticktick &
+# morgen &
 # thunderbird-beta
 
 ##################

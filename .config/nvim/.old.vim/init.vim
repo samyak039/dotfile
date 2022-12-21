@@ -40,7 +40,7 @@ set cursorline cursorcolumn
 set number relativenumber
 set ignorecase smartcase hlsearch incsearch
 set splitright splitbelow
-set scrolloff=5 sidescrolloff=3
+set scrolloff=3 sidescrolloff=3
 set smartindent shiftround shiftwidth=4
 set tabstop=4 softtabstop=4 expandtab
 
@@ -64,11 +64,11 @@ let maplocalleader = " "
 command! W execute 'w !doas -u root -- tee > /dev/null %' <bar> edit!
 
 inoremap {{ {<esc>o}<esc>O
+
 nnoremap <silent> < v<
 nnoremap <silent> > v>
 vnoremap <silent> < <gv
 vnoremap <silent> > >gv
-
 nnoremap <leader>Q :q!<CR>
 nnoremap <leader>W :W<CR>
 nnoremap <leader>t :set expandtab!<CR>
@@ -77,6 +77,8 @@ nnoremap <leader>wq :wqa<CR>
 noremap <C-n> :NERDTreeToggle<CR>
 noremap <C-s> :UndotreeToggle<CR>
 noremap <C-t> :TagbarToggle<CR>
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-x><C-o>
 
 nnoremap <A-d> :tabclose<CR>
 nnoremap <A-e> :tabe 
@@ -98,11 +100,17 @@ nnoremap <A-y> :%y<CR>
 "inoremap (( ()<left>
 "inoremap [[ []<left>
 
-
-
 "---------------------------------------------------------------------------------------------------
 " ADVANCED
 "---------------------------------------------------------------------------------------------------
+
+" competitive programming
+autocmd FileType cpp nnoremap   <leader>ci      :-1read $HOME/template/boiler_plate/cpp.cpp<CR>/==<CR>ztcc
+autocmd FileType cpp nnoremap   <leader>cc      :!g++ -g --std=c++11 % -o %:r<CR>
+" autocmd FileType cpp nnoremap   <leader>rm      :set makeprg=g++<CR>:make % -o %:r<CR>
+autocmd FileType cpp nnoremap   <leader>cr      :!time ./%:r<CR>
+autocmd FileType cpp nnoremap   <leader>ct      :!for f in %:r.*.test; do echo "TEST: $f"; time ./%:r < $f; done<CR>
+
 " Disables automatic commenting on newline:
 autocmd VimEnter * setlocal formatoptions-=cro
 

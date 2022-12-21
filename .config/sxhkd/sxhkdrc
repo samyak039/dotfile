@@ -93,17 +93,19 @@ hyper + a
 hyper + b
     firefox-developer-edition
 hyper + shift + b
-    firefox-developer-edition -p dev
+    firefox-developer-edition -P dev
 hyper + c
     qalculate-gtk
 #hyper + d
 #    dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 hyper + d
-    discord-canary
+    discord
 hyper + e
     emacsclient -c -s doom -a 'emacs'
 hyper + alt + e
     emacsclient -s doom --eval "emacs-everywhere"
+hyper + f
+    ferdium
 hyper + g
     gentleman
 hyper + h
@@ -125,13 +127,13 @@ hyper + q
 hyper + r
     $TERMINAL -t tremc -e tremc
 hyper + s
-    spotify
+    spotify-tray
 hyper + t
     kotatogram-desktop
 hyper + v
     vscodium
 hyper + w
-    whatsapp-nativefier
+    whatsie
 
 # restart scripts or daemon
 alt + shift + control + s

@@ -22,11 +22,14 @@ export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/doomemacs/bin"
 
 # dart & flutter
+export FLUTTER_ROOT=$(which flutter | rev | cut -d / -f3- | rev)
 export PATH="${PATH}:$HOME/.pub-cache/bin"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default/bin"
 export PATH="${PATH}:/usr/lib/dart/bin"
 
 # java & android
+export JAVA_HOME='/usr/lib/jvm/default'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
 export PATH="${PATH}:${JAVA_HOME:-/usr/lib/jvm/default}/bin"
 export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/emulator"
 export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/platform-tools"
@@ -82,7 +85,8 @@ export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export LEDGER_FILE="$XDG_DATA_HOME/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export PYTHONSTARTUP="/etc/python/pythonrc"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"

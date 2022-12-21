@@ -22,7 +22,7 @@ case $SHELL in
 */zsh)
     [ -z "$ZSH_NAME" ] && exec $SHELL $0 "$@"
     [ -d /etc/zsh ] && zdir=/etc/zsh || zdir=/etc
-    zhome=${ZDOTDIR:-$HOME}
+    zhome=${ZDOTDIR:-$HOME/.config/zsh}
     # zshenv is always sourced automatically.
     [ -f $zdir/zprofile ] && . $zdir/zprofile
     [ -f $zhome/.zprofile ] && . $zhome/.zprofile
@@ -95,10 +95,8 @@ if [ -f "$USERXSESSION" ]; then
   . "$USERXSESSION"
 fi
 
-[ -f "$XDG_CONFIG_HOME/X11/xinitrc" ] && "$XDG_CONFIG_HOME/X11/xinitrc"
-
-#if [ -z "$*" ]; then
-#    exec xmessage -center -buttons OK:0 -default OK "Sorry, $DESKTOP_SESSION is no valid session."
-#else
-#    exec $@
-#fi
+if [ -z "$*" ]; then
+    exec xmessage -center -buttons OK:0 -default OK "Sorry, $DESKTOP_SESSION is no valid session."
+else
+    exec $@
+fi

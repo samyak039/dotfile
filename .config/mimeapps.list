@@ -1,5 +1,5 @@
 [Added Associations]
-x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;
+x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;userapp-Kotatogram Desktop-CAT3U1.desktop;
 x-scheme-handler/http=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
 x-scheme-handler/https=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
 x-scheme-handler/chrome=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
@@ -17,8 +17,8 @@ x-scheme-handler/webcal=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-P
 x-scheme-handler/webcals=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-PXM9P1.desktop;userapp-Thunderbird-AXIHQ1.desktop;
 
 [Default Applications]
-application/pdf=org.pwmt.zathura.desktop;okularApplication_pdf.desktop;
-x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;
+application/pdf=FoxitReader.desktop
+x-scheme-handler/tg=userapp-Kotatogram Desktop-CAT3U1.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-EY01P1.desktop
 message/rfc822=userapp-Thunderbird-EY01P1.desktop
 x-scheme-handler/mid=userapp-Thunderbird-EY01P1.desktop
@@ -41,3 +41,5 @@ x-scheme-handler/kite=kite-copilot.desktop
 x-scheme-handler/discord-881480706545573918=discord-881480706545573918.desktop
 x-scheme-handler/desktime=DeskTime.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/web+ssh=brave-browser.desktop
+application/ppdf=FoxitReader.desktop

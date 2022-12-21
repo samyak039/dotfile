@@ -15,3 +15,6 @@
 (map! (:after LaTeX
        (:map LaTeX-mode-map
         :desc "\begin{}...\end{}" "a" #'LaTeX-environment)))
+
+;; hledger -> ledger-mode
+(add-to-list 'auto-mode-alist '("\\.journal\\'" . ledger-mode))

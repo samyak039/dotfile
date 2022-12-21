@@ -3,10 +3,12 @@
 
 # all the directories and mkdir them if not exists
 downloadDir=$(xdg-user-dir DOWNLOAD) ;  [ -d $downloadDir ] || mkdir $downloadDir
+
 archiveDir="$downloadDir/archive" ;     [ -d $archiveDir  ] || mkdir $archiveDir
 audioDir="$downloadDir/audio" ;         [ -d $audioDir    ] || mkdir $audioDir
 documentDir="$downloadDir/document";    [ -d $documentDir ] || mkdir $documentDir
 imageDir="$downloadDir/image";          [ -d $imageDir    ] || mkdir $imageDir
+isoDir="$downloadDir/iso";				[ -d $isoDir	  ] || mkdir $isoDir
 programDir="$downloadDir/program";		[ -d $programDir  ] || mkdir $programDir
 textDir="$downloadDir/text";            [ -d $textDir     ] || mkdir $textDir
 torrentDir="$downloadDir/torrent";      [ -d $torrentDir  ] || mkdir $torrentDir
@@ -28,6 +30,9 @@ inotifywait -m $downloadDir -e create -e moved_to |
 			# image
 			gif|jpeg|jpg|png)
 				move_to_dir=$imageDir ;;
+			# iso
+			iso)
+				move_to_dir=$isoDir ;;
 			# program
 			apk|AppImage|deb)
 				move_to_dir=$programDir ;;
