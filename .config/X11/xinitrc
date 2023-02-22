@@ -29,6 +29,7 @@ dwmblocks &
 set-display
 set-keymap && sxhkd &
 sort_download_dir.sh &
+work-life-balance.sh &
 
 ##########################
 # background application #
@@ -52,12 +53,11 @@ unclutter --timeout 3 --ignore-scrolling &
 #############
 # huge apps #
 #############
-DeskTime &
+# Evernote &
 # discord --start-minimized &
-[ $(date +%H) -gt 9 ] && [ $(date +%H) -lt 19 ] && ferdium &
-# ticktick &
-# morgen &
+morgen &
 # thunderbird-beta
+# ticktick &
 
 ##################
 # Window Manager #

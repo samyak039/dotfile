@@ -136,6 +136,7 @@
     "/home/samyak/.local/share/fvm/versions"
   ],
 
+  "gitlens.codeLens.includeSingleLineSymbols": true,
   "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
   "gitlens.currentLine.uncommittedChangesFormat": " ${ago}",
   "gitlens.defaultDateFormat": "YYYY, MMMM Do HH:mm",
@@ -145,16 +146,14 @@
   "gitlens.defaultTimeFormat": "HH:mm",
   "gitlens.graph.dimMergeCommits": true,
   "gitlens.graph.showRemoteNames": true,
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "gitlens.virtualRepositories.enabled": false,
 
   "gruvboxMaterial.highContrast": true,
   "gruvboxMaterial.darkWorkbench": "flat",
   "gruvboxMaterial.italicComments": false,
   "gruvboxMaterial.lightWorkbench": "flat",
-
-  "haskell.manageHLS": "GHCup",
-
-  "liveServer.settings.donotShowInfoMsg": true,
-  "liveServer.settings.host": "localhost",
 
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.print.imgToBase64": true,
@@ -163,8 +162,6 @@
   "markdown.occurrencesHighlight.enabled": true,
   "markdown.preview.breaks": true,
   "markdown.updateLinksOnFileMove.enabled": "prompt",
-
-  "redhat.telemetry.enabled": false,
 
   "scm.countBadge": "focused",
 
@@ -8097,11 +8094,6 @@
   "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
   "workbench.preferredLightColorTheme": "Gruvbox Material Light",
   "workbench.tree.expandMode": "doubleClick",
-  "workbench.activityBar.visible": false,
-
-  "yaml.schemas": {
-    "file:///home/samyak/.vscode/extensions/atlassian.atlascode-3.0.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-  },
 
   //######################
   // LANGUAGE PREFERENCES
@@ -8139,13 +8131,5 @@
 
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[xml]": {
-    "editor.defaultFormatter": "DotJoshJohnson.xml"
   }
 }

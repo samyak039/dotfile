@@ -17,12 +17,11 @@ export EDITOR="nvim"
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 export READER="zathura"
 export TERMINAL="alacritty"
-export VISUAL="emacsclient -c -s doom -a 'emacs'"
+#export VISUAL="emacsclient -c -s doom -a 'emacs'"
 
-########
+#######
 # TEMP #
 ########
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 
 ########
 # PATH #

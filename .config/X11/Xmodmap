@@ -13,6 +13,14 @@ clear mod5
 !   programmer dvorak
 !   with custom modifiers
 !   with custom second & third level
+!
+!    Key
+!    Shift+Key
+!    Mode_switch+Key
+!    Mode_switch+Shift+Key
+!    ISO_Level3_Shift+Key
+!    ISO_Level3_Shift+Shift+Key
+
 keycode   8 =
 keycode   9 = Escape NoSymbol Escape
 keycode  10 = ampersand percent
@@ -44,11 +52,11 @@ keycode  34 = slash question questiondown division
 keycode  35 = at asciicircum
 keycode  36 = Return
 keycode  37 = Hyper_L NoSymbol Hyper_L
-keycode  38 = a A
-keycode  39 = o O
+keycode  38 = a A amacron Amacron
+keycode  39 = o O omacron Omacron
 keycode  40 = e E
-keycode  41 = u U
-keycode  42 = i I
+keycode  41 = u U umacron Umacron
+keycode  42 = i I imacron Imacron
 keycode  43 = d D
 keycode  44 = h H Left
 keycode  45 = t T

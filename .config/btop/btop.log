@@ -29,3 +29,6 @@
 
 2022/09/06 (17:06:39) | ===> btop++ v.1.2.9
 2022/09/06 (17:06:39) | ERROR: Exception in runner thread -> Proc:: -> basic_string::replace: __pos (which is 18446744073709551608) > this->size() (which is 0)
+
+2023/01/28 (15:28:24) | ===> btop++ v.1.2.13
+2023/01/28 (15:28:25) | ERROR: Stall in Runner thread, restarting!

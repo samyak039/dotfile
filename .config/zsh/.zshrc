@@ -55,16 +55,28 @@ function v() {
 # vs code
 function vs() {
     if [ $# -gt 0 ]; then
-        code $@
+        codium $@
     else
-        code .
+        codium .
     fi
+}
+
+# case conversion
+
+function camelcase() {
+    perl -pe 's#(_)(.)#\u$2#g'
+}
+
+function snakecase() {
+    perl -pe 's#([A-Z])#_\L$1#g' | perl -pe 's#^_##'
 }
 
 # dotfile config
 alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
 # no confusion between doas --option or cmd --option
 alias doas='doas --'
+# update system
+alias pmsyu='doas pacman -Sy && doas powerpill -Su && paru -Su'
 # dart & flutter pub
 alias drt='fvm dart'
 alias fltr='fvm flutter'
