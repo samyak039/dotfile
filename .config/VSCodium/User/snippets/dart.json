@@ -10,19 +10,31 @@
   // 		"console.log('$1');",
   // 		"$2"
   // 	],
-  // 	"description": "Log output to console"
+  // 	"description": "Logg output to console"
   // },
 
   "log MESSAGE to console": {
     "prefix": "lg",
-    "body": "Log(StackTrace.current, '$1');",
+    "body": "Logg(StackTrace.current, '$1');",
     "description": "log MESSAGE to console"
   },
 
   "log ERROR to console": {
     "prefix": "le",
-    "body": "Log(StackTrace.current, '', error: $1);",
+    "body": "Logg(StackTrace.current, '', error: $1);",
     "description": "log ERROR to console"
+  },
+
+  "todo": {
+    "prefix": "td",
+    "body": "// TODO: $1",
+    "description": "TODO"
+  },
+
+  "fixme": {
+    "prefix": "fx",
+    "body": "// FIXME: $1",
+    "description": "FIXME"
   },
 
   "draw Border under Container()": {

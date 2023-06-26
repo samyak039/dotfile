@@ -1,10 +1,13 @@
+import:
+ - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
+
 env:
   TERM: xterm-256color
 
 window:
-  dimensions:
-    columns: 0
-    lines: 0
+  # dimensions:
+  #   columns: 0
+  #   lines: 0
   padding:
     x: 5
     y: 0
@@ -14,7 +17,7 @@ window:
   startup_mode: Maximized
   # title: Alacritty
   dynamic_title: true
-  decorations_theme_variant: dark
+  decorations_theme_variant: Dark
 
 scrolling:
   history: 10000
@@ -44,100 +47,6 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-colors:
-  primary:
-    background: "#202020"
-    # hard contrast background - '#131414' '#1d2021'
-    # medm contrash background - '#202020' # '#282828'
-    # soft contrast background - '#2a2827' # '#32302f'
-    foreground: "#d4be98" # '#ebdbb2'
-    bright_foreground: "#ddc7a1" # '#fbf1c7'
-    dim_foreground: "#c5b18d" # '#a89984'
-  # cursor:
-  #   text: CellBackground
-  #   cursor: CellForeground
-  # vi_mode_cursor:
-  #   text: CellBackground
-  #   cursor: CellForeground
-  search:
-    matches:
-      foreground: "#202020"
-      background: "#d8a657"
-    focused_match:
-      foreground: "#202020"
-      background: "#e78a4e"
-  hints:
-    start:
-      background: "#e78a4e"
-      foreground: "#202020"
-    end:
-      background: "#202020"
-      foreground: "#e78a4e"
-  footer_bar:
-    background: "#d4be98"
-    foreground: "#202020"
-  line_indicator:
-    backgronud: "#d4be98"
-    foreground: "#202020"
-  selection:
-    text: CellBackground
-    background: CellForeground
-  bright:
-    black: "#46403d" # '#928374'
-    red: "#ea6962" # '#fb4934'
-    green: "#a9b665" # '#b8bb26'
-    yellow: "#d8a657" # '#fabd2f'
-    blue: "#7daea3" # '#83a598'
-    magenta: "#d3869b" # '#d3869b'
-    cyan: "#89b482" # '#8ec07c'
-    white: "#d4be98" # '#ebdbb2'
-  normal:
-    black: "#2e2c2b" # '#282828'
-    red: "#b85651" # '#cc241d'
-    green: "#8f9a52" # '#98971a'
-    yellow: "#c18f41" # '#d79921'
-    blue: "#68948a" # '#458588'
-    magenta: "#ab6c7d" # '#b16286'
-    cyan: "#72966c" # '#689d6a'
-    white: "#f2e5bc" # '#a89984'
-  dim:
-    black: "#32302f" # '#32302f'
-    red: "#c14a4a" # '#9d0006'
-    green: "#6c782e" # '#79740e'
-    yellow: "#b47109" # '#b57614'
-    blue: "#45707a" # '#076678'
-    magenta: "#945e80" # '#8f3f71'
-    cyan: "#4c7a5d" # '#427b58'
-    white: "#928374" # '#928374'
-  indexed_colors:
-    - { index: 66, color: "#f2e5bc" } # '#a89984'
-    - { index: 72, color: "#72966c" } # '#689d6a'
-    - { index: 106, color: "#8f9a52" } # '#98971a'
-    - { index: 108, color: "#89b482" } # '#8ec07c'
-    - { index: 109, color: "#7daea3" } # '#83a598'
-    - { index: 124, color: "#b85651" } # '#cc241d'
-    - { index: 132, color: "#ab6c7d" } # '#b16286'
-    - { index: 142, color: "#a9b665" } # '#b8bb26'
-    - { index: 166, color: "#bd6f3e" } # '#d65d0e'
-    - { index: 167, color: "#ea6962" } # '#fb4934'
-    - { index: 172, color: "#c18f41" } # '#d79921'
-    - { index: 175, color: "#d3869b" } # '#d3869b'
-    - { index: 208, color: "#e78a4e" } # '#fe8019'
-    - { index: 214, color: "#d8a657" } # '#fabd2f'
-    - { index: 223, color: "#d4be98" } # '#ebdbb2'
-    - { index: 229, color: "#ddc7a1" } # '#fbf1c7'
-    - { index: 234, color: "#131414" } # '#1d2021'
-    - { index: 235, color: "#202020" } # '#282828'
-    - { index: 236, color: "#2A2827" } # '#32302f'
-    - { index: 237, color: "#2E2C2B" } # '#3c3836'
-    - { index: 239, color: "#32302f" } # '#504945'
-    - { index: 241, color: "#3d3835" } # '#665c54'
-    - { index: 243, color: "#46403d" } # '#7c6f64'
-    - { index: 245, color: "#514945" } # '#928374'
-    - { index: 246, color: "#5a524c" } # '#a89984'
-    - { index: 248, color: "#665c54" } # '#bdae93'
-    - { index: 250, color: "#7c6f64" } # '#d5c4a1'
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
@@ -145,15 +54,12 @@ selection:
 cursor:
   style:
     shape: Underline
-  blinking: Off
   vi_mode_style:
     shape: Block
   unfocused_hollow: false
   thickness: 0.25
 
 live_config_reload: true
-
-alt_send_esc: true
 
 mouse:
   hide_when_typing: true
@@ -175,7 +81,7 @@ hints:
 
 mouse_bindings:
   - { mouse: Right, action: ExpandSelection }
-  - { mouse: Middle, mode: ~Vi, action: PasteSelection }
+  # - { mouse: Middle, mode: ~Vi, action: PasteSelection }
 
 key_bindins:
   # custom

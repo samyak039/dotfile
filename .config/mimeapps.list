@@ -15,11 +15,12 @@ x-scheme-handler/mid=userapp-Thunderbird-YGG4P1.desktop;userapp-Thunderbird-UVKX
 x-scheme-handler/webcal=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-PXM9P1.desktop;userapp-Thunderbird-AXIHQ1.desktop;
 x-scheme-handler/webcals=userapp-Thunderbird-MG0BQ1.desktop;userapp-Thunderbird-PXM9P1.desktop;userapp-Thunderbird-AXIHQ1.desktop;
 image/png=eom.desktop;
+application/pdf=org.kde.okular.desktop;
 
 [Default Applications]
-application/pdf=FoxitReader.desktop
+application/pdf=org.kde.okular.desktop
 x-scheme-handler/tg=userapp-Kotatogram Desktop-CAT3U1.desktop
-x-scheme-handler/mailto=userapp-Thunderbird-EY01P1.desktop
+x-scheme-handler/mailto=brave-browser.desktop
 message/rfc822=userapp-Thunderbird-EY01P1.desktop
 x-scheme-handler/mid=userapp-Thunderbird-EY01P1.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-AXIHQ1.desktop
@@ -46,3 +47,5 @@ application/ppdf=FoxitReader.desktop
 image/png=eom.desktop
 x-scheme-handler/notion=notion-app.desktop
 x-scheme-handler/etcher=balena-etcher.desktop
+x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
+x-scheme-handler/clickup=ClickUp.desktop

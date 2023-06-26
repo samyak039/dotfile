@@ -1,116 +1,79 @@
 {
-  "codegpt.apiKey": "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",
-
-  "cSpell.diagnosticLevel": "Hint",
-  "cSpell.showStatus": false,
-  "cSpell.userWords": [
-    "Appbar",
-    "ARGB",
-    "autocorrect",
-    "autofocus",
-    "Bardiya",
-    "Bootstap",
-    "Cumulations",
-    "cupertino",
-    "datatable",
-    "domlock",
-    "Fira",
-    "Firestore",
-    "flexbox",
-    "flutterfire",
-    "Fluttertoast",
-    "geolocator",
-    "gruvbox",
-    "LTRB",
-    "namaste",
-    "Neue",
-    "Passcode",
-    "Prefs",
-    "pygame",
-    "reinitializing",
-    "rgba",
-    "riverpod",
-    "Samyak",
-    "screencast",
-    "Showtoast",
-    "signup",
-    "speciality",
-    "SSID",
-    "sublist",
-    "subloc",
-    "todos",
-    "ulli",
-    "unfocus",
-    "vsync",
-    "xmark"
-  ],
-
-  "customizeUI.activityBar": "bottom",
-  "customizeUI.font.monospace": "Fira Code",
-  "customizeUI.font.regular": "Fira Sans",
-
-  "dart.debugExternalPackageLibraries": false,
-  "dart.debugSdkLibraries": false,
-  "dart.devToolsLocation": "external",
-  "dart.flutterScreenshotPath": "~/image/screenshot/",
-  "dart.flutterSdkPath": ".fvm/flutter_sdk",
-  "dart.previewFlutterUiGuides": true,
-  "dart.previewFlutterUiGuidesCustomTracking": true,
-  "dart.renameFilesWithClasses": "prompt",
-  "dart.runPubGetOnNestedProjects": "below",
-  "dart.runPubGetOnPubspecChanges": "prompt",
+  //#############//
+  // PREFERENCES //
+  //#############//
 
   "debug.confirmOnExit": "always",
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
+  "debug.javascript.breakOnConditionalError": true,
 
   "diffEditor.codeLens": true,
+  "diffEditor.renderIndicators": false,
 
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.codeLensFontSize": 9,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
   "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.cursorSurroundingLines": 5,
-  "editor.indentSize": "tabSize",
+  "editor.detectIndentation": false,
   "editor.find.autoFindInSelection": "multiline",
-  "editor.fontFamily": "'Fira Code', 'FiraCode Nerd Font', 'monospace'",
-  "editor.fontLigatures": true,
+  "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code'",
+  "editor.fontLigatures": "'cv25', 'cv26', 'cv32', 'ss02', 'ss07', 'ss08'",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.formatOnType": true,
   "editor.guides.bracketPairs": "active",
+  "editor.indentSize": "tabSize",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.fontSize": 10,
+  "editor.inlayHints.padding": true,
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.enabled": false,
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.size": "fill",
-  "editor.overviewRulerBorder": false,
-  "editor.renderWhitespace": "none",
   "editor.rulers": [80],
   "editor.stickyScroll.enabled": true,
+  "editor.stickyTabStops": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.preview": true,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggestFontSize": 12,
+  "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
-
-  "errorLens.fontSize": "10",
-  "errorLens.gutterIconSet": "defaultOutline",
-  "errorLens.messageTemplate": "$severity:$code",
+  "editor.quickSuggestions": {
+    "other": "inline"
+  },
 
   "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.enabled": true,
   "explorer.incrementalNaming": "smart",
   "explorer.openEditors.visible": 5,
-  "explorer.sortOrder": "foldersNestsFiles",
+  "explorer.sortOrder": "type",
+  "explorer.sortOrderLexicographicOptions": "upper",
 
-  "files.autoSave": "onFocusChange",
+  "files.autoSaveDelay": 10000,
   "files.insertFinalNewline": true,
+  "files.simpleDialog.enable": true,
   "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "files.associations": {
-    "*.journal": "hledger"
+    "*.journal": "ledger",
+    ".zimrc": "shellscript",
+    "*.toml": "properties",
+    "*.html": "html",
+    "*.js": "javascript"
   },
   "files.watcherExclude": {
-    "**/.fvm": true
+    "**/.fvm": true,
+    "**/node_modules": true,
+    "**/venv": true
   },
-
-  "git-graph.commitDetailsView.fileView.type": "File List",
-  "git-graph.date.format": "Relative",
-  "git-graph.dialog.addTag.pushToRemote": true,
-  "git-graph.enhancedAccessibility": true,
-  "git-graph.referenceLabels.alignment": "Branches (on the left) & Tags (on the right)",
 
   "git.autofetch": true,
   "git.branchPrefix": "dev--",
@@ -120,6 +83,7 @@
   "git.fetchOnPull": true,
   "git.followTagsWhenSync": true,
   "git.ignoreRebaseWarning": true,
+  "git.mergeEditor": true,
   "git.pullBeforeCheckout": true,
   "git.showPushSuccessNotification": true,
   "git.terminalGitEditor": true,
@@ -127,17 +91,299 @@
   "git.untrackedChanges": "separate",
   "git.verboseCommit": true,
   "git.ignoredRepositories": [
+    "fvm",
     "/home/samyak/.local/share/fvm/versions/stable",
     "/home/samyak/.local/share/fvm/"
   ],
-  "git.mergeEditor": true,
   "git.repositoryScanIgnoredFolders": [
     "node_modules",
+    "fvm",
     "/home/samyak/.local/share/fvm/versions"
   ],
 
+  "scm.countBadge": "focused",
+
+  "screencastMode.fontSize": 36,
+  "screencastMode.verticalOffset": 10,
+
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.exclude": {
+    "**/.fvm": true,
+    "**/node_modules": true,
+    "**/package-lock.json": true,
+    "**/venv": true
+  },
+
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.shellIntegration.enabled": false,
+  "terminal.integrated.shellIntegration.suggestEnabled": true,
+  "terminal.integrated.tabs.enabled": false,
+
+  "window.autoDetectColorScheme": true,
+  "window.confirmBeforeClose": "keyboardOnly",
+  "window.dialogStyle": "custom",
+  "window.menuBarVisibility": "toggle",
+  "window.title": "${dirty}${rootName}${separator}${remoteName}${separator}${activeEditorShort}${separator}${appName}",
+
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
+  "workbench.preferredLightColorTheme": "Gruvbox Material Light",
+  "workbench.productIconTheme": "fluent-icons",
+  "workbench.tree.expandMode": "doubleClick",
+  "workbench.tree.indent": 12,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#ea6962", // red
+    "editorBracketHighlight.foreground2": "#d8a657", // yellow
+    "editorBracketHighlight.foreground3": "#a9b665", // green
+    "editorBracketHighlight.foreground4": "#7daea3", // blue
+    "editorBracketHighlight.foreground5": "#e78a4e", // orange
+    "editorBracketHighlight.foreground6": "#d3869b" // purple
+    // "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+  },
+
+  //############//
+  // EXTENSIONS //
+  //############//
+
+  "extensionAllowedProposedApi": [
+    "ms-vscode-remote.vscode-remote-extensionpack",
+    "ms-vscode-remote.remote-wsl"
+  ],
+
+  "autoDocstring.includeName": true,
+  "autoDocstring.startOnNewLine": true,
+
+  "better-comments.tags": [
+    {
+      "tag": "bug",
+      "color": "#ea6962", // red
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "fixme",
+      "color": "#e78a4e", // orange
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "!",
+      "color": "#e78a4e", // orange
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "hack",
+      "color": "#7daea3", // orange
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": true,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#7daea3", // blue
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#d8a657", // yellow
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "[x]",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "[ ]",
+      "color": "#d3869b", // purple
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#a9b665", // green
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+
+  "black-formatter.args": ["-l", "80"],
+
+  "codegpt.apiKey": "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",
+
+  "CodeGPT.model": "text-davinci-003",
+
+  "color-highlight.markRuler": false,
+
+  "cSpell.diagnosticLevel": "Hint",
+  "cSpell.showStatus": false,
+  "cSpell.userWords": [
+    "alexa",
+    "Appbar",
+    "Appwrite",
+    "ARGB",
+    "autocorrect",
+    "autofocus",
+    "Bardiya",
+    "Bengaluru",
+    "Bootstap",
+    "classs",
+    "combinators",
+    "Cumulations",
+    "cupertino",
+    "dartdocs",
+    "datatable",
+    "deintegrate",
+    "Dhiraj",
+    "Divya",
+    "domlock",
+    "Fira",
+    "Firestore",
+    "flexbox",
+    "flutterfire",
+    "Fluttertoast",
+    "geolocator",
+    "gruvbox",
+    "imdb",
+    "itsdangerous",
+    "JWT",
+    "Karnataka",
+    "Logg",
+    "LTRB",
+    "Manan",
+    "Mehta",
+    "namaste",
+    "Neue",
+    "Oswal",
+    "Passcode",
+    "pincode",
+    "pkey",
+    "Podfile",
+    "precache",
+    "Prefs",
+    "Pubspec",
+    "pygame",
+    "pymongo",
+    "razorpay",
+    "refac",
+    "reinitializing",
+    "rgba",
+    "riverpod",
+    "Rohit",
+    "Samyak",
+    "screencast",
+    "Showtoast",
+    "signup",
+    "speciality",
+    "SQLALCHEMY",
+    "sshtunnel",
+    "SSID",
+    "sublist",
+    "subloc",
+    "Sunita",
+    "todos",
+    "ulli",
+    "unfocus",
+    "upsert",
+    "vsync",
+    "xmark",
+    "xtra",
+    "zipcode"
+  ],
+
+  "customizeUI.activityBar": "top",
+  "customizeUI.activityBarHideSettings": true,
+  "customizeUI.listRowHeight": 20, // shrink rows to match XCode
+  "customizeUI.fontSizeMap": {
+    "13px": "11px",
+    "12px": "11px",
+    "window-title": "12px", // Window title font when using custom titlebar
+    "tab-title": "12px", // Used for editor tab titles
+    "monospace": "10.5px", // Used for monospace fonts in user interface
+    "menu": "13px" // Used for menu items (windows only)
+  },
+
+  "emmet.useInlineCompletions": true,
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+
+  "errorLens.enableOnDiffView": true,
+  "errorLens.fontSize": "10",
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.gutterIconSize": "auto",
+  "errorLens.messageBackgroundMode": "message",
+  "errorLens.messageTemplate": "$message $count || $source $code",
+  "errorLens.padding": "4",
+  "errorLens.replaceLinebreaksSymbol": " || ",
+  "errorLens.scrollbarHackEnabled": true,
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.exclude": [
+    "File '/home/samyak/ct/majik_kids/appwrite_nodejs/src/pages_collection\\.ts' not found\\.  The file is in the program because:    Matched by default include pattern '\\*\\*/\\*'"
+  ],
+
+  "flake8.severity": {
+    "E": "Warning",
+    "F": "Information"
+  },
+
+  "git-graph.commitDetailsView.fileView.type": "File List",
+  "git-graph.date.format": "Relative",
+  "git-graph.dialog.addTag.pushToRemote": true,
+  "git-graph.enhancedAccessibility": true,
+  "git-graph.referenceLabels.alignment": "Branches (on the left) & Tags (on the right)",
+
+  "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.includeSingleLineSymbols": true,
   "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.scrollable": false,
   "gitlens.currentLine.uncommittedChangesFormat": " ${ago}",
   "gitlens.defaultDateFormat": "YYYY, MMMM Do HH:mm",
   "gitlens.defaultDateLocale": "en-IN",
@@ -149,11 +395,75 @@
   "gitlens.showWelcomeOnInstall": false,
   "gitlens.showWhatsNewAfterUpgrades": false,
   "gitlens.virtualRepositories.enabled": false,
+  "gitlens.autolinks": [
+    {
+      "prefix": "MJK-",
+      "url": "https://cumulations.atlassian.net/browse/MJK-<num>"
+    },
+    {
+      "prefix": "MK-",
+      "url": "https://samyak-ct.atlassian.net/browse/MK-<num>"
+    }
+  ],
 
-  "gruvboxMaterial.highContrast": true,
   "gruvboxMaterial.darkWorkbench": "flat",
+  "gruvboxMaterial.diagnosticTextBackgroundOpacity": "12.5%",
+  "gruvboxMaterial.highContrast": true,
   "gruvboxMaterial.italicComments": false,
   "gruvboxMaterial.lightWorkbench": "flat",
+
+  "indenticator.color.dark": "#a89984",
+  "indenticator.color.light": "#7c6f64",
+  "indenticator.hover.highlight": false,
+  "indenticator.hover.peekBack": 1,
+  "indenticator.hover.peekForward": 1,
+  "indenticator.inner.color.dark": "#7c6f64",
+  "indenticator.inner.color.light": "#a89984",
+  "indenticator.inner.showHover": false,
+  "indenticator.inner.showIndentGuide": true,
+  "indenticator.inner.style": "",
+  "indenticator.inner.width": 2,
+  "indenticator.showHover": false,
+  "indenticator.style": "",
+  "indenticator.width": 2,
+  "indenticator.languageSpecific": {
+    "[python]": {
+      "indenticator.hover.highlight": true,
+      "indenticator.inner.hover.peekBack": 1,
+      "indenticator.inner.hover.peekForward": 1,
+      "indenticator.inner.showHover": true,
+      "indenticator.inner.style": "inset",
+      "indenticator.showHover": true,
+      "indenticator.style": "inset"
+    }
+  },
+
+  "indentRainbow.errorColor": "rgba(0,0,0,0)",
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.colors": [
+    // "#b85651", // dimRed
+    // "#c18f41", // dimYellow
+    // "#859a52", // dimGreen
+    // "#68948a", // dimBlue
+    // "#bd6f3e", // dimOrange
+    // "#ab6c7d" // dimPurple
+    "#ea6962", // red
+    "#d8a657", // yellow
+    "#a9b665", // green
+    "#7daea3", // blue
+    "#e78a4e", // orange
+    "#d3869b" // purple
+  ],
+  "indentRainbow.includedLanguages": ["python", "django-html", "shellscript"],
+
+  "isort.args": ["--profile", "black", "-l", "80"],
+  "isort.check": true,
+  "isort.severity": {
+    "E": "Information"
+  },
+
+  "liveServer.settings.host": "localhost",
 
   "markdown.extension.italic.indicator": "_",
   "markdown.extension.print.imgToBase64": true,
@@ -163,24 +473,69 @@
   "markdown.preview.breaks": true,
   "markdown.updateLinksOnFileMove.enabled": "prompt",
 
-  "scm.countBadge": "focused",
+  "material-icon-theme.activeIconPack": "none",
 
-  "screencastMode.fontSize": 32,
-  "screencastMode.verticalOffset": 10,
+  "prettier.proseWrap": "always",
+  "prettier.singleQuote": true,
 
-  "search.searchEditor.reusePriorSearchConfiguration": true,
-  "search.showLineNumbers": true,
-  "search.smartCase": true,
-  "search.exclude": {
-    "**/.fvm": true
-  }, // Remove from file watching
+  "prettifySymbolsMode.revealOn": "selection",
+  "prettifySymbolsMode.substitutions": [
+    {
+      "language": "python",
+      "substitutions": [
+        {
+          "ugly": "lambda",
+          "pretty": "λ"
+        }
+      ]
+    }
+  ],
 
-  "terminal.integrated.copyOnSelection": true,
-  "terminal.integrated.shellIntegration.enabled": true,
+  "redhat.telemetry.enabled": false,
+
+  "rewrap.autoWrap.enabled": true,
+  "rewrap.reformat": true,
+
+  "sync.autoDownload": true,
+  "sync.autoUpload": true,
+  "sync.forceDownload": false,
+  "sync.quietSync": true,
+  "sync.gist": "979edd32ee6e33ad5eb730cd9523bd32",
+  "sync.forceUpload": true,
+
+  "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
+  "todo-tree.general.exportPath": "./todo-tree-%Y%m%d-%H%M.txt",
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": true,
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.highlights.useColourScheme": true,
+  "todo-tree.tree.expanded": true,
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.tree.tooltipFormat": "${tag} ${after}\n${filepath}, line ${line}",
+  "todo-tree.general.tags": ["BUG", "FIXME", "HACK", "TODO", "[ ]", "[x]"],
+  "todo-tree.highlights.backgroundColourScheme": [
+    "#ea6962", // BUG // red
+    "#e78a4e", // FIXME // orange
+    "#7daea3", // HACK // orange
+    "#d8a657", // TODO // yellow
+    "#d3869b", // [ ] // purple
+    "#ab6c7d" // [x] // dimPurple
+  ],
+  "todo-tree.highlights.foregroundColourScheme": [
+    "black", // BUG
+    "black", // HACK
+    "black", // FIXME
+    "black", // TODO
+    "black", // XXX
+    "black", // [ ]
+    "white" // [x]
+  ],
 
   "turboConsoleLog.addSemicolonInTheEnd": true,
-  "turboConsoleLog.logMessagePrefix": "=>",
+  "turboConsoleLog.delimiterInsideMessage": "::",
   "turboConsoleLog.includeFileNameAndLineNum": false,
+  "turboConsoleLog.logMessagePrefix": "=>",
+  "turboConsoleLog.quote": "'",
 
   "vim.camelCaseMotion.enable": true,
   "vim.changeWordIncludesWhitespace": true,
@@ -194,6 +549,7 @@
   "vim.hlsearch": true,
   "vim.inccommand": "append",
   "vim.leader": "",
+  "vim.replaceWithRegister": true,
   "vim.shell": "/bin/zsh",
   "vim.showMarksInGutter": true,
   "vim.smartRelativeLine": true,
@@ -661,7 +1017,7 @@
     },
     {
       "key": "c",
-      "name": "+Compile/Comments",
+      "name": "+Code",
       "icon": "gear",
       "type": "bindings",
       "bindings": [
@@ -685,6 +1041,20 @@
           "icon": "eye-watch",
           "type": "command",
           "command": "editor.debug.action.showDebugHover"
+        },
+        {
+          "key": "f",
+          "name": "Format Buffer",
+          "icon": "file",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "F",
+          "name": "Format Selection",
+          "icon": "selection",
+          "type": "command",
+          "command": "editor.action.formatSelection"
         },
         {
           "key": "l",
@@ -1047,10 +1417,10 @@
         },
         {
           "key": "n",
-          "name": "New file",
+          "name": "Advanced New file",
           "icon": "new-file",
           "type": "command",
-          "command": "explorer.newFile"
+          "command": "extension.advancedNewFile"
         },
         {
           "key": "o",
@@ -1109,6 +1479,13 @@
             "workbench.files.action.showActiveFileInExplorer",
             "deleteFile"
           ]
+        },
+        {
+          "key": "N",
+          "name": "New file",
+          "icon": "new-file",
+          "type": "command",
+          "command": "explorer.newFile"
         },
         {
           "key": "L",
@@ -4483,6 +4860,13 @@
               "command": "editor.emmet.action.wrapWithAbbreviation"
             },
             {
+              "key": "x",
+              "name": "Emmet: Remove Tag",
+              "icon": "trash",
+              "type": "command",
+              "command": "editor.emmet.action.removeTag"
+            },
+            {
               "key": "L",
               "name": "Live Server: Stop",
               "icon": "globe",
@@ -4609,6 +4993,13 @@
                   "command": "workbench.action.showAllSymbols"
                 }
               ]
+            },
+            {
+              "key": "m",
+              "name": "Turbo Console Log: Display Log Message",
+              "icon": "debug",
+              "type": "command",
+              "command": "turboConsoleLog.displayLogMessage"
             },
             {
               "key": "G",
@@ -6103,6 +6494,42 @@
               ]
             },
             {
+              "key": "j",
+              "name": "+Jupyter",
+              "icon": "notebook-render-output",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "j",
+                  "name": "Execute Cell",
+                  "icon": "play",
+                  "type": "command",
+                  "command": "notebook.cell.execute"
+                },
+                {
+                  "key": "e",
+                  "name": "Execute Cell",
+                  "icon": "notebook-execute",
+                  "type": "command",
+                  "command": "notebook.cell.execute"
+                },
+                {
+                  "key": "y",
+                  "name": "Add Code Cell",
+                  "icon": "add",
+                  "type": "command",
+                  "command": "notebook.cell.execute"
+                },
+                {
+                  "key": "y",
+                  "name": "Add Code Cell",
+                  "icon": "add",
+                  "type": "command",
+                  "command": "notebook.cell.execute"
+                }
+              ]
+            },
+            {
               "key": "r",
               "name": "+Refactor",
               "icon": "edit",
@@ -6733,6 +7160,13 @@
                   "command": "workbench.action.showAllSymbols"
                 }
               ]
+            },
+            {
+              "key": "m",
+              "name": "Turbo Console Log: Display Log Message",
+              "icon": "debug",
+              "type": "command",
+              "command": "turboConsoleLog.displayLogMessage"
             },
             {
               "key": "G",
@@ -8080,21 +8514,6 @@
 
   "whichkey.delay": 300,
 
-  "window.autoDetectColorScheme": true,
-  "window.confirmBeforeClose": "keyboardOnly",
-  "window.dialogStyle": "custom",
-  "window.menuBarVisibility": "toggle",
-  "window.title": "${dirty}${rootName}${separator}${remoteName}${separator}${activeEditorShort}${separator}${appName}",
-  "window.titleSeparator": " ■ ",
-
-  "workbench.colorTheme": "Gruvbox Material Dark",
-  "workbench.editor.showTabs": false,
-  "workbench.enableExperiments": false,
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
-  "workbench.preferredLightColorTheme": "Gruvbox Material Light",
-  "workbench.tree.expandMode": "doubleClick",
-
   //######################
   // LANGUAGE PREFERENCES
   //######################
@@ -8103,14 +8522,33 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
+  "dart.devToolsLocation": "external",
+  "dart.experimentalRefactors": true,
+  "dart.flutterScreenshotPath": "~/image/screenshot/",
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.previewCommitCharacters": true,
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.renameFilesWithClasses": "prompt",
+  "dart.runPubGetOnNestedProjects": "below",
+  "dart.runPubGetOnPubspecChanges": "prompt",
+  "dart.showTodos": false,
   "[dart]": {
-    // "editor.selectionHighlight": false,
-    // "editor.suggest.snippetsPreventQuickSuggestions": false,
-    // "editor.wordBasedSuggestions": false
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
   },
 
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "editor.tabSize": 4
   },
 
   "[javascript]": {
@@ -8125,11 +8563,100 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "php.format.rules.arrayInitializersNewLineBeforeFirstElement": true,
+  "php.inlayHints.parameters.byReference": true,
+  "php.inlayHints.parameters.enabled": true,
+  "php.inlayHints.parameters.suppressNameMatchingValue": true,
+  "php.inlayHints.types.return": true,
+  "php.inlayHints.types.suppressVariableFromLiteral": false,
+  "php.inlayHints.types.variable": true,
+  "php.suggest.basic": true,
+  "php.validate.enable": true,
+
+  "[plaintext]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.wordWrap": "wordWrapColumn"
+  },
+
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.importFormat": "relative",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "off",
+  "python.linting.enabled": false,
+  "python.linting.flake8CategorySeverity.F": "Information",
+  "python.testing.pytestEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+
+  "[shellscript]": {
+    "editor.tabSize": 4
+  },
+
+  "svg.preview.mode": "svg",
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+
+  // "typescript.extension.sortImports.pathSortOrder": [
+  //   "package",
+  //   "relativeUpLevel",
+  //   "relativeDownLevel"
+  // ],
+  // "typescript.extension.sortImports.sortMethod": "path",
+  // "typescript.extension.sortImports.sortOnSave": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  "xml.format.maxLineWidth": 80,
+  "xml.format.splitAttributes": true,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+    // "editor.tabSize": 4
+  },
+
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  //########
+  // Others
+  //########
+  "": "",
+  "npm.keybindingsChangedWarningShown": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "gruvboxMaterial.darkPalette": "original",
+  "gruvboxMaterial.lightPalette": "original",
+  "material-icon-theme.hidesExplorerArrows": true
 }

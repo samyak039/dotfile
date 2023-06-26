@@ -8,7 +8,6 @@
 #
 # @samyak039
 
-
 ############
 # DEFAULTS #
 ############
@@ -19,19 +18,14 @@ export READER="zathura"
 export TERMINAL="alacritty"
 #export VISUAL="emacsclient -c -s doom -a 'emacs'"
 
+############
+# REQUIRED #
+############
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+
 #######
 # TEMP #
 ########
 
-########
-# PATH #
-########
-#typeset -U path PATH
-#path=($XDG_BIN_HOME $path)
-#path=($SCRIPT $SCRIPT/crt $SCRIPT/statusbar $path)
-#path=($XDG_DATA_HOME/doomemacs/bin $path)
-#path=($JAVA_HOME/bin $path)
-#path=($ANDROID_SDK_ROOT/cmdline-tools/latest/bin $ANDROID_SDK_ROOT/tools $path)
-#path=($ANDROID_SDK_ROOT/emulator $ANDROID_SDK_ROOT/platform-tools $path)
-#path=($ANDROID_SDK_ROOT/tools $ANDROID_SDK_ROOT/)
-#export PATH
+# zsh
+export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"

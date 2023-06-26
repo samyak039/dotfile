@@ -90,9 +90,9 @@ hyper + a
     pavucontrol
     #$TERMINAL -t ncpamixer -e ncpamixer
 hyper + b
-    firefox-developer-edition
+    librewolf
 hyper + shift + b
-    firefox-developer-edition -P dev
+    brave --profile-directory="Default"
 hyper + c
     qalculate-gtk
 #hyper + d
@@ -109,32 +109,24 @@ hyper + g
     gentleman
 hyper + h
     $TERMINAL -t btop -e btop
-hyper + i
-    gimp
 hyper + k
     keepassxc
 hyper + m
-    gmail-desktop
+    morgen
 hyper + n
     $TERMINAL -t nvim -e nvim
-hyper + o
-    ticktick
 hyper + p
     pcmanfm
-hyper + q
-    qutebrowser
 hyper + r
-    $TERMINAL -t tremc -e tremc
+    $TERMINAL -t tremc -e tremc -X
 hyper + s
     spotify-tray
 hyper + t
     kotatogram-desktop
-hyper + v
-    vscodium
+# hyper + v
+#     vscodium
 hyper + w
-    whatsie
-hyper + y
-    youtube-music
+    zapzap
 
 # restart scripts or daemon
 alt + shift + control + s

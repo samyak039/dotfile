@@ -10,6 +10,6 @@ Section "InputClass"
 	Identifier "libinput"
 	MatchIsPointer "yes"
 	Driver "libinput"
-    Option "AccelProfile" "flat"
+  Option "AccelProfile" "flat"
 	Option "AccelSpeed" "0"
 EndSection

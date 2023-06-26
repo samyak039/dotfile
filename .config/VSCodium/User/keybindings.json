@@ -6,7 +6,7 @@
     "when": "editorTextFocus && !gitlens:disabled && !gitlens:disabledToggleCodeLens && config.gitlens.keymap == 'alternate'"
   },
   {
-    "key": "shift+alt+j",
+    "key": "shift+alt+k",
     "command": "workbench.action.toggleSidebarVisibility"
   },
   {
@@ -14,7 +14,7 @@
     "command": "-workbench.action.toggleSidebarVisibility"
   },
   {
-    "key": "shift+alt+k",
+    "key": "shift+alt+x",
     "command": "workbench.action.togglePanel"
   },
   {
@@ -149,7 +149,7 @@
   {
     "key": "ctrl+l",
     "command": "acceptSelectedSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus && !terminalFocus"
   },
   // Easy navigation in parameter hint (i.e. traverse the hints when there's multiple overload for one method)
   // Cannot be added to package.json because of conflict with vim's default bindings
@@ -177,7 +177,7 @@
   {
     "key": "ctrl+l",
     "command": "acceptSelectedCodeAction",
-    "when": "codeActionMenuVisible"
+    "when": "codeActionMenuVisible && !terminalFocus"
   },
   // Add ctrl+h/l to navigate in file browser
   {
@@ -188,7 +188,7 @@
   {
     "key": "ctrl+l",
     "command": "file-browser.stepIn",
-    "when": "inFileBrowser"
+    "when": "inFileBrowser && !terminalFocus"
   },
   {
     "key": "shift+alt+g",
@@ -199,7 +199,205 @@
     "command": "-acmx.runSolution"
   },
   {
+    "key": "ctrl+shift+alt+i",
+    "command": "editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+[Backquote]",
+    "command": "workbench.action.terminal.focus"
+  },
+  {
+    "key": "ctrl+[Backquote]",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l c",
+    "command": "extension.copyGitHubLinkToClipboard",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+l c",
+    "command": "-extension.copyGitHubLinkToClipboard"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "expandLineSelection",
+    "when": "textInputFocus && !terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "notebook.centerActiveCell",
+    "when": "notebookEditorFocused && !terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-notebook.centerActiveCell",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+l g",
+    "command": "extension.openInGitHub",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+l g",
+    "command": "-extension.openInGitHub"
+  },
+  {
+    "key": "ctrl+l p",
+    "command": "extension.openPrGitProvider",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+l p",
+    "command": "-extension.openPrGitProvider"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "extension.vim_navigateCtrlL",
+    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl && !terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-extension.vim_navigateCtrlL",
+    "when": "editorTextFocus && vim.active && vim.use<C-l> && !inDebugRepl"
+  },
+  {
+    "key": "alt+2",
+    "command": "-workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "alt+0",
+    "command": "-workbench.action.lastEditorInGroup"
+  },
+  {
     "key": "ctrl+shift+alt+g",
+    "command": "gitlens.showGraphPage"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.explorer",
+        "workbench.action.terminal.focus",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+e",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.explorer",
+        "workbench.debug.action.toggleRepl",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.view.debug",
+        "workbench.debug.action.toggleRepl",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+j",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.toggleAuxiliaryBar"
+      ]
+    }
+  },
+  {
+    "key": "shift+alt+q",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "shift+alt+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "turboConsoleLog.displayLogMessage",
+    "when": "editorTextFocus && editorLangId =~ /typescript|javascript/"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "-turboConsoleLog.displayLogMessage"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-selectAllSearchEditorMatches",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-editor.action.selectHighlights",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "-addCursorsAtSearchResults",
+    "when": "fileMatchOrMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+l",
     "command": "git-graph.view"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-codegpt.getCode"
+  },
+  {
+    "key": "ctrl+shift+'",
+    "command": "workbench.view.extension.todo-tree-container"
+  },
+  {
+    "key": "alt+space",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "alt+space",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus && terminalShellIntegrationEnabled && !accessibilityModeEnabled && terminalShellType == 'pwsh'"
+  },
+  {
+    "key": "shift+space",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "f8",
+    "command": "-extension.miramac.node.exec"
   }
 ]

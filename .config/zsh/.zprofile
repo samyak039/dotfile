@@ -8,7 +8,6 @@
 #
 # @samyak039
 
-
 ########
 # PATH #
 ########
@@ -39,11 +38,6 @@ export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/tools/bin"
 # `cmdline-tolos/bin` AFTER `tools/bin` only. need to override the above one
 export PATH="${PATH}:${ANDROID_SDK_ROOT:-/opt/android-sdk}/cmdline-tools/latest/bin"
 
-# nodejs
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 ###################
 # XDG Directories #
 ###################
@@ -60,50 +54,71 @@ export CACHE="$XDG_CACHE_HOME"
 export DATA="$XDG_DATA_HOME"
 export SCRIPT="$HOME/script"
 
-
-#######
-# ENV #
-#######
-# android studio
-export _JAVA_AWT_WM_NONREPARENTING=1
-# flutter needs Chrome
-export CHROME_EXECUTABLE="/usr/bin/brave"
-
-
 #######
 # XDG #
 #######
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
 export FVM_HOME="$XDG_DATA_HOME/fvm"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
+# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export FZF_PATH="$XDG_DATA_HOME/fzf"
 
+#######
+# ENV #
+#######
+
+# android studio
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Brave -> Chrome
+export CHROME_EXECUTABLE="/usr/bin/brave"
+
+# https://github.com/oldratlee/hacker-quotes
+export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE=true
+
+# nodejs
+export NVM_DIR="$XDG_DATA_HOME/nvm"
+source /usr/share/nvm/init-nvm.sh
+
+# python
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+# eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+
+# zsh
+export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 
 #############
 # XDG-Ninja #
 #############
+alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 export ATOM_HOME="$XDG_DATA_HOME/atom"
+export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal/config"
+export CABAL_DIR="$XDG_DATA_HOME/cabal"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
+export GOPATH="$XDG_DATA_HOME/go"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export LEDGER_FILE="$XDG_DATA_HOME/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
+export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export PYTHONSTARTUP="/etc/python/pythonrc"
+export STACK_XDG=1
+export STACK_ROOT="$XDG_DATA_HOME/stack"
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 # export npm_config_cache="$XDG_CACHE_HOME/npm"
 # export npm_config_init_module="$XDG_CONFIG_HOME/npm/config/npm-init.js"
-# export npm_config_prefix="$XDG_DATA_HOME/npm"
+# export npm_config_prefix="$XDG_DATA_HOME"
 # export npm_config_tmp="$XDG_RUNTIME_DIR/npm"
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
-
 
 ##########
 # STARTX #

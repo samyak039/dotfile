@@ -61,3 +61,6 @@
 [submodule "image/walls"]
 	path = image/walls
 	url = git@gitlab.com:samyak039/wallpaper.git
+[submodule ".local/share/ledger"]
+	path = .local/share/ledger
+	url = git@gitlab.com:samyak039/ledger.git

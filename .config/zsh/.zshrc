@@ -44,22 +44,38 @@ alias c='advcp -igr'
 alias e="emacsclient -t -s doom -a 'emacs'"
 # advmv
 alias m='advmv -ig'
+
+# qrencode
+alias qrcode="qrencode -t UTF8"
+alias qrpng="qrencode -t PNG -o qr.png"
+alias qrsvg="qrencode -t PNG -o qr.svg"
+
+# pipenv https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv
+alias pch="pipenv check"
+alias pcl="pipenv clean"
+alias pgr="pipenv graph"
+alias pi="pipenv install"
+alias pidev="pipenv install --dev"
+alias pl="pipenv lock"
+alias po="pipenv open"
+alias prun="pipenv run"
+alias psh="pipenv shell"
+alias psy="pipenv sync"
+alias pu="pipenv uninstall"
+alias pwh="pipenv --where"
+alias pvenv="pipenv --venv"
+alias ppy="pipenv --py"
+
 # neovim
-function v() {
-	if [ $# -gt 0 ]; then
-		nvim $@
-	else
-		nvim .
-	fi
-}
-# vs code
-function vs() {
-    if [ $# -gt 0 ]; then
-        codium $@
-    else
-        codium .
-    fi
-}
+alias v="nvim"
+
+# function v() {
+# 	if [ $# -gt 0 ]; then
+# 		nvim $@
+# 	else
+# 		nvim .
+# 	fi
+# }
 
 # case conversion
 
@@ -138,12 +154,32 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 ### completion
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 
+# ### fzf-tab
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' popup-min-size 50 8
+zstyle ':fzf-tab*' fzf-min-height 20
+zstyle ':fzf-tab:complete:cd:*' fzf-min-height 30
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --color=always $realpath'
+zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
+zstyle ':fzf-tab:complete:cht.sh:argument-1' fzf-preview 'cht.sh $word'
+zstyle ':fzf-tab:complete:systemctl-*:*' fzf-preview 'SYSTEMD_COLORS=1 systemctl status $word'
+
+# zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+
+### fzf-tab-source
+zstyle ':fzf-tab:sources' config-directory /the/directory/containing/your/source.zsh
+
 ### fzf-zsh-plugin
 export FZF_PREVIEW_ADVANCED=true
 
 ### git
 # Set a custom prefix for the generated aliases. The default prefix is 'G'.
 zstyle ':zim:git' aliases-prefix 'g'
+
+### ohmyzsh/nvm
+# zstyle ':omz:plugins:nvm' lazy yes
+# zstyle ':omz:plugins:nvm' lazy-cmd eslint prettier typescript tsc
+# zstyle ':zim:ohmyzsh:plugins:nvm' lazy yes
 
 ### pacman
 # zstyle ':zim:pacman' frontend 'powerpill'
@@ -208,12 +244,8 @@ unset key
 # exa
 alias ls='exa --group-directories-first --icons --classify'
 
-##########
-# zoxide #
-##########
-eval "$(zoxide init zsh)"
-
-############
-# starship #
-############
+########
+# eval #
+########
 eval "$(starship init zsh)"
+

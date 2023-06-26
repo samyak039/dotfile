@@ -18,7 +18,7 @@ zmodule environment
 zmodule git
 # Applies correct bindkeys for input events.
 zmodule input
-# TODO Sets a custom terminal title.
+# # Sets a custom terminal title.
 # zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
 zmodule utility
@@ -33,23 +33,82 @@ zmodule fzf
 # # Also includes optional helper aliases.
 # zmodule pacman
 
-
 ################
 # 3rd modulets #
 ################
 
 # ZSH plugin to enable fzf searches of a lot more stuff
 zmodule unixorn/fzf-zsh-plugin
+
 # Replace zsh's default completion selection menu with fzf
 zmodule Aloxaf/fzf-tab
+
+# # a collection of fzf-tab completion sources.
+# zmodule Freed-Wu/fzf-tab-source
+
 ## A utility tool powered by fzf for using git interactively
 #zmodule wfxr/forgit
-## just print a hacker quote randomly when open a terminal
-# TODO zmodule oldratlee/hacker-quotes
+
+# just print a hacker quote randomly when open a terminal
+zmodule oldratlee/hacker-quotes
+
+# #  Better completion for npm
+# zmodule lukechilds/zsh-better-npm-completion
+
+# Provides Node version management integrations and associated completions.
+zmodule bgrrtt/zimfw-node
+
 ## Real-time type-ahead completion for Zsh.
 ## Asynchronous find-as-you-type autocompletion.
 # FIXME zmodule marlonrichert/zsh-autocomplete
 
+# wakatime: Track how much time you have spent in your terminal!
+zmodule wbingli/zsh-wakatime # without project detection
+# zmodule sobolevn/wakatime-zsh-plugin # with project detection
+
+# OH MY ZSH #
+#############
+
+# Aliases cheatsheet
+zmodule ohmyzsh/ohmyzsh --root plugins/aliases
+
+# command not found
+zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
+
+# # copy file to system clipboard
+# TODO: get `clipcopy`
+# zmodule ohmyzsh/ohmyzsh --root plugins/copyfile
+
+# # copy path to system clipboard
+# TODO: get `clipcopy`
+# zmodule ohmyzsh/ohmyzsh --root plugins/copypath
+
+# This plugin adds auto-completion and aliases for docker.
+zmodule ohmyzsh/ohmyzsh --root plugins/docker
+
+# The Flutter plugin provides completion and useful aliases
+zmodule ohmyzsh/ohmyzsh --root plugins/flutter
+
+# # npm
+# zmodule ohmyzsh/ohmyzsh --root plugins/npm
+
+# a Simple Python version management system
+zmodule ohmyzsh/ohmyzsh --root plugins/pyenv
+
+# This plugin adds completion for the text search tool ripgrep, also known as rg.
+zmodule ohmyzsh/ohmyzsh --root plugins/ripgrep
+
+# The systemd plugin provides many useful aliases for systemd.
+zmodule ohmyzsh/ohmyzsh --root plugins/systemd
+
+# The Fuck plugin — magnificent app which corrects your previous console command.
+zmodule ohmyzsh/ohmyzsh --root plugins/thefuck
+
+# alias for VSCode / VSCodium
+zmodule ohmyzsh/ohmyzsh --root plugins/vscode
+
+# smarter cd command for your terminal
+zmodule ohmyzsh/ohmyzsh --root plugins/zoxide
 
 ##############
 # completion #
@@ -57,8 +116,12 @@ zmodule Aloxaf/fzf-tab
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions --fpath src
-# Enables and configures smart and extensive tab completion.
-# completion must be sourced after all modules that add completion definitions.
+
+# This plugin provides some features to simplify the use of Pipenv while working on ZSH.
+# zmodule ohmyzsh/ohmyzsh --root plugins/pipenv
+
+# # Enables and configures smart and extensive tab completion.
+# # completion must be sourced after all modules that add completion definitions.
 zmodule completion
 
 ################
@@ -73,7 +136,6 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # Fish-like autosuggestions for Zsh.
 zmodule zsh-users/zsh-autosuggestions
-
 
 ########
 # TODO #
