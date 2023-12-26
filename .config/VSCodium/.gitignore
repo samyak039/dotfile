@@ -1,0 +1,8 @@
+# everything
+*
+
+# Except
+!.gitignore
+!User/keybindings.json
+!User/settings.json
+!User/snippts/
