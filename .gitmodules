@@ -55,12 +55,12 @@
 [submodule ".local/share/mozilla/firefox/arkenfox"]
 	path = .local/share/mozilla/firefox/arkenfox
 	url = git@github.com:arkenfox/user.js.git
-[submodule ".local/share/mozilla/firefox/Firefox-UI-Fix"]
-	path = .local/share/mozilla/firefox/Firefox-UI-Fix
-	url = git@github.com:black7375/Firefox-UI-Fix.git
 [submodule "image/walls"]
 	path = image/walls
 	url = git@gitlab.com:samyak039/wallpaper.git
 [submodule ".local/share/ledger"]
 	path = .local/share/ledger
 	url = git@gitlab.com:samyak039/ledger.git
+[submodule ".local/share/mozilla/firefox/profile/chrome/firefox-csshacks"]
+	path = .local/share/mozilla/firefox/profile/chrome/firefox-csshacks
+	url = git@github.com:MrOtherGuy/firefox-csshacks.git

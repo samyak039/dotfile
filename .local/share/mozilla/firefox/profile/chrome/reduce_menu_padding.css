@@ -1,6 +1,0 @@
-:root {
-  --menu-padding: 2px;
-}
-:root[uidensity=compact] {
-  --menu-padding: 0px;
-}

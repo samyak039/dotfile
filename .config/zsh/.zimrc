@@ -85,6 +85,10 @@ zmodule ohmyzsh/ohmyzsh --root plugins/command-not-found
 
 # This plugin adds auto-completion and aliases for docker.
 zmodule ohmyzsh/ohmyzsh --root plugins/docker
+zmodule ohmyzsh/ohmyzsh --root plugins/docker-compose
+
+# This plugin adds auto-completion and aliases for docker.
+zmodule ohmyzsh/ohmyzsh --root plugins/dotenv
 
 # The Flutter plugin provides completion and useful aliases
 zmodule ohmyzsh/ohmyzsh --root plugins/flutter

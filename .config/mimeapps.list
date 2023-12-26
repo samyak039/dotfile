@@ -1,5 +1,5 @@
 [Added Associations]
-x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;userapp-Kotatogram Desktop-CAT3U1.desktop;
+x-scheme-handler/tg=userapp-Kotatogram Desktop-JDCNM1.desktop;userapp-Kotatogram Desktop-CAT3U1.desktop;org.telegram.desktop.desktop;
 x-scheme-handler/http=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
 x-scheme-handler/https=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
 x-scheme-handler/chrome=librewolf.desktop;firefox-developer-edition.desktop;firefoxdeveloperedition.desktop;
@@ -19,8 +19,8 @@ application/pdf=org.kde.okular.desktop;
 
 [Default Applications]
 application/pdf=org.kde.okular.desktop
-x-scheme-handler/tg=userapp-Kotatogram Desktop-CAT3U1.desktop
-x-scheme-handler/mailto=brave-browser.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/mailto=brave-browser-beta.desktop
 message/rfc822=userapp-Thunderbird-EY01P1.desktop
 x-scheme-handler/mid=userapp-Thunderbird-EY01P1.desktop
 x-scheme-handler/webcal=userapp-Thunderbird-AXIHQ1.desktop
@@ -49,3 +49,4 @@ x-scheme-handler/notion=notion-app.desktop
 x-scheme-handler/etcher=balena-etcher.desktop
 x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
 x-scheme-handler/clickup=ClickUp.desktop
+sourcegraph=cody-handler.desktop

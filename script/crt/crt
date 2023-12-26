@@ -60,7 +60,7 @@ function dry_run {
 function test_run {
 	for f in in*.txt; do
 		echo -e "\n============\n  $f  \n============"
-		./"$filename" < $f
+		time ./"$filename" < $f
 	done
 }
 

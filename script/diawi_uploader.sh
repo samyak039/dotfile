@@ -73,7 +73,7 @@ done
 printf "\n=> File found at '$file'\n"
 
 # set upload command
-cmd_upload="curl --http1.1 $diawi_url -F token='$token' -F file=@$file"
+cmd_upload="curl --http1.1 $diawi_url -F token='$token' -F file=@'$file'"
 [ ! -z $email ] && cmd_upload="$cmd_upload -F callback_emails='$email'"
 
 printf "\n=> Uploading IPA file\n"

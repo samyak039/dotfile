@@ -14,14 +14,14 @@
   // },
 
   "log MESSAGE to console": {
-    "prefix": "lg",
-    "body": "Logg(StackTrace.current, '$1');",
+    "prefix": "cm",
+    "body": "Chronicle(StackTrace.current, '$1', [$1$2]);",
     "description": "log MESSAGE to console"
   },
 
   "log ERROR to console": {
-    "prefix": "le",
-    "body": "Logg(StackTrace.current, '', error: $1);",
+    "prefix": "ce",
+    "body": "Chronicle(StackTrace.current, '$1', [$1$2] isError: true,);",
     "description": "log ERROR to console"
   },
 

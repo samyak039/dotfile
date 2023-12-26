@@ -79,10 +79,19 @@ export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE=true
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 source /usr/share/nvm/init-nvm.sh
 
+# PNPM
+export PNPM_HOME="/home/samyak/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+export PATH="${PNPM_HOME}:${PATH}"
+
 # python
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+eval "$(pyenv virtualenv-init -)"
 # eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
 # zsh
@@ -101,7 +110,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-export LEDGER_FILE="$XDG_DATA_HOME/ledger/hledger.journal"
+export LEDGER_FILE="$HOME/paper/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"

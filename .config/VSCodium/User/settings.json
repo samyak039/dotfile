@@ -6,25 +6,22 @@
   "debug.confirmOnExit": "always",
   "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "debug.javascript.breakOnConditionalError": true,
+  "debug.openExplorerOnEnd": true,
 
   "diffEditor.codeLens": true,
   "diffEditor.renderIndicators": false,
 
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.codeLensFontSize": 9,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": true
-  },
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.cursorSurroundingLines": 5,
-  "editor.detectIndentation": false,
   "editor.find.autoFindInSelection": "multiline",
   "editor.fontFamily": "'FiraCode Nerd Font', 'Fira Code'",
   "editor.fontLigatures": "'cv25', 'cv26', 'cv32', 'ss02', 'ss07', 'ss08'",
+  "editor.fontSize": 15,
   "editor.formatOnPaste": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.guides.bracketPairs": "active",
   "editor.indentSize": "tabSize",
@@ -33,7 +30,7 @@
   "editor.inlayHints.padding": true,
   "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
-  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": true,
   "editor.rulers": [80],
   "editor.stickyScroll.enabled": true,
   "editor.stickyTabStops": true,
@@ -43,8 +40,12 @@
   "editor.suggest.showStatusBar": true,
   "editor.suggestFontSize": 12,
   "editor.suggestSelection": "recentlyUsedByPrefix",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.wordWrap": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
   "editor.quickSuggestions": {
     "other": "inline"
   },
@@ -84,6 +85,7 @@
   "git.followTagsWhenSync": true,
   "git.ignoreRebaseWarning": true,
   "git.mergeEditor": true,
+  "git.openRepositoryInParentFolders": "always",
   "git.pullBeforeCheckout": true,
   "git.showPushSuccessNotification": true,
   "git.terminalGitEditor": true,
@@ -100,6 +102,8 @@
     "fvm",
     "/home/samyak/.local/share/fvm/versions"
   ],
+
+  "merge-conflict.autoNavigateNextConflict.enabled": true,
 
   "scm.countBadge": "focused",
 
@@ -132,8 +136,8 @@
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.enableExperiments": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.preferredDarkColorTheme": "Gruvbox Material Dark",
-  "workbench.preferredLightColorTheme": "Gruvbox Material Light",
+  "workbench.preferredDarkColorTheme": "Tokyo Night Storm",
+  "workbench.preferredLightColorTheme": "Tokyo Night Light",
   "workbench.productIconTheme": "fluent-icons",
   "workbench.tree.expandMode": "doubleClick",
   "workbench.tree.indent": 12,
@@ -148,6 +152,52 @@
     // "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
   },
 
+  //#############//
+  // COLOR THEME //
+  //#############//
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    },
+    "[Tokyo Night Storm]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },
+
   //############//
   // EXTENSIONS //
   //############//
@@ -156,6 +206,10 @@
     "ms-vscode-remote.vscode-remote-extensionpack",
     "ms-vscode-remote.remote-wsl"
   ],
+
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
 
   "autoDocstring.includeName": true,
   "autoDocstring.startOnNewLine": true,
@@ -253,10 +307,6 @@
     }
   ],
 
-  "black-formatter.args": ["-l", "80"],
-
-  "codegpt.apiKey": "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",
-
   "CodeGPT.model": "text-davinci-003",
 
   "color-highlight.markRuler": false,
@@ -291,6 +341,7 @@
     "geolocator",
     "gruvbox",
     "imdb",
+    "indenticator",
     "itsdangerous",
     "JWT",
     "Karnataka",
@@ -305,6 +356,7 @@
     "pincode",
     "pkey",
     "Podfile",
+    "Polyline",
     "precache",
     "Prefs",
     "Pubspec",
@@ -314,6 +366,7 @@
     "refac",
     "reinitializing",
     "rgba",
+    "RGBO",
     "riverpod",
     "Rohit",
     "Samyak",
@@ -327,10 +380,13 @@
     "sublist",
     "subloc",
     "Sunita",
+    "tailwindcss",
     "todos",
     "ulli",
     "unfocus",
     "upsert",
+    "upserted",
+    "Upserts",
     "vsync",
     "xmark",
     "xtra",
@@ -338,7 +394,6 @@
   ],
 
   "customizeUI.activityBar": "top",
-  "customizeUI.activityBarHideSettings": true,
   "customizeUI.listRowHeight": 20, // shrink rows to match XCode
   "customizeUI.fontSizeMap": {
     "13px": "11px",
@@ -379,10 +434,11 @@
   "git-graph.enhancedAccessibility": true,
   "git-graph.referenceLabels.alignment": "Branches (on the left) & Tags (on the right)",
 
-  "gitlens.codeLens.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
   "gitlens.codeLens.includeSingleLineSymbols": true,
+  "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
-  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.enabled": true,
   "gitlens.currentLine.scrollable": false,
   "gitlens.currentLine.uncommittedChangesFormat": " ${ago}",
   "gitlens.defaultDateFormat": "YYYY, MMMM Do HH:mm",
@@ -406,10 +462,12 @@
     }
   ],
 
+  "gruvboxMaterial.darkPalette": "original",
   "gruvboxMaterial.darkWorkbench": "flat",
   "gruvboxMaterial.diagnosticTextBackgroundOpacity": "12.5%",
   "gruvboxMaterial.highContrast": true,
   "gruvboxMaterial.italicComments": false,
+  "gruvboxMaterial.lightPalette": "original",
   "gruvboxMaterial.lightWorkbench": "flat",
 
   "indenticator.color.dark": "#a89984",
@@ -463,6 +521,12 @@
     "E": "Information"
   },
 
+  "leetcode.defaultLanguage": "cpp",
+  "leetcode.hint.commentDescription": false,
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.problems.sortStrategy": "Acceptance Rate (Descending)",
+  "leetcode.workspaceFolder": "/home/samyak/learn/leetcode/",
+
   "liveServer.settings.host": "localhost",
 
   "markdown.extension.italic.indicator": "_",
@@ -473,7 +537,9 @@
   "markdown.preview.breaks": true,
   "markdown.updateLinksOnFileMove.enabled": "prompt",
 
-  "material-icon-theme.activeIconPack": "none",
+  "material-icon-theme.hidesExplorerArrows": true,
+
+  "npm.keybindingsChangedWarningShown": true,
 
   "prettier.proseWrap": "always",
   "prettier.singleQuote": true,
@@ -1948,6 +2014,13 @@
       ]
     },
     {
+      "key": "k",
+      "name": "Definition Hover",
+      "icon": "preview",
+      "type": "command",
+      "command": "editor.action.showDefinitionPreviewHover"
+    },
+    {
       "key": "l",
       "name": "+Layouts",
       "icon": "editor-layout",
@@ -3131,6 +3204,24 @@
                   "command": "editor.action.referenceSearch.trigger"
                 }
               ]
+            },
+            {
+              "key": "t",
+              "name": "LeetCode: Test",
+              "type": "command",
+              "command": "leetcode.testSolution"
+            },
+            {
+              "key": "s",
+              "name": "LeetCode: Submit",
+              "type": "command",
+              "command": "leetcode.submitSolution"
+            },
+            {
+              "key": "o",
+              "name": "LeetCode: Submit",
+              "type": "command",
+              "command": "leetcode.showSolution"
             }
           ]
         },
@@ -8543,16 +8634,27 @@
     "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
     "editor.tabCompletion": "onlySnippets",
+    "editor.tabSize": 2,
     "editor.wordBasedSuggestions": false
   },
 
   "[django-html]": {
-    "editor.defaultFormatter": "monosans.djlint",
-    "editor.tabSize": 4
+    "editor.defaultFormatter": "monosans.djlint"
   },
 
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  "[jinja-html]": {
+    "editor.defaultFormatter": "monosans.djlint"
   },
 
   "[json]": {
@@ -8563,19 +8665,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "javascript.inlayHints.enumMemberValues.enabled": true,
-  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off"
   },
 
   "php.format.rules.arrayInitializersNewLineBeforeFirstElement": true,
@@ -8595,31 +8692,28 @@
   },
 
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.diagnosticMode": "workspace",
-  "python.analysis.importFormat": "relative",
   "python.analysis.inlayHints.functionReturnTypes": true,
   "python.analysis.inlayHints.pytestParameters": true,
   "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.typeCheckingMode": "off",
-  "python.linting.enabled": false,
+  "python.diagnostics.sourceMapsEnabled": true,
   "python.linting.flake8CategorySeverity.F": "Information",
-  "python.testing.pytestEnabled": true,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true,
-    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python",
     "editor.codeActionsOnSave": {
       "source.organizeImports": true
     }
   },
 
-  "[shellscript]": {
-    "editor.tabSize": 4
-  },
-
   "svg.preview.mode": "svg",
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
+  },
+
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.includeLanguages": {
+    "jinja": "html",
+    "jinja-html": "html"
   },
 
   // "typescript.extension.sortImports.pathSortOrder": [
@@ -8639,11 +8733,14 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
   "xml.format.maxLineWidth": 80,
   "xml.format.splitAttributes": true,
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
-    // "editor.tabSize": 4
   },
 
   "[yaml]": {
@@ -8654,9 +8751,13 @@
   // Others
   //########
   "": "",
-  "npm.keybindingsChangedWarningShown": true,
+  "leetcode.hint.commandShortcut": false,
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.inlayHints.callArgumentNames": true,
+  "python.formatting.provider": "black",
+  "diffEditor.renderSideBySide": false,
+  "python.testing.unittestEnabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "gruvboxMaterial.darkPalette": "original",
-  "gruvboxMaterial.lightPalette": "original",
-  "material-icon-theme.hidesExplorerArrows": true
+  "cmake.configureOnOpen": false,
+  "workbench.editor.tabSizing": "shrink"
 }

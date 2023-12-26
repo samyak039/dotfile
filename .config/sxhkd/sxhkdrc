@@ -34,20 +34,22 @@ Print + control + shift
 
 # brightness
 XF86MonBrightness{Down,Up}
-    light -{U,A} 5
     # xbacklight -{dec,inc} 10
+    light -{U,A} 5
 super + {F9,F10}
-    light -{U,A} 5
     # xbacklight -{dec,inc} 10
+    light -{U,A} 5
 super + hyper + {Down,Up}
-    light -{U,A} 5
     # xbacklight -{dec,inc} 10
+    light -{U,A} 5
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
     pamixer --allow-boost {-t,-d,-i} 5 && pkill -RTMIN+10 blocks
-super + {F2,F3,F4}
-    pamixer --allow-boost {-d,-i,-t} 5 && pkill -RTMIN+10 blocks
+super + {F1,F2,F3}
+    pamixer --allow-boost {-t,-d,-i} 5 && pkill -RTMIN+10 blocks
+super + F4
+    microphone-toggle.sh
 
 # media control (music)
 XF86Audio{Stop,Prev,Play,Next}
@@ -90,9 +92,9 @@ hyper + a
     pavucontrol
     #$TERMINAL -t ncpamixer -e ncpamixer
 hyper + b
-    librewolf
+    firefox-developer-edition -P profile
 hyper + shift + b
-    brave --profile-directory="Default"
+    brave-beta --profile-directory="Default"
 hyper + c
     qalculate-gtk
 #hyper + d
@@ -100,7 +102,9 @@ hyper + c
 hyper + d
     discord
 hyper + e
-    emacsclient -c -s doom -a 'emacs'
+    $TERMINAL -t neovim -e tmux new -s neovim
+hyper + shift + e
+    emacsclient -c -s doom -a 'emacs --fg-daemon'
 hyper + alt + e
     emacsclient -s doom --eval "emacs-everywhere"
 hyper + f
@@ -113,8 +117,6 @@ hyper + k
     keepassxc
 hyper + m
     morgen
-hyper + n
-    $TERMINAL -t nvim -e nvim
 hyper + p
     pcmanfm
 hyper + r
@@ -126,7 +128,7 @@ hyper + t
 # hyper + v
 #     vscodium
 hyper + w
-    zapzap
+    whatsie
 
 # restart scripts or daemon
 alt + shift + control + s

@@ -21,10 +21,10 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Alegreya" :size 18)
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 19 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Alegreya" :size 19)
       doom-big-font (font-spec :family "FiraCode Nerd Font" :size 32 :weight 'medium)
-      doom-unicode-font (font-spec :family "Twemoji" :size 18 :weight 'normal))
+      doom-unicode-font (font-spec :family "Twemoji" :size 19 :weight 'normal))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -99,10 +99,14 @@
 ;; custom key bindings
 (map! :leader
       (:prefix-map ("t" . "toggle")
-       :desc "Color Highlight" "C" #'rainbow-mode
-       :desc "Comment"  "t" #'comment-line
-       ;; overrides original [SPC t t]
-       :desc "Pomodoro timer" "p" #'org-pomodoro))
+                   :desc "Color Highlight" "C" #'rainbow-node
+                   :desc "Neotree" "e" #'neotree-toggle))
+
+(map! :leader
+      (:prefix-map ("o" . "open")
+                   :desc "Neotree" "e" #'neotree-show))
+
+
 
 ;; web-mode
 (map! :map web-mode-map
@@ -116,6 +120,7 @@
       :desc "Save - Compile - Run" "c" '(lambda nil (interactive) (save-buffer) (lsp-dart-run)))
 
 ;; TeX-mode
+;; changes LaTeX typesetting engine
 (setq TeX-engine 'xetex)
 
 ;; vim scrolloff
@@ -193,13 +198,13 @@
 
   :bind* (:filter company-mode
 
-          ;; The default keybinding for `completion-at-point' and
-          ;; `complete-symbol' is M-TAB or equivalently C-M-i. We
-          ;; already remapped those bindings to `company-manual-begin'
-          ;; above. Here we make sure that they definitely invoke
-          ;; `company-manual-begin' even if a minor mode binds M-TAB
-          ;; directly.
-          ("M-TAB" . #'company-manual-begin))
+                  ;; The default keybinding for `completion-at-point' and
+                  ;; `complete-symbol' is M-TAB or equivalently C-M-i. We
+                  ;; already remapped those bindings to `company-manual-begin'
+                  ;; above. Here we make sure that they definitely invoke
+                  ;; `company-manual-begin' even if a minor mode binds M-TAB
+                  ;; directly.
+                  ("M-TAB" . #'company-manual-begin))
 
   :config
 
@@ -252,7 +257,7 @@
     :config
 
     ;; Use `prescient' for Company menus.
-    (company-prescient-mode +1))
+    (company-prescient-mode +1)))
 
 ;;   ;; Package `company-lsp' provides a Company backend for `lsp-mode'.
 ;;   ;; It's configured automatically by `lsp-mode'.
@@ -281,4 +286,4 @@
 ;;                                                                              svelte-ls))
 ;;                                                                      (not))
 ;;                                                    (cl-return t)))))))
-  )
+

@@ -127,9 +127,10 @@ symbol = ''
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+version_format = '${raw}'
 symbol = '' # nf-dev-python
-pyenv_version_name = true
-pyenv_prefix = ' ' # nf-cod-server_environment
+# pyenv_version_name = true
+# pyenv_prefix = ' ' # nf-cod-server_environment
 
 [ruby]
 symbol = '' # nf-dev-ruby

@@ -41,9 +41,12 @@ unsetopt beep
 # advcp
 alias c='advcp -igr'
 # emacs
-alias e="emacsclient -t -s doom -a 'emacs'"
+alias e="emacsclient --no-wait --socket-name='doom' -a 'emacs --fg-daemon'"
 # advmv
 alias m='advmv -ig'
+
+# clear -x
+alias cx='clear -x'
 
 # qrencode
 alias qrcode="qrencode -t UTF8"
@@ -105,14 +108,14 @@ alias dfvm='fvm dart'
 # color
 alias ip='ip -c'
 
-# leetcode-cli
-alias ll="leetcode"
-alias lld="leetcode data"
-alias lls="leetcode stat"
-llp() { leetcode pick $q; }
-lle() { leetcode edit $q; }
-llt() { leetcode test $q; }
-llx() { leetcode exec $q; }
+# # leetcode-cli
+# alias ll="leetcode"
+# alias lld="leetcode data"
+# alias lls="leetcode stat"
+# llp() { leetcode pick $q; }
+# lle() { leetcode edit $q; }
+# llt() { leetcode test $q; }
+# llx() { leetcode exec $q; }
 
 # adb quick connect connect
 adbcon() {
