@@ -1,0 +1,75 @@
+import = [
+  # "~/.config/alacritty/alacritty-theme/themes/gruvbox_dark.toml",
+  "~/.config/alacritty/base16-alacritty/colors/base16-gruvbox-dark-medium-256.toml",
+  # "~/.config/alacritty/base16-alacritty/colors/base16-gruvbox-dark-hard-256.toml",
+]
+
+[window]
+# dimensions = { columns = 0, lines = 0 }
+# position = "None"
+# padding = { x = 0, y = 0 }
+dynamic_padding = true
+decorations = "None"
+# opacity = 0.8
+# blur = false # (works on macOS/KDE Wayland)
+# startup_mode = "Windowed"
+# title = "Alacritty"
+# dynamic_title = true
+# class = { instance =  "Alacritty",  general = "Alacritty" }
+# decoration_theme_variant = "Dark"
+# resizie_increment = false
+# option_as_alt = "None"
+
+# [scrolling]
+# history = 10000
+# multiplier = 3
+
+[font]
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+# bold = { style = "Bold" }
+# italic = { style = "Italic" }
+# bold_italic = { style = "Bold Italic" }
+size = 11
+# offset = { x = 0, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
+builtin_box_drawing= true
+
+# [bell]
+# animation = "Linear"
+# duration = 0
+# color = "#ffffff"
+# command = "None"
+
+[selection]
+# semantic_escape_chars = ",│‘|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Underline", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+# blink_interval = 750
+# blink_timeout = 5
+unfocused_hollow = false
+thickness = 0.25
+
+# [terminal]
+# osc52 = "OnlyCopy"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+  { mouse = "Right", action = "ExpandSelection" },
+  { mouse = "Middle", mode = "~Vi", action = "PasteSelection" }
+]
+
+[hints]
+alphabet = "hutenosadigpc.r,l;"
+# enabled = [
+#   { command = "xdg-open", hyperlinks = true, post_processing = true, persist = false, mouse.enabled = true, binding = { key = "U", mods = "Control|Shift" }, regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+" }
+# ]
+
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control", mode = "~Vi", action = "SpawnNewInstance" }
+]
+

@@ -1,6 +1,0 @@
-#!/bin/sh
-
-date=$(date '+%m-%d %a')
-time=$(date '+%H:%M:%S')
-
-printf "%s <span size='larger'>%s</span>" "$date" "$time"

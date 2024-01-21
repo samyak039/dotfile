@@ -29,9 +29,6 @@ repo_root_style = 'green'
 repo_root_format = '[$read_only]($read_only_style)[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style) '
 fish_style_pwd_dir_length = 1
 
-[jobs]
-symbol = '✦'
-
 [shell]
 disabled = false
 zsh_indicator = ''
@@ -77,7 +74,7 @@ format = '[$hostname]($style) '
 
 [memory_usage]
 disabled = false
-symbol = '󰍛'
+# symbol = '󰍛'
 format = '$symbol [${ram_pct}|(${swap_pct})]($style) '
 
 [username]
@@ -88,52 +85,52 @@ format = '[$user]($style)@'
 ###############
 
 [c]
-symbol = '' # nf-custom-c
+# symbol = '' # nf-custom-c
 
 [dart]
 format = '[$symbol($version )]($style)'
-symbol = '' # nf-dev-dart
+# symbol = '' # nf-dev-dart
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
-symbol = '' # nf-dev-git_branch
+# symbol = '' # nf-dev-git_branch
 
 [golang]
-symbol = '' # nf-dev-go
+# symbol = '' # nf-dev-go
 
 [haskell]
-symbol = '' # nf-dev-haskell
+# symbol = '' # nf-dev-haskell
 
 [java]
-symbol = '' # nf-dev-java
+# symbol = '' # nf-dev-java
 
 [kotlin]
-symbol = '' # nf-custom-kotlin
+# symbol = '' # nf-custom-kotlin
 
 [lua]
-symbol = '󰢱'
+# symbol = '󰢱'
 
 [nodejs]
 format = '[$symbol($version )]($style)'
-symbol = '' # nf-dev-nodejs_small
+# symbol = '' # nf-dev-nodejs_small
 
 [package]
 format = '[$symbol$version]($style) '
-symbol = ' ' # nf-cod-package
+# symbol = ' ' # nf-cod-package
 # symbol = '' # nf-dev-code
 
 [php]
-symbol = ''
+# symbol = ''
 
 [python]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 version_format = '${raw}'
-symbol = '' # nf-dev-python
+# symbol = '' # nf-dev-python
 # pyenv_version_name = true
 # pyenv_prefix = ' ' # nf-cod-server_environment
 
 [ruby]
-symbol = '' # nf-dev-ruby
+# symbol = '' # nf-dev-ruby
 
 [rust]
-symbol = '' # nf-dev-rust
+# symbol = '' # nf-dev-rust

@@ -19,8 +19,8 @@ setopt HIST_IGNORE_ALL_DUPS
 
 
 ## input / output
-# Set editor default keymap to emacs (`-e`) or vi (`-v`)
-bindkey -v
+# Set editor default keymap to emacs (`-e`) or vi/vim (`-v`)
+bindkey -e
 # Prompt for spelling correction of commands.
 setopt CORRECT
 # Customize spelling correction prompt.
@@ -72,6 +72,9 @@ alias ppy="pipenv --py"
 # neovim
 alias v="nvim"
 
+# zoxide
+alias zw="source zoxide_tmux_window.sh"
+
 # function v() {
 # 	if [ $# -gt 0 ]; then
 # 		nvim $@
@@ -90,8 +93,12 @@ function snakecase() {
     perl -pe 's#([A-Z])#_\L$1#g' | perl -pe 's#^_##'
 }
 
+function tmux-window-name() {
+	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
+}
+
 # dotfile config
-alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfile --work-tree=$HOME"
+alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME"
 # no confusion between doas --option or cmd --option
 alias doas='doas --'
 # update system
@@ -188,8 +195,13 @@ zstyle ':zim:git' aliases-prefix 'g'
 # zstyle ':zim:pacman' frontend 'powerpill'
 # zstyle ':zim:pacman' helpers 'paru'
 
-### termtitle TODO
-# zstyle ':zim:termtitle' format '%~'
+## termtitle
+# set the titles to show the command name typed by the user while the command
+# is being executed and then the current directory name after the command ended
+# (i.e. before each prompt)
+zstyle ':zim:termtitle' hooks 'preexec' 'precmd'
+zstyle ':zim:termtitle:preexec' format '${${(A)=1}[1]}'
+zstyle ':zim:termtitle:precmd'  format '%1~'
 
 ### zim
 # use degit instead of git
@@ -251,4 +263,3 @@ alias ls='exa --group-directories-first --icons --classify'
 # eval #
 ########
 eval "$(starship init zsh)"
-

@@ -1,5 +1,6 @@
 Config { overrideRedirect = False
-       , font     = "xft:iosevka-9"
+       , font     = "MonaspiceNe Nerd Font 12"
+       -- , font     = "xft:MonaspiceNe NF:style=Regular:size=12:antialias=true"
        , bgColor  = "#5f5f5f"
        , fgColor  = "#f8f8f2"
        , position = TopW L 90
@@ -32,3 +33,5 @@ Config { overrideRedirect = False
        , alignSep = "}{"
        , template = "%XMonadLog% }{ %alsa:default:Master% | %cpu% | %memory% * %swap% | %EGPF% | %date% "
        }
+
+-- vim:ft=haskell

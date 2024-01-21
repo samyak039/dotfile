@@ -18,10 +18,6 @@ shift + F7
 #     notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/c0sQxa1JbI032R1GOWzzgX`"
 #     #notify-send -a 'IFTTT' 'Study ON' "`curl -X POST https://maker.ifttt.com/trigger/study_on/with/key/$IFTTT_WEBHOOK`"
 
-# dmenu
-super + Up
-    $BIN/dmoji
-
 # Screenshot
 Print
     flameshot gui
@@ -83,9 +79,19 @@ super + ctrl + bar
 #super + shift + backslash
 #    killall -SIGUSR2 dunst
 
+
+super + d
+    rofi -show drun
+super + shift + d
+    rofi -combi-modi drun,run -show combi
+super + s
+    $TERMINAL
+super + t
+    $TERMINAL
+
 # hyper keybinding / application keybinding
 hyper + period
-    $TERMINAL -t lf -e lf
+    $TERMINAL -e lf
 hyper + Return
     $TERMINAL
 hyper + a
@@ -97,41 +103,41 @@ hyper + shift + b
     brave-beta --profile-directory="Default"
 hyper + c
     qalculate-gtk
-#hyper + d
-#    dmenu_run_history_i -l 20 -c -bw 3 -p 'run'
 hyper + d
     discord
 hyper + e
-    $TERMINAL -t neovim -e tmux new -s neovim
+    $TERMINAL -e --class neovim tmux new-session -A -s neovim 
 hyper + shift + e
-    emacsclient -c -s doom -a 'emacs --fg-daemon'
+    emacsclient -c -a 'emacs --fg-daemon'
 hyper + alt + e
-    emacsclient -s doom --eval "emacs-everywhere"
-hyper + f
-    ferdium
-hyper + g
-    gentleman
+    emacsclient --eval "emacs-everywhere"
 hyper + h
-    $TERMINAL -t btop -e btop
+    $TERMINAL -e btop
 hyper + k
+    keepmenu
+hyper + shift + k
     keepassxc
 hyper + m
     morgen
 hyper + p
     pcmanfm
+hyper + q
+    todoist-nativefier
 hyper + r
-    $TERMINAL -t tremc -e tremc -X
+    $TERMINAL -e tremc -X
 hyper + s
     spotify-tray
 hyper + t
-    kotatogram-desktop
-# hyper + v
-#     vscodium
+    telegram-desktop
+hyper + u
+    rofimoji
+hyper + v
+    code-insiders
 hyper + w
-    whatsie
+    zapzap
+hyper  + BackSpace
+    rofi-powermenu.sh
 
 # restart scripts or daemon
 alt + shift + control + s
     killnotify sxhkd "config reloaded" && sxhkd &
-alt + shift + control + d
-    killnotify dwm "dwm restarted"

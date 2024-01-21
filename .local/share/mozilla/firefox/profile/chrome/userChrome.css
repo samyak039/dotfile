@@ -2,7 +2,7 @@
 /* Firefox CSS Hacks */
 /*###################*/
 
-@import url("firefox-csshacks/chrome/autohide_toolbox.css");
+/* @import url("firefox-csshacks/chrome/autohide_toolbox.css"); */
 @import url("firefox-csshacks/chrome/compact_extensions_panel.css");
 @import url("firefox-csshacks/chrome/compact_proton.css");
 @import url("firefox-csshacks/chrome/custom_menupopup_check_icons.css");
