@@ -52,3 +52,6 @@
 [submodule ".local/share/mozilla/firefox/profile/chrome/firefox-csshacks"]
 	path = .local/share/mozilla/firefox/profile/chrome/firefox-csshacks
 	url = git@github.com:MrOtherGuy/firefox-csshacks.git
+[submodule ".local/share/keepassxc"]
+	path = .local/share/keepassxc
+	url = git@github.com:samyak039/keepassxc.git
