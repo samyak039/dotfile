@@ -29,23 +29,24 @@ Print + control + shift
     flameshot gui --clipboard --delay 3000
 
 # brightness
-XF86MonBrightness{Down,Up}
-    # xbacklight -{dec,inc} 10
-    light -{U,A} 5
-super + {F9,F10}
-    # xbacklight -{dec,inc} 10
-    light -{U,A} 5
+# XF86MonBrightness{Down,Up}
+#     # xbacklight -{dec,inc} 10
+#     # light -{U,A} 5
+#     brightnessctl s {10%-,+10%}
+super + {F11,F12}
+    brightnessctl set {'10%-','+10%'}
 super + hyper + {Down,Up}
-    # xbacklight -{dec,inc} 10
-    light -{U,A} 5
+    brightnessctl s {'10%-','+10%'}
 
 # volume
 XF86Audio{Mute,LowerVolume,RaiseVolume}
-    pamixer --allow-boost {-t,-d,-i} 5 && pkill -RTMIN+10 blocks
+    pamixer --allow-boost -{t,d,i} 5 && pkill -RTMIN+10 blocks
 super + {F1,F2,F3}
-    pamixer --allow-boost {-t,-d,-i} 5 && pkill -RTMIN+10 blocks
-super + F4
-    microphone-toggle.sh
+    pamixer --allow-boost -{t,d,i} 5 && pkill -RTMIN+10 blocks
+# super + F4
+#     microphone-toggle.sh
+XF86AudioMicMute
+    pamixer --default-source -t && pkill -RTMIN+10 blocks
 
 # media control (music)
 XF86Audio{Stop,Prev,Play,Next}
@@ -84,25 +85,28 @@ super + d
     rofi -show drun
 super + shift + d
     rofi -combi-modi drun,run -show combi
+super + shift + control + d
+    dmenu_run_history_i -c -l 20 -bw 3 -p run
 super + s
     $TERMINAL
-super + t
-    $TERMINAL
+# super + t
+#     $TERMINAL
 
 # hyper keybinding / application keybinding
+hyper + apostrophe
+    rofimoji
 hyper + period
-    $TERMINAL -e lf
+    $TERMINAL -e yazi
 hyper + Return
     $TERMINAL
 hyper + a
     pavucontrol
-    #$TERMINAL -t ncpamixer -e ncpamixer
 hyper + b
     firefox-developer-edition -P profile
 hyper + shift + b
     brave-beta --profile-directory="Default"
 hyper + c
-    qalculate-gtk
+    morgen
 hyper + d
     discord
 hyper + e
@@ -118,11 +122,11 @@ hyper + k
 hyper + shift + k
     keepassxc
 hyper + m
-    morgen
+    beeper --default-frame
 hyper + p
-    pcmanfm
+    thunar
 hyper + q
-    todoist-nativefier
+    qalculate-gtk
 hyper + r
     $TERMINAL -e tremc -X
 hyper + s

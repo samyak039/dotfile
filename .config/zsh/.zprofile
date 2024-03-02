@@ -36,7 +36,7 @@ export PATH="${PATH}:${SCRIPT:-$HOME/scripts}/statusbar"
 export PATH="${PATH}:${XDG_BIN_HOME:-$HOME/.local/bin}"
 export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins/t-smart-tmux-session-manager/bin"
 export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/applications"
-export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/emacs/bin"
+export PATH="${PATH}:${XDG_CONFIG_HOME:-$HOME/.config}/emacs/bin"
 
 # dart & flutter
 export FLUTTER_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default"
@@ -103,17 +103,22 @@ export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 #############
 # XDG-Ninja #
 #############
+alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
+alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
+alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 export ATOM_HOME="$XDG_DATA_HOME/atom"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal/config"
 export CABAL_DIR="$XDG_DATA_HOME/cabal"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export ERRFILE="$XDG_CACHE_HOME/X11/xsession-errors"
-export GOPATH="$XDG_DATA_HOME/go"
+export GHCUP_USE_XDG_DIRS=true
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GOPATH="$XDG_DATA_HOME/go"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
 export LEDGER_FILE="$HOME/papers/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
@@ -122,19 +127,15 @@ export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PYTHONSTARTUP="/etc/python/pythonrc"
-export STACK_XDG=1
 export STACK_ROOT="$XDG_DATA_HOME/stack"
+export STACK_XDG=1
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-# export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-# export npm_config_cache="$XDG_CACHE_HOME/npm"
-# export npm_config_init_module="$XDG_CONFIG_HOME/npm/config/npm-init.js"
-# export npm_config_prefix="$XDG_DATA_HOME"
-# export npm_config_tmp="$XDG_RUNTIME_DIR/npm"
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 
 ##########

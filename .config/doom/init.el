@@ -70,7 +70,7 @@
        (dired +icons +ranger)             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
        (ibuffer +icons)         ; interactive buffer management
-       tramp
+       ;; tramp
        (undo +tree)              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
@@ -82,7 +82,7 @@
 
        :checkers
        grammar           ; tasing grammar mistake every you make
-       (spell +aspell +everywhere) ; tasing you for misspelling mispelling
+       ;; (spell +aspell +everywhere) ; tasing you for misspelling mispelling
        (syntax +childframe)              ; tasing you for every semicolon you forget
 
        :tools
@@ -193,7 +193,7 @@
 
        :config
        (default +bindings +smartparens))
-       ;; literate
+;; literate
 
 ;; CUSTOM
 

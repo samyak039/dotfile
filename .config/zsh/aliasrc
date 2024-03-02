@@ -1,0 +1,62 @@
+# 
+#        _ _
+#   __ _| (_) __ _ ___ _ __ ___
+#  / _` | | |/ _` / __| '__/ __|
+# | (_| | | | (_| \__ \ | | (__
+#  \__,_|_|_|\__,_|___/_|  \___|
+#
+#
+# @samyak039
+
+# advcpmv
+alias c='advcp -igr'
+alias m='advmv -ig'
+
+# dotfile config
+alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME"
+
+# no confusion between `doas --option` or `cmd --option`
+alias doas='doas --'
+
+# clear -x
+alias cx='clear -x'
+
+# emacs
+alias e="emacsclient --no-wait --socket-name='doom' -a 'emacs --fg-daemon'"
+
+# # leetcode-cli
+# alias ll="leetcode"
+# alias lld="leetcode data"
+# alias lls="leetcode stat"
+# llp() { leetcode pick $q; }
+# lle() { leetcode edit $q; }
+# llt() { leetcode test $q; }
+# llx() { leetcode exec $q; }
+
+# qrencode
+alias qrcode="qrencode -t UTF8"
+alias qrpng="qrencode -t PNG -o qr.png"
+alias qrsvg="qrencode -t PNG -o qr.svg"
+
+# # neovim
+# alias v="nvim"
+
+# zoxide
+alias zw="source zoxide_tmux_window.sh"
+
+# pacman | paru
+alias syu="doas pacman -Sy && doas powerpill -Su && paru -Su"
+alias syunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
+
+#---------------#
+# colorful life #
+#---------------#
+
+alias ip='ip -c'
+
+
+#-----#
+# XDG #
+#-----#
+
+# vim:ft=zsh

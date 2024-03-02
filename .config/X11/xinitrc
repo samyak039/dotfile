@@ -17,6 +17,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	done
 	unset f
 fi
+xsetroot -cursor_name left_ptr
 
 # # Set up an icon tray
 # trayer --edge top --align right --SetDockType true --SetPartialStrut true \
@@ -53,23 +54,24 @@ flameshot &
 /usr/lib/kdeconnectd &
 # mpDris2 &
 nm-applet &
-pcmanfm -d &
-picom -b
+# picom -b
 polkit-dumb-agent &
 redshift &
 syncthing --no-browser &
+thunar --daemon &
 transmission-daemon &
 unclutter --timeout 3 --ignore-scrolling &
 
 #############
 # huge apps #
 #############
-# $BROWSER &
+$BROWSER &
+beeper --default-frame --hidden &
 # morgen &
-# notion-app &
-# spotify-tray &
-# todoist-nativefier &
-# # rclone mount work: ~/work-drive --daemon &
+notion-app &
+spotify-tray &
+dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
+# rclone mount work: ~/work-drive --daemon &
 
 ##################
 # Window Manager #
@@ -77,4 +79,3 @@ unclutter --timeout 3 --ignore-scrolling &
 
 [[ $XDG_VTNR -eq 1 ]] && exec dwm 2>>"$CACHE/dwm.log"
 [[ $XDG_VTNR -eq 2 ]] && exec xmonad 2>>"$CACHE/xmonad.log"
-#exec i3 2>> $XDG_CACHE_HOME/i3.log

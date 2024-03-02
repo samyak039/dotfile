@@ -152,6 +152,7 @@ pipewire-docs
 pipewire-pulse
 playerctl
 pnpm
+polkit-dump-agent
 powerpill
 protonvpn-cli
 protonvpn-gui
@@ -168,6 +169,7 @@ rmtrash
 rsync
 scrcpy
 screenkey
+secret-service
 speedtest-cli
 spotify
 spotify-tray-git

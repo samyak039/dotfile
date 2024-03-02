@@ -22,7 +22,7 @@ no='no'
 rofi_cmd() {
 	rofi \
 		-font "MonaspiceKr Nerd Font 18" \
-		-theme-str 'window {width: 12em;}' \
+		-theme-str 'window {width: 14em;}' \
 		-theme-str 'listview {lines: 5;}' \
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
@@ -34,7 +34,7 @@ rofi_cmd() {
 confirm_cmd() {
 	rofi \
 		-font "MonaspiceKr Nerd Font 18" \
-		-theme-str 'window {width: 12em;}' \
+		-theme-str 'window {width: 14em;}' \
 		-theme-str 'mainbox {children: [ "message", "listview" ];}' \
 		-theme-str 'listview {columns: 2; lines: 1;}' \
 		-theme-str 'element-text {horizontal-align: 0.5;}' \

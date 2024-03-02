@@ -29,133 +29,16 @@ setopt CORRECT
 WORDCHARS=${WORDCHARS//[\/]}
 
 # history
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
 # beep-beep
 unsetopt beep
 
-#######################
-# aliases & functions #
-#######################
-# source ${ZDOTDIR}/aliasrc
+# aliases
+source ${ZDOTDIR}/aliasrc
 
-# advcp
-alias c='advcp -igr'
-# emacs
-alias e="emacsclient --no-wait --socket-name='doom' -a 'emacs --fg-daemon'"
-# advmv
-alias m='advmv -ig'
-
-# clear -x
-alias cx='clear -x'
-
-# qrencode
-alias qrcode="qrencode -t UTF8"
-alias qrpng="qrencode -t PNG -o qr.png"
-alias qrsvg="qrencode -t PNG -o qr.svg"
-
-# pipenv https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pipenv
-alias pch="pipenv check"
-alias pcl="pipenv clean"
-alias pgr="pipenv graph"
-alias pi="pipenv install"
-alias pidev="pipenv install --dev"
-alias pl="pipenv lock"
-alias po="pipenv open"
-alias prun="pipenv run"
-alias psh="pipenv shell"
-alias psy="pipenv sync"
-alias pu="pipenv uninstall"
-alias pwh="pipenv --where"
-alias pvenv="pipenv --venv"
-alias ppy="pipenv --py"
-
-# neovim
-alias v="nvim"
-
-# zoxide
-alias zw="source zoxide_tmux_window.sh"
-
-# function v() {
-# 	if [ $# -gt 0 ]; then
-# 		nvim $@
-# 	else
-# 		nvim .
-# 	fi
-# }
-
-# case conversion
-
-function camelcase() {
-    perl -pe 's#(_)(.)#\u$2#g'
-}
-
-function snakecase() {
-    perl -pe 's#([A-Z])#_\L$1#g' | perl -pe 's#^_##'
-}
-
-function tmux-window-name() {
-	($TMUX_PLUGIN_MANAGER_PATH/tmux-window-name/scripts/rename_session_windows.py &)
-}
-
-# dotfile config
-alias cfg="/usr/bin/git --git-dir=$CONFIG/dotfiles --work-tree=$HOME"
-# no confusion between doas --option or cmd --option
-alias doas='doas --'
-# update system
-alias pmsyu='doas pacman -Sy && doas powerpill -Su && paru -Su'
-# dart & flutter pub
-alias drt='fvm dart'
-alias fltr='fvm flutter'
-alias dpub='dart pub'
-alias fpub='flutter pub'
-# fvm
-alias ffvm='fvm flutter'
-alias dfvm='fvm dart'
-
-# color
-alias ip='ip -c'
-
-# # leetcode-cli
-# alias ll="leetcode"
-# alias lld="leetcode data"
-# alias lls="leetcode stat"
-# llp() { leetcode pick $q; }
-# lle() { leetcode edit $q; }
-# llt() { leetcode test $q; }
-# llx() { leetcode exec $q; }
-
-# adb quick connect connect
-adbcon() {
-  if ( adb connect "192.168.$1.93:5555" | rg connected ); then
-    if ( adb devices | rg 'device$' ); then
-      if ( flutter devices | rg -i android ); then
-      else
-        echo '\e[1;33mNOT CONNECTED\e[m' && return 2;
-      fi
-    else
-      echo 'echo';
-    fi
-  else
-    echo '\e[1;33mADB cannot reach Device\e[m';  return 1;
-  fi
-}
-
-# better X tools
-xxev() {
-  xev | awk -F'[ )]+' ' /^KeyPress/ {a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-}
-xxprop() {
-  xprop | awk '
-      /^WM_CLASS/{sub(/.* =/, "instance:"); sub(/,/, "\nclass:"); print}
-      /^WM_NAME/{sub(/.* =/, "title:"); print}'
-}
-
-#######
-# XDG #
-#######
-alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
-alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
-alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
+# functions
+source ${ZDOTDIR}/functionrc
 
 ###########################
 # pre zimfw customization #
@@ -163,6 +46,7 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 
 ### completion
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
+zstyle ':zim:completion' ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
 
 # ### fzf-tab
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
@@ -263,3 +147,4 @@ alias ls='exa --group-directories-first --icons --classify'
 # eval #
 ########
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh --cmd d)"

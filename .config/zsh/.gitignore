@@ -1,3 +1,2 @@
 *.zwc
-.zcompdump
-.zhistory
+.zcompdump*

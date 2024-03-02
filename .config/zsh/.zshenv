@@ -30,13 +30,5 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 # TEMP #
 ########
 
-export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
-export PATH="${PATH}:${ANDROID_SDK_ROOT}/emulator"
-export PATH="${PATH}:${ANDROID_SDK_ROOT}/platform-tools"
-export PATH="${PATH}:${ANDROID_SDK_ROOT}/tools"
-export PATH="${PATH}:${ANDROID_SDK_ROOT}/tools/bin"
-# `cmdline-tolos/bin` AFTER `tools/bin` only. need to override the above one
-export PATH="${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin"
-
-export CHROME_EXECUTABLE="/usr/bin/brave-beta"
-
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export HISTFILE="$XDG_DATA_HOME/zsh/.zhistory"

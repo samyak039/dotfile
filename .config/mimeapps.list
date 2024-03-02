@@ -51,3 +51,4 @@ x-scheme-handler/etcher=balena-etcher.desktop
 x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
 x-scheme-handler/clickup=ClickUp.desktop
 sourcegraph=cody-handler.desktop
+x-scheme-handler/anytype=anytype.desktop
