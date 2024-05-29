@@ -22,7 +22,12 @@ alias doas='doas --'
 alias cx='clear -x'
 
 # emacs
-alias e="emacsclient --no-wait --socket-name='doom' -a 'emacs --fg-daemon'"
+alias e="emacsclient --no-wait -a 'emacs --fg-daemon'"
+
+# hledger
+alias hla="hledger-iadd --file $LEDGER_FILE_CURRENT --completion-engine fuzzy"
+alias hlc="hledger check -s ordereddate"
+alias hlr="hledger areg"
 
 # # leetcode-cli
 # alias ll="leetcode"

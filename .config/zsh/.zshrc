@@ -1,3 +1,4 @@
+
 #
 #            _
 #    _______| |__  _ __ ___
@@ -8,10 +9,16 @@
 #
 # @samyak039
 
-
 #######
 # zsh #
 #######
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 ## History
 # Remove older command from the history if a duplicate is to be added.
@@ -111,10 +118,10 @@ ZIM_HOME=${XDG_CONFIG_HOME:-$HOME/.config}/zim
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   if (( ${+commands[curl]} )); then
     curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh > /dev/null
   else
     mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
-        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh > /dev/null
   fi
 fi
 
@@ -142,9 +149,7 @@ unset key
 
 # exa
 alias ls='exa --group-directories-first --icons --classify'
+alias lr='ll -T'
 
-########
-# eval #
-########
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh --cmd d)"
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

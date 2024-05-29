@@ -25,6 +25,9 @@ export CACHE="$XDG_CACHE_HOME"
 export DATA="$XDG_DATA_HOME"
 export SCRIPT="$HOME/scripts"
 
+
+export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2023-24.journal"
+
 ########
 # PATH #
 ########
@@ -46,8 +49,8 @@ export PATH="${PATH}:${XDG_DATA_HOME:-$HOME/.local/share}/fvm/default/bin"
 export PATH="${PATH}:/usr/lib/dart/bin"
 
 # java & android
-export JAVA_HOME='/usr/lib/jvm/default'
-export PATH="${PATH}:${JAVA_HOME:-/usr/lib/jvm/default}/bin"
+# export JAVA_HOME='/usr/lib/jvm/default'
+# export PATH="${PATH}:${JAVA_HOME:-/usr/lib/jvm/default}/bin"
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 export ANDROID_SDK_ROOT="${HOME}/Android/Sdk"
 export PATH="${PATH}:${ANDROID_SDK_ROOT}/emulator"
@@ -61,7 +64,7 @@ export PATH="${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin"
 # XDG #
 #######
 export DOOMDIR="$XDG_CONFIG_HOME/doom"
-export FVM_HOME="$XDG_DATA_HOME/fvm"
+export FVM_CACHE_PATH="$XDG_DATA_HOME/fvm"
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 export FZF_PATH="$XDG_DATA_HOME/fzf"
 
@@ -97,8 +100,23 @@ eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 # eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
+# PHP
+export PHPENV_ROOT="$XDG_DATA_HOME/phpenv"
+if [ -d "${PHPENV_ROOT}" ]; then
+  export PATH="${PHPENV_ROOT}/bin:${PATH}"
+  eval "$(phpenv init -)"
+fi
+
 # zsh
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
+
+##########
+# RICING #
+##########
+export FZF_DEFAULT_OPTS=" \
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
 #############
 # XDG-Ninja #
