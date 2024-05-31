@@ -98,15 +98,20 @@ zstyle ':zim:termtitle:precmd'  format '%1~'
 # use degit instead of git
 zstyle ':zim:zmodule' use 'degit'
 
-### zsh-autosuggestion
-# Disable automatic widget re-binding on each precmd. This can be set when
-# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
-ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+# ### zsh-autosuggestion
+# # Disable automatic widget re-binding on each precmd. This can be set when
+# # zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
+# ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
+
+### zsh-history-substring-search
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND="fg=magenta,bold"
+HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND="fg=red,bold"
 
 ### zsh-syntax-highlighting
 # Set what highlighters will be used.
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets cursor root)
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets cursor root)
 
 
 #########
@@ -141,11 +146,15 @@ source ${ZIM_HOME}/init.zsh
 zmodload -F zsh/terminfo +p:terminfo
 
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
-for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
-for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
-for key ('k') bindkey -M vicmd ${key} history-substring-search-up
-for key ('j') bindkey -M vicmd ${key} history-substring-search-down
-unset key
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+# for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
+# for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
+# for key ('k') bindkey -M vicmd ${key} history-substring-search-up
+# for key ('j') bindkey -M vicmd ${key} history-substring-search-down
+# unset key
 
 # exa
 alias ls='exa --group-directories-first --icons --classify'
