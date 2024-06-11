@@ -41,23 +41,17 @@ export HISTFILE="$XDG_STATE_HOME/zsh/history"
 # beep-beep
 unsetopt beep
 
-# aliases
-source ${ZDOTDIR}/aliasrc
-
-# functions
-source ${ZDOTDIR}/functionrc
-
 ###########################
 # pre zimfw customization #
 ###########################
 
 ### completion
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
-zstyle ':zim:completion' ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
+zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
 
 # ### fzf-tab
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':fzf-tab:*' popup-min-size 50 8
+zstyle ':fzf-tab:*' popup-min-size 120 20 # WxH
 zstyle ':fzf-tab*' fzf-min-height 20
 zstyle ':fzf-tab:complete:cd:*' fzf-min-height 30
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa --color=always $realpath'
@@ -143,6 +137,9 @@ source ${ZIM_HOME}/init.zsh
 # post zimfw config #
 #####################
 
+source ${ZDOTDIR}/aliasrc
+source ${ZDOTDIR}/functionrc
+
 zmodload -F zsh/terminfo +p:terminfo
 
 # Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
@@ -150,15 +147,6 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
-# for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
-# for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
-# for key ('k') bindkey -M vicmd ${key} history-substring-search-up
-# for key ('j') bindkey -M vicmd ${key} history-substring-search-down
-# unset key
-
-# exa
-alias ls='exa --group-directories-first --icons --classify'
-alias lr='ll -T'
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

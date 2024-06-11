@@ -8,6 +8,10 @@
 #
 # @samyak039
 
+function mkcd() {
+	[[ -n ${1} ]] && mkdir -p ${1} && builtin cd ${1}
+}
+
 # case conversion
 
 function camelcase() {
@@ -86,6 +90,17 @@ multiplexer_name_update() {
 v() {
 	multiplexer_name_update
 	nvim "$@"
+}
+
+# yazi
+# https://yazi-rs.github.io/docs/quick-start#shell-wrapper
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # vim:ft=sh

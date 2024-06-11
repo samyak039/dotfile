@@ -33,10 +33,12 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 # TEMP #
 ########
 export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2023-24.journal"
+export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime" 
 
 ########
 # EVAL #
 ########
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 eval "$(jenv init -)"
 # eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd d)"

@@ -53,6 +53,30 @@ alias zw="source zoxide_tmux_window.sh"
 alias syu="doas pacman -Sy && doas powerpill -Su && paru -Su"
 alias syunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
 
+
+#-----------#
+# eza | exa #
+#-----------#
+
+alias _ls='/bin/ls'
+alias lR='eza --group-directories-first --icons -T'                         # Long format, recursive as a tree
+alias la='eza --group-directories-first --icons --all --all --long --git'     # Long format, git status
+alias lc='eza --group-directories-first --icons --long --git -schanged'     # Long format, newest status change (ctime) last
+alias lk='eza --group-directories-first --icons --long --git -ssize'        # Long format, largest file size last
+alias ll='eza --group-directories-first --icons --long --git --no-user'     # Long format, git status
+alias llu='eza --group-directories-first --icons --long --git'              # Long format, git status, with user
+alias lr='eza --group-directories-first --icons --long --git -T'            # Long format, recursive as a tree
+alias ls='eza --group-directories-first --icons --classify'            # Long format, recursive as a tree
+alias lt='eza --group-directories-first --icons --long --git -smodified'    # Long format, newest modification time last
+alias lx='eza --group-directories-first --icons --long --git -sextension'   # Long format, sort by extension
+alias l='ll'
+
+# # exa
+# alias ls='exa --group-directories-first --icons --classify'
+# alias lr='ll -T'
+
+
+
 #---------------#
 # colorful life #
 #---------------#
@@ -107,7 +131,7 @@ alias dxc='docker container exec'
 alias dxcit='docker container exec -it'
 
 #----------------#
-# docker-compose #
+# docker compose #
 #----------------#
 
 alias dco="docker compose"
