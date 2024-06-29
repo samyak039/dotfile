@@ -30,8 +30,8 @@ keybinds clear-defaults=true {
 
         // tab
         bind "," { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "p" "Ctrl p" { GoToPreviousTab; SwitchToMode "Normal"; }
+        bind "n" "Ctrl n" { GoToNextTab; SwitchToMode "Normal"; }
         bind "c" { NewTab; SwitchToMode "Normal"; }
         bind "&" { CloseTab; SwitchToMode "Normal"; }
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }

@@ -20,6 +20,7 @@ alias doas='doas --'
 
 # clear -x
 alias cx='clear -x'
+alias cxx='clear'
 
 # emacs
 alias e="emacsclient --no-wait -a 'emacs --fg-daemon'"
@@ -50,8 +51,8 @@ alias qrsvg="qrencode -t PNG -o qr.svg"
 alias zw="source zoxide_tmux_window.sh"
 
 # pacman | paru
-alias syu="doas pacman -Sy && doas powerpill -Su && paru -Su"
-alias syunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
+alias pacsyu="doas pacman -Sy && doas powerpill -Su && paru -Su"
+alias pacsyunc="doas pacman -Sy --noconfirm && doas powerpill -Su --noconfirm && paru -Su --noconfirm"
 
 
 #-----------#

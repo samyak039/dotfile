@@ -66,18 +66,13 @@ export PATH="${PATH}:${ANDROID_SDK_ROOT}/tools/bin"
 # `cmdline-tolos/bin` AFTER `tools/bin` only. need to override the above one
 export PATH="${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin"
 
-#######
-# ENV #
-#######
+###############
+# DEVELOP ENV #
+###############
 
-# android studio
-export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1 # android studio
 
-# Brave -> Chrome
-export CHROME_EXECUTABLE="/usr/bin/brave-beta"
-
-# https://github.com/oldratlee/hacker-quotes
-export ZSH_HACKER_QUOTES_ENABLE_WHEN_INTERACTIVE=true
+export CHROME_EXECUTABLE="/usr/bin/brave-beta" # Brave -> Chrome
 
 # nodejs
 export NVM_DIR="$XDG_DATA_HOME/nvm"
@@ -85,10 +80,6 @@ source /usr/share/nvm/init-nvm.sh
 
 # PNPM
 export PNPM_HOME="/home/samyak/.local/share/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
 export PATH="${PNPM_HOME}:${PATH}"
 
 # python
@@ -113,16 +104,20 @@ export FZF_DEFAULT_OPTS=" \
   --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
   --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 
+
 #############
 # XDG-Ninja #
 #############
 
 # export PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store"
 # export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
+# alias adb='HOME="$XDG_DATA_HOME"/android adb'
 alias ldgr='ledger --init-file "$XDG_CONFIG_HOME"/ledgerrc --sort date'
 alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
+export ANDROID_HOME="$XDG_DATA_HOME/android/sdk"
+export ANDROID_USER_HOME="$XDG_DATA_HOME/android"
 export ATOM_HOME="$XDG_DATA_HOME/atom"
 export CABAL_CONFIG="$XDG_CONFIG_HOME/cabal/config"
 export CABAL_DIR="$XDG_DATA_HOME/cabal"
@@ -138,10 +133,12 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export LEDGER_FILE="$HOME/papers/ledger/hledger.journal"
 export LESSHISTFILE="$XDG_CACHE_HOME/less/history"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export PARALLEL_HOME="$XDG_CONFIG_HOME/parallel"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
@@ -155,6 +152,7 @@ export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export TEXMFVAR="$XDG_CACHE_HOME/texlive/texmf-var"
 export WAKATIME_HOME="$XDG_CONFIG_HOME/wakatime"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+export XCURSOR_PATH="/usr/share/icons:$XDG_DATA_HOME/icons"
 
 ########
 # TEMP #

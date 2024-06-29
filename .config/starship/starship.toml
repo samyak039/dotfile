@@ -2,9 +2,13 @@
 # starship #
 ############
 
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # add_newline = true
 # format = '''$jobs$shell$memory_usage$hostname$username$directory$status$character'''
 # right_format = '''$all'''
+palette = "catppuccin_mocha"
 
 [battery]
 full_symbol = '󱊣 '
@@ -26,11 +30,11 @@ style = 'bold'
 [character]
 success_symbol = '[](bold green)' # nf-fa-chevron_right
 error_symbol = '[](bold red)'     # nf-fa-chevron_up
-vicmd_symbol = '[](bold purple)'  # nf-fa-chevron_left
+vimcmd_symbol = '[](bold purple)' # nf-fa-chevron_left
 
 [cmd_duration]
-format = '\[[ $duration]($style)\] '  # nf-fa-stopwatch
-show_notifications = true
+format = '\[[ $duration]($style)\] ' # nf-fa-stopwatch
+show_notifications = false
 notification_timeout = 2_000
 
 [directory]
@@ -65,12 +69,12 @@ disabled = false
 map_symbol = true
 pipestatus = true
 format = '[\[$symbol $status\]]($style)'
-symbol = '' # nf-fa-times
+symbol = ''                             # nf-fa-times
 success_symbol = ''
-not_executable_symbol = ''  # nf-fa-exclamation
-not_found_symbol = ''  # nf-fa-search
-sigint_symbol = '󰟾'  # nf-md-wall
-signal_symbol = ''  # nf-fa-bolt
+not_executable_symbol = ''              # nf-fa-exclamation
+not_found_symbol = ''                   # nf-fa-search
+sigint_symbol = '󰟾'                      # nf-md-wall
+signal_symbol = ''                      # nf-fa-bolt
 
 [time]
 disabled = false
@@ -178,18 +182,18 @@ format = '[\($state( $progress_current/$progress_total)\)]($style) '
 
 [git_status]
 format = '([\[$all_status$ahead_behind\] ]($style))'
-conflicted = ' '  # nf-fae-equal
-ahead = ''  # nf-fa-arrow_up
-behind = ''  # nf-fa-arrow_down
-diverged = ''  # nf-fa-arrows_v nf-fa-long_arrow_up nf-fa-long_arrow_down
+conflicted = ' '                                    # nf-fae-equal
+ahead = ''                                          # nf-fa-arrow_up
+behind = ''                                         # nf-fa-arrow_down
+diverged = ''                                      # nf-fa-arrows_v nf-fa-long_arrow_up nf-fa-long_arrow_down
 up_to_date = ''
-untracked = ''  # nf-fa-question
-stashed = ''  # nf-fa-dollar
-modified = ''  # nf-fa-exclamation
-staged = ''  # nf-fa-plus
-renamed = ' '  # nf-fa-hashtag
-deleted = ''  # nf-fa-times
-typechanged = ''  # nf-fa-asterisk
+untracked = ''                                      # nf-fa-question
+stashed = ''                                        # nf-fa-dollar
+modified = ''                                       # nf-fa-exclamation
+staged = ''                                         # nf-fa-plus
+renamed = ' '                                       # nf-fa-hashtag
+deleted = ''                                        # nf-fa-times
+typechanged = ''                                    # nf-fa-asterisk
 
 [golang]
 format = '\[[$symbol($version)]($style)\] '
@@ -391,3 +395,32 @@ symbol = " "
 
 [solidity]
 format = '\[[$symbol($version)]($style)\] '
+
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

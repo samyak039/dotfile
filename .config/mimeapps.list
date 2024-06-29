@@ -19,7 +19,7 @@ application/pdf=org.kde.okular.desktop;
 binary/octet-stream=firefoxdeveloperedition.desktop;
 
 [Default Applications]
-application/pdf=org.kde.okular.desktop
+application/pdf=org.pwmt.zathura.desktop
 x-scheme-handler/tg=org.telegram.desktop.desktop
 x-scheme-handler/mailto=brave-browser-beta.desktop
 message/rfc822=userapp-Thunderbird-EY01P1.desktop
@@ -52,3 +52,5 @@ x-scheme-handler/discord-719647875465871400=discord-719647875465871400.desktop
 x-scheme-handler/clickup=ClickUp.desktop
 sourcegraph=cody-handler.desktop
 x-scheme-handler/anytype=anytype.desktop
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/eclipse+command=_usr_lib_dbeaver_.desktop

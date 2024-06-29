@@ -181,6 +181,7 @@ subdl
 sxhkd
 syncthing
 thefuck
+texlive
 tinycompress
 tmux
 tmux-plugin-manager

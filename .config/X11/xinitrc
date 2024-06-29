@@ -39,7 +39,7 @@ dwmblocks &
 # scripts #
 ###########
 set-display
-set-keymap && sxhkd &
+set-keymap && SXHKD_SHELL="/bin/sh" sxhkd &
 sort_download_dir.sh &
 # work-life-balance.sh &
 
@@ -49,12 +49,12 @@ sort_download_dir.sh &
 blueman-applet &
 dunst &
 easyeffects --gapplication-service &
-emacs --daemon &
+# emacs --daemon &
 flameshot &
-/usr/lib/kdeconnectd &
+/usr/bin/kdeconnectd &
 # mpDris2 &
 nm-applet &
-# picom -b
+picom --daemon &
 polkit-dumb-agent &
 redshift &
 syncthing --no-browser &
@@ -65,17 +65,17 @@ unclutter --timeout 3 --ignore-scrolling &
 #############
 # huge apps #
 #############
-$BROWSER &
+# $BROWSER &
 beeper --default-frame --hidden &
 # morgen &
-notion-app &
-spotify-tray &
-dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
+# notion-app &
+# spotify-tray &
+# dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
 # rclone mount work: ~/work-drive --daemon &
 
 ##################
 # Window Manager #
 ##################
 
-[[ $XDG_VTNR -eq 1 ]] && exec dwm 2>>"$CACHE/dwm.log"
-[[ $XDG_VTNR -eq 2 ]] && exec xmonad 2>>"$CACHE/xmonad.log"
+[ "$XDG_VTNR" -eq 1 ] && exec dwm 2>>"$CACHE/dwm.log"
+[ "$XDG_VTNR" -eq 2 ] && exec xmonad 2>>"$CACHE/xmonad.log"

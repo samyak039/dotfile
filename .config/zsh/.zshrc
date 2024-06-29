@@ -13,33 +13,25 @@
 # zsh #
 #######
 
+## p10K
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+if [[ -r "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 ## History
-# Remove older command from the history if a duplicate is to be added.
-setopt HIST_IGNORE_ALL_DUPS
-
-
-## input / output
-# Set editor default keymap to emacs (`-e`) or vi/vim (`-v`)
-bindkey -e
-# Prompt for spelling correction of commands.
-setopt CORRECT
-# Customize spelling correction prompt.
-#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-# Remove path separator from WORDCHARS.
-WORDCHARS=${WORDCHARS//[\/]}
-
-# history
+setopt HIST_IGNORE_ALL_DUPS # Remove older command from the history if a duplicate is to be added.
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
-# beep-beep
-unsetopt beep
+## input / output
+bindkey -e # Set editor default keymap to emacs (`-e`) or vi/vim (`-v`)
+setopt CORRECT # Prompt for spelling correction of commands.
+WORDCHARS=${WORDCHARS//[\/]} # Remove path separator from WORDCHARS.
+# SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? ' # Customize spelling correction prompt.
+
+unsetopt beep # beep-beep
 
 ###########################
 # pre zimfw customization #
@@ -49,7 +41,7 @@ unsetopt beep
 zstyle ':completion::complete:*' cache-path ${XDG_CACHE_HOME}/zsh/zcompcache
 zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}
 
-# ### fzf-tab
+### fzf-tab
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' popup-min-size 120 20 # WxH
 zstyle ':fzf-tab*' fzf-min-height 20
@@ -77,10 +69,9 @@ zstyle ':zim:git' aliases-prefix 'g'
 # zstyle ':zim:ohmyzsh:plugins:nvm' lazy yes
 
 ### pacman
-# zstyle ':zim:pacman' frontend 'powerpill'
-# zstyle ':zim:pacman' helpers 'paru'
+zstyle ':zim:pacman' priv_cmd 'doas'
 
-## termtitle
+### termtitle
 # set the titles to show the command name typed by the user while the command
 # is being executed and then the current directory name after the command ended
 # (i.e. before each prompt)
@@ -92,9 +83,9 @@ zstyle ':zim:termtitle:precmd'  format '%1~'
 # use degit instead of git
 zstyle ':zim:zmodule' use 'degit'
 
-# ### zsh-autosuggestion
-# # Disable automatic widget re-binding on each precmd. This can be set when
-# # zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
+### zsh-autosuggestion
+# Disable automatic widget re-binding on each precmd. This can be set when
+# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
 # ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd completion history)
 
@@ -148,5 +139,17 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
+## p10K
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+[[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
+
+
+##############
+# load tools #
+##############
+
+eval "$(pyenv virtualenv-init -)"
+# [ -d "${PHPENV_ROOT}" ] && eval "$(phpenv init -)"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+eval "$(jenv init -)"
+eval "$(zoxide init zsh --cmd d)"

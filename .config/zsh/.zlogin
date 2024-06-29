@@ -8,6 +8,10 @@
 #
 # @samyakbardiya
 
+#=============================#
+# Setting things after .zshrc #
+#=============================#
+
 eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -20,3 +24,4 @@ eval "$(pyenv virtualenv-init -)"
 eval "$(jenv init -)"
 
 eval "$(zoxide init zsh --cmd d)"
+

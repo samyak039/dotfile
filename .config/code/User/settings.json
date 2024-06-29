@@ -17,8 +17,7 @@
   "editor.cursorSmoothCaretAnimation": "explicit",
   "editor.cursorSurroundingLines": 5,
   "editor.find.autoFindInSelection": "multiline",
-  "editor.fontFamily": "'MonaSpiceNe Nerd Font', 'FiraCode Nerd Font'",
-  "editor.fontSize": 15,
+  "editor.fontFamily": "'InputMono Nerd Font', 'MonaSpiceNe Nerd Font', 'FiraCode Nerd Font'",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -27,7 +26,6 @@
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlayHints.fontSize": 10,
   "editor.inlayHints.padding": true,
-  "editor.lineNumbers": "relative",
   "editor.linkedEditing": true,
   "editor.minimap.autohide": true,
   "editor.rulers": [80],
@@ -48,8 +46,6 @@
   "editor.quickSuggestions": {
     "other": "inline"
   },
-
-  "explorer.compactFolders": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.enabled": true,
   "explorer.incrementalNaming": "smart",
@@ -510,7 +506,7 @@
   //   "#e78a4e", // orange
   //   "#d3869b" // purple
   // ],
-  // "indentRainbow.includedLanguages": ["python", "django-html", "shellscript"],
+  "indentRainbow.includedLanguages": ["python", "django-html", "shellscript"],
 
   "leetcode.defaultLanguage": "cpp",
   "leetcode.hint.commandShortcut": false,
@@ -8612,6 +8608,10 @@
     "editor.defaultFormatter": "monosans.djlint"
   },
 
+  "[java]": {
+    "editor.rulers": [120]
+  },
+
   "flake8.severity": {
     "E": "Warning",
     "F": "Information"
@@ -8706,7 +8706,7 @@
   "python.formatting.provider": "black",
   "python.testing.unittestEnabled": true,
   "[python]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
@@ -8765,5 +8765,12 @@
   "catppuccin.bracketMode": "neovim",
   "catppuccin.italicKeywords": false,
   "catppuccin.italicComments": false,
-  "catppuccin-icons.hidesExplorerArrows": true
+  "catppuccin-icons.hidesExplorerArrows": true,
+  "workbench.colorCustomizations": {},
+  "cmake.showOptionsMovedNotification": false,
+  "security.workspace.trust.enabled": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "workbench.startupEditor": "none",
+  "window.density.editorTabHeight": "compact",
+  "workbench.editor.showTabs": "single"
 }

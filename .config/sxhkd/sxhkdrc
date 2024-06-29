@@ -1,3 +1,5 @@
+# vim:ft=sxhkdrc
+
 # KEYBOARD LAYOUT
 shift + F1
     set-keymap ; notify-send -a 'Keyboard Layout' 'DVORAK'
@@ -89,14 +91,15 @@ super + shift + control + d
     dmenu_run_history_i -c -l 20 -bw 3 -p run
 super + s
     $TERMINAL
-# super + t
-#     $TERMINAL
+# calming
+super + shift + s
+    $TERMINAL_ALT
 
 # hyper keybinding / application keybinding
 hyper + apostrophe
     rofimoji
 hyper + period
-    $TERMINAL -e yazi
+    $TERMINAL_ALT -e yazi
 hyper + Return
     $TERMINAL
 hyper + a
@@ -105,16 +108,20 @@ hyper + b
     firefox-developer-edition -P profile
 hyper + shift + b
     brave-beta --profile-directory="Default"
+hyper + shift + ctrl + b
+    brave-beta --profile-directory="CT"
 hyper + c
     morgen
 hyper + d
     discord
 hyper + e
-    $TERMINAL -e --class neovim tmux new-session -A -s neovim 
+    $TERMINAL --class neovim -e tmux new-session -A -s neovim
 hyper + shift + e
-    emacsclient -c -a 'emacs --fg-daemon'
-hyper + alt + e
-    emacsclient --eval "emacs-everywhere"
+    $TERMINAL_ALT -e --class neovim tmux new-session -A -s neovim
+# hyper + shift + e
+#     emacsclient -c -a 'emacs --fg-daemon'
+# hyper + alt + e
+#     emacsclient --eval "emacs-everywhere"
 hyper + h
     $TERMINAL -e btop
 hyper + k
@@ -132,7 +139,7 @@ hyper + r
 hyper + s
     spotify-tray
 hyper + t
-    telegram-desktop
+    dex "$XDG_DATA_HOME/applications/$(ls $XDG_DATA_HOME/applications | awk '/appimagekit/ && /Todoist/')" &
 hyper + u
     rofimoji
 hyper + v
@@ -142,6 +149,9 @@ hyper + w
 hyper  + BackSpace
     rofi-powermenu.sh
 
+hyper + space
+    notify-send "SXHKD" "SXHKD_SHELL: ${SXHKD_SHELL}"
+
 # restart scripts or daemon
 alt + shift + control + s
-    killnotify sxhkd "config reloaded" && sxhkd &
+    killnotify sxhkd "config reloaded" && SXHKD_SHELL="/bin/sh" sxhkd &

@@ -1,75 +1,45 @@
-import = [
-  # "~/.config/alacritty/alacritty-theme/themes/gruvbox_dark.toml",
-  "~/.config/alacritty/base16-alacritty/colors/base16-gruvbox-dark-medium-256.toml",
-  # "~/.config/alacritty/base16-alacritty/colors/base16-gruvbox-dark-hard-256.toml",
-]
+# man 5 alacritty
+
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [window]
-# dimensions = { columns = 0, lines = 0 }
-# position = "None"
-# padding = { x = 0, y = 0 }
-dynamic_padding = true
-decorations = "None"
-# opacity = 0.8
-# blur = false # (works on macOS/KDE Wayland)
-# startup_mode = "Windowed"
-# title = "Alacritty"
-# dynamic_title = true
-# class = { instance =  "Alacritty",  general = "Alacritty" }
-# decoration_theme_variant = "Dark"
-# resizie_increment = false
-# option_as_alt = "None"
-
-# [scrolling]
-# history = 10000
-# multiplier = 3
+dynamic_padding = true # Spread additional padding evenly around the terminal content.
+decorations = "None"   # Window decorations.
+opacity = 0.9
+# blur = true
 
 [font]
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
-# bold = { style = "Bold" }
-# italic = { style = "Italic" }
-# bold_italic = { style = "Bold Italic" }
+# calming
+# normal = { family = "Input Mono", style = "Regular" }
+normal = { family = "InputMono Nerd Font", style = "Regular" }
+# normal = { family = "MonaspiceNe Nerd Font", style = "Regular" }
+# normal = { family = "FiraCode Nerd Font", style = "Regular" }
 size = 11
-# offset = { x = 0, y = 0 }
-# glyph_offset = { x = 0, y = 0 }
-builtin_box_drawing= true
-
-# [bell]
-# animation = "Linear"
-# duration = 0
-# color = "#ffffff"
-# command = "None"
+builtin_box_drawing = true
 
 [selection]
-# semantic_escape_chars = ",│‘|:\"' ()[]{}<>\t"
-save_to_clipboard = true
+save_to_clipboard = true # selected text will be copied to the primary clipboard.
 
 [cursor]
-style = { shape = "Underline", blinking = "Off" }
-vi_mode_style = { shape = "Block", blinking = "Off" }
-# blink_interval = 750
-# blink_timeout = 5
-unfocused_hollow = false
+style = { shape = "Underline", blinking = "Never" }
+vi_mode_style = { shape = "Block", blinking = "Always" }
+unfocused_hollow = true
 thickness = 0.25
 
-# [terminal]
-# osc52 = "OnlyCopy"
-
 [mouse]
-hide_when_typing = true
+hide_when_typing = true # the cursor is temporarily hidden when typing
 bindings = [
   { mouse = "Right", action = "ExpandSelection" },
-  { mouse = "Middle", mode = "~Vi", action = "PasteSelection" }
+  { mouse = "Middle", mode = "~Vi", action = "PasteSelection" },
 ]
 
 [hints]
-alphabet = "hutenosadigpc.r,l;"
+alphabet = "hutenosadigpc.r,l;" # Keys used for the hint labels.
 # enabled = [
 #   { command = "xdg-open", hyperlinks = true, post_processing = true, persist = false, mouse.enabled = true, binding = { key = "U", mods = "Control|Shift" }, regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+" }
 # ]
 
 [keyboard]
 bindings = [
-  { key = "Return", mods = "Control", mode = "~Vi", action = "SpawnNewInstance" }
+  { key = "Return", mods = "Control", mode = "~Vi", action = "SpawnNewInstance" },
 ]
-

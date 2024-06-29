@@ -13,15 +13,15 @@
 # DEFAULTS #
 ############
 export BROWSER="firefox-developer-edition"
-export BROWSER2="brave-beta"
+export BROWSER_ALT="brave-beta"
 export EDITOR="nvim"
-# export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 export READER="zathura"
 export TERMINAL="alacritty"
 export TERMINAL_ALT="wezterm"
+export VSCODE="code"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p --theme default'"
 # export TERM="screen-256color"
 # export VISUAL="emacsclient -c -s doom -a 'emacs'"
-export VSCODE="code"
 
 
 ##########
