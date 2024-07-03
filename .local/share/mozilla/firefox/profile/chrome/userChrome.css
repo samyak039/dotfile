@@ -13,10 +13,12 @@
 @import url("firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
 @import url("firefox-csshacks/chrome/loading_indicator_bouncing_line.css");
 @import url("firefox-csshacks/chrome/minimal_in-UI_scrollbars.css");
+@import url("firefox-csshacks/chrome/overlay_fullscreen_toolbars.css");
 @import url("firefox-csshacks/chrome/overlay_sidebar_header.css");
 @import url("firefox-csshacks/chrome/privatemode_indicator_as_menu_button.css");
 @import url("firefox-csshacks/chrome/proton_dark_light_notifications.css");
 @import url("firefox-csshacks/chrome/urlbar_connection_type_text_colors.css");
+@import url("firefox-csshacks/chrome/urlbar_container_color_border.css");
 @import url("firefox-csshacks/chrome/window_control_force_linux_system_style.css");
 
 /* @import url("GruvFox/chrome/userChrome.css"); */

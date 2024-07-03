@@ -31,7 +31,7 @@ export CACHE="$XDG_CACHE_HOME"
 export DATA="$XDG_DATA_HOME"
 export SCRIPT="$HOME/scripts"
 
-export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2023-24.journal"
+export LEDGER_FILE_CURRENT="$HOME/papers/ledger/2024-25.journal"
 
 
 ########

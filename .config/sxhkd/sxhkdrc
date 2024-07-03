@@ -111,7 +111,7 @@ hyper + shift + b
 hyper + shift + ctrl + b
     brave-beta --profile-directory="CT"
 hyper + c
-    morgen
+    notion-calendar-elecrtron
 hyper + d
     discord
 hyper + e
@@ -130,6 +130,8 @@ hyper + shift + k
     keepassxc
 hyper + m
     beeper --default-frame
+hyper + n
+    notion-app
 hyper + p
     thunar
 hyper + q
